@@ -1,0 +1,31 @@
+a.tc-tiddlylink, a.tc-tiddlylink:hover, a.tc-tiddlylink:hover {
+	padding: 2px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+	line-height: 1.3;
+	color: #333;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.16);
+	text-decoration: none;
+	transition: background 120ms ease-in 0s;
+}
+a:hover {
+	background-color: #EEE;
+}
+
+a.tc-tiddlylink-external, a.tc-tiddlylink-external:visited {
+	padding: 2px;
+	border-bottom: 1px solid #8357d7;
+	text-decoration: none;
+  box-decoration-break: clone;
+  font-weight: 700;
+  color: #666;
+}
+a.tc-tiddlylink-external:hover {
+  background-color: #333;
+  background-image: linear-gradient(19deg, #333 0%, #CCC 100%);
+	background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}

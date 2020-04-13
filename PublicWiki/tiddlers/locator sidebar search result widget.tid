@@ -1,0 +1,11 @@
+caption: Facets
+created: 20200408140310432
+creator: 
+modified: 20200413112810791
+modifier: 
+tags: WikiCustomization $:/tags/SearchResults
+title: locator sidebar search result widget
+tmap.id: 48d8aa6e-4a7e-4539-97b1-bed03dcc7592
+type: text/vnd.tiddlywiki
+
+<<locator-search>>

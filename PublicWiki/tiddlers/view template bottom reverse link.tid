@@ -1,0 +1,11 @@
+created: 20200408145142997
+creator: 
+modified: 20200413113553534
+modifier: 
+tags: WikiCustomization $:/tags/ViewTemplate
+title: view template bottom reverse link
+tmap.id: 083ceea2-d824-4343-ad8f-83b50f1b1fa0
+type: text/vnd.tiddlywiki
+
+<<list-links filter:"[all[current]backlinks[]][all[current]tagging[]]" class:"horizontal-list-links" >>
+

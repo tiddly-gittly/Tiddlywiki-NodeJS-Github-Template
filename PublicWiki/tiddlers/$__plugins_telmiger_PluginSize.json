@@ -1,0 +1,61 @@
+{
+    "tiddlers": {
+        "$:/plugins/telmiger/PluginSize/styles.css": {
+            "created": "20190122231405826",
+            "creator": "Thomas Elmiger",
+            "text": ".tiddler-size-indicator {\n   width: 100%;\n   background-color: rgba(125,125,125,0.3);\n   padding: 0.25rem;\n   margin-bottom: 1rem;\n}\n\n.te-info-panel .tc-plugin-info {\n   margin-bottom: 0;\n}\n\n.te-info-panel .tc-plugin-info-dropdown {\n   margin-top: -1px;\n}",
+            "title": "$:/plugins/telmiger/PluginSize/styles.css",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190308220246621"
+        },
+        "$:/plugins/telmiger/PluginSize/template": {
+            "text": "\\define harveyBall(size)\n<$reveal type=\"lt\" text=\"500001\" default=$size$>\n<$reveal type=\"gt\" text=\"100000\" default=$size$>\n<<HB21>>\n</$reveal>\n<$reveal type=\"lt\" text=\"100001\" default=$size$>\n<$reveal type=\"gt\" text=\"50000\" default=$size$>\n<<HB13>>\n</$reveal>\n<$reveal type=\"lt\" text=\"50001\" default=$size$>\n<$reveal type=\"gt\" text=\"25000\" default=$size$>\n<<HB8>>\n</$reveal>\n<$reveal type=\"lt\" text=\"25001\" default=$size$>\n<<HB5>>\n</$reveal>\n</$reveal>\n</$reveal>\n</$reveal>\n<$reveal type=\"gt\" text=\"500000\" default=$size$>\n<<HB34>>\n</$reveal>\n\\end\n<div class=\"tiddler-size-indicator\">\n<$wikify name=\"size\" text=\"\"\"<$editor-counter tiddler=<<currentTiddler>> field=\"text\" mode=\"character\"/>\"\"\">\n<$macrocall $name=\"harveyBall\" size=<<size>>/> – plugin size: <$macrocall $name=\"rpn\" a=<<size>> b=\"1000\" operation=\"/\" decimals=\"1\" locale=\"en-GB\"/> k characters (<<size>>)\n</$wikify>\n</div>",
+            "title": "$:/plugins/telmiger/PluginSize/template",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190122231539037",
+            "list-after": "$:/core/ui/ViewTemplate/plugin",
+            "creator": "Thomas Elmiger",
+            "created": "20190122222437252"
+        },
+        "$:/plugins/telmiger/PluginSize/ViewTemplate": {
+            "text": "<$list filter=\"[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]\">\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>",
+            "title": "$:/plugins/telmiger/PluginSize/ViewTemplate",
+            "tags": "$:/tags/ViewTemplate",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190122232104594",
+            "list-after": "$:/core/ui/ViewTemplate/plugin",
+            "creator": "Thomas Elmiger",
+            "created": "20190122065955189"
+        },
+        "$:/plugins/telmiger/PluginSize/readme": {
+            "created": "20190127210600496",
+            "creator": "Thomas Elmiger",
+            "text": "!! Plugin Size\n\nThis plugin calculates the size of all installed plugins, including themes and languages.\n\n!!! Categories (character count)\n\n* <<HB34>> more than 500 k\n* <<HB21>> up to 500 k \n* <<HB13>> up to 100 k\n* <<HB8>> up to 50 k\n* <<HB5>> up to 25 k\n\n!!! Dependencies\n\nThis is done using the following other plugins: \n\n* [[Editor Counter|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2FEditorCounter]] to count the characters in the text field of plugin tiddlers\n* [[RPN|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2Frpn]] for number formatting\n* [[Harvey Balls|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2FHarveyBalls]] for size indication icons\n\n!!! Information\n\nThe size of installed plugins can be found on \n\n* a tab //{{$:/core/images/info-button}} Plugin Info// in the $:/ControlPanel \n* on $:/plugins/telmiger/PluginSize/lists\n\n!!! Copyright \n\n© 2019, Thomas Elmiger",
+            "title": "$:/plugins/telmiger/PluginSize/readme",
+            "tags": "",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190310225033635"
+        },
+        "$:/plugins/telmiger/PluginSize/icon": {
+            "created": "20190127213417005",
+            "creator": "Thomas Elmiger",
+            "text": "<<HB21>>",
+            "title": "$:/plugins/telmiger/PluginSize/icon",
+            "tags": "",
+            "modified": "20190127213525277",
+            "modifier": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/PluginSize/lists": {
+            "created": "20190308213013859",
+            "creator": "Thomas Elmiger",
+            "text": "\\define lingo-base() $:/language/ControlPanel/Plugins/\n\n\\define plugin-table(type)\n<$set name=\"plugin-type\" value=\"\"\"$type$\"\"\">\n<$set name=\"qualified-state\" value=<<qualify \"$:/state/plugin-info\">>>\n<$list filter=\"[!has[draft.of]plugin-type[$type$]sort[description]]\" emptyMessage=<<lingo \"Empty/Hint\">> >\n<div class=\"te-info-panel\">\n{{||$:/core/ui/Components/plugin-info}}\n</div>\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>\n</$set>\n</$set>\n\\end\n\n<<lingo Installed/Hint>>\n\n<<tabs \"[[$:/core/ui/ControlPanel/Plugins/Installed/Plugins]] [[$:/core/ui/ControlPanel/Plugins/Installed/Themes]] [[$:/core/ui/ControlPanel/Plugins/Installed/Languages]]\" \"$:/core/ui/ControlPanel/Plugins/Installed/Plugins\">>\n",
+            "title": "$:/plugins/telmiger/PluginSize/lists",
+            "tags": "$:/tags/ControlPanel",
+            "modifier": "Thomas Elmiger",
+            "modified": "20190308220650742",
+            "caption": "{{$:/core/images/info-button}} Plugin Info",
+            "list-after": "$:/core/ui/ControlPanel/Plugins"
+        }
+    }
+}

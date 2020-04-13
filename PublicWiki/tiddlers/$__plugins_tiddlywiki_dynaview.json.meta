@@ -1,0 +1,11 @@
+author: JeremyRuston
+core-version: >=5.0.0
+created: 20200411032856235
+dependents: 
+description: Dynamic scrolling and zooming effects
+list: readme docs examples config
+modified: 20200411032856235
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/dynaview
+type: application/json
+version: 5.1.21

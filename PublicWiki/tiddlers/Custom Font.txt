@@ -1,0 +1,6 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
+* {
+  font-variant-ligatures: contextual;
+  font-display: swap;
+}

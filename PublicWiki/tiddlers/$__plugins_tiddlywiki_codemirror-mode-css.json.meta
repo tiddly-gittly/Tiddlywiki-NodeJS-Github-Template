@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20200409033735293
+dependents: 
+description: CodeMirror Mode: CSS Highlighting
+list: readme
+modified: 20200409033735293
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-mode-css
+type: application/json
+version: 5.1.21

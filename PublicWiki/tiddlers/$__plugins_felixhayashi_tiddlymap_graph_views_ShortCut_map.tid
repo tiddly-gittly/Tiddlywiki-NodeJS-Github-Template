@@ -1,0 +1,27 @@
+created: 20200409033735800
+modified: 20200409033735800
+title: $:/plugins/felixhayashi/tiddlymap/graph/views/ShortCut/map
+type: text/vnd.tiddlywiki
+
+{
+ "3a9b6424-dfe6-4113-923a-d145d5d85afe": {
+  "x": -185,
+  "y": -134
+ },
+ "57d1f83c-4802-472c-a9d1-b4fc8061340e": {
+  "x": -161,
+  "y": 24
+ },
+ "cdb732d7-1239-470d-a482-c67509110ceb": {
+  "x": -50,
+  "y": -91
+ },
+ "21163e80-10c2-4c9c-bb16-e5b0d795ced4": {
+  "x": -269,
+  "y": -43
+ },
+ "8f0549e3-60d4-4226-a1c9-74f987dc4a4d": {
+  "x": -58.05833339691162,
+  "y": -3.366668701171875
+ }
+}

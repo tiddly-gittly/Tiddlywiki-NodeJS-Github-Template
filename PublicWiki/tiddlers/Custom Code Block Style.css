@@ -1,0 +1,15 @@
+p > code, li > code {
+  box-decoration-break: clone;
+  border: none;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+
+  background: linear-gradient(19deg,#DDD,#EEE);
+  color: #333;
+}
+
+.hljs {
+	background-color: white;
+	border: none;
+	box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px
+}

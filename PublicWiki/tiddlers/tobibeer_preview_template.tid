@@ -1,0 +1,10 @@
+created: 20200413014112868
+modified: 20200413113919884
+tags: [[Preview internal link on hover]]
+title: tobibeer/preview/template
+tmap.id: 2fc654f5-adb6-4e5a-a732-eeca62cde101
+type: text/vnd.tiddlywiki
+
+{{||$:/core/ui/ViewTemplate/tags}}
+
+{{||view template bottom reverse link}}

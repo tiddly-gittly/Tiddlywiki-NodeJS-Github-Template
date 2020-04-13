@@ -1,0 +1,5 @@
+created: 20200409033735915
+filter: [field:tmap.id[3a9b6424-dfe6-4113-923a-d145d5d85afe]] [field:tmap.id[57d1f83c-4802-472c-a9d1-b4fc8061340e]] [field:tmap.id[cdb732d7-1239-470d-a482-c67509110ceb]] [field:tmap.id[21163e80-10c2-4c9c-bb16-e5b0d795ced4]] [field:tmap.id[8f0549e3-60d4-4226-a1c9-74f987dc4a4d]]
+modified: 20200409033735915
+title: $:/plugins/felixhayashi/tiddlymap/graph/views/Default/filter/nodes
+type: text/vnd.tiddlywiki

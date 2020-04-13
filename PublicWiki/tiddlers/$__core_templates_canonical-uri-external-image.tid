@@ -1,0 +1,14 @@
+created: 20200412025117549
+modified: 20200413112810800
+tags: WikiCustomization
+title: $:/core/templates/canonical-uri-external-image
+type: text/vnd.tiddlywiki
+
+<!--
+
+This template is used to assign the ''_canonical_uri'' field to external images.
+
+Change the `./images/` part to a different base URI. The URI can be relative or absolute.
+
+-->
+https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/PublicWiki/tiddlers/<$view field="title" format="doubleurlencoded"/>

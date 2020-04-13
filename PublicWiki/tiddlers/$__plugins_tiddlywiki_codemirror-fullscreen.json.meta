@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20200411032803057
+dependents: 
+description: CodeMirror AddOn: Fullscreen Editing
+list: readme
+modified: 20200411032803057
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-fullscreen
+type: application/json
+version: 5.1.21

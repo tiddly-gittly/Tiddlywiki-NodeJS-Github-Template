@@ -1,0 +1,12 @@
+author: Mohammad Rahmani
+core-version: >=5.1.22
+created: 20200410160130618
+dependents: 
+description: Todolist
+list: readme history license
+modified: 20200410160130618
+plugin-type: plugin
+source: https://github.com/kookma/TW-Todolist
+title: $:/plugins/kookma/todolist
+type: application/json
+version: 1.2.1

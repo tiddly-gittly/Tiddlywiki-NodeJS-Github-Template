@@ -1,0 +1,81 @@
+blurb: Add a search bar anywhere (macro version)
+caption: Search Anywhere (macro version)
+created: 20180709090517704
+modified: 20200409033736100
+motivation: https://groups.google.com/forum/#!topic/tiddlywiki/YcFmY9X4D5Q
+tags: $:/tags/Macro
+title: $:/macros/Forums/SearchBar
+type: text/vnd.tiddlywiki
+
+\define search(state:"$:/temp/search")
+<div class="tc-sidebar-lists">
+
+<$set name="searchTiddler" value="$state$">
+<div class="tc-search">
+<$edit-text tiddler="$state$" type="search" tag="input" focus={{$:/config/Search/AutoFocus}} focusPopup=<<qualify "$:/state/popup/search-dropdown">> class="tc-popup-handle"/>
+<$reveal state="$state$" type="nomatch" text="">
+<$button tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class="tc-btn-invisible">
+<$action-setfield $tiddler="$:/temp/advancedsearch" text={{$state$}}/>
+<$action-setfield $tiddler="$state$" text=""/>
+<$action-navigate $to="$:/AdvancedSearch"/>
+{{$:/core/images/advanced-search-button}}
+</$button>
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler="$state$" text="" />
+{{$:/core/images/close-button}}
+</$button>
+<$button popup=<<qualify "$:/state/popup/search-dropdown">> class="tc-btn-invisible">
+{{$:/core/images/down-arrow}}
+<$list filter="[{$state$}minlength{$:/config/Search/MinLength}limit[1]]" variable="listItem">
+<$set name="resultCount" value="""<$count filter="[!is[system]search{$(searchTiddler)$}]"/>""">
+{{$:/language/Search/Matches}}
+</$set>
+</$list>
+</$button>
+</$reveal>
+<$reveal state="$state$" type="match" text="">
+<$button to="$:/AdvancedSearch" tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class="tc-btn-invisible">
+{{$:/core/images/advanced-search-button}}
+</$button>
+</$reveal>
+</div>
+
+<$reveal tag="div" class="tc-block-dropdown-wrapper" state="$state$" type="nomatch" text="">
+
+<$reveal tag="div" class="tc-block-dropdown tc-search-drop-down tc-popup-handle" state=<<qualify "$:/state/popup/search-dropdown">> type="nomatch" text="" default="">
+
+<$list filter="[{$state$}minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
+
+{{$:/core/ui/SearchResults}}
+
+</$list>
+
+</$reveal>
+
+</$reveal>
+
+</$set>
+
+</div>
+\end
+
+!Description
+
+This macro lets you add a search bar that is the same as the search in the sidebar anywhere in your wiki by putting `<<search>>`. By default it uses the same state tiddler so any search you do will be shared with all the bars. If you want to use a different state tiddler you can give it as the macro parameter (see example below).
+
+!!Usage
+
+Basic: `<<search>>`
+
+With custom state tiddler: `<<search state:"$:/temp/otherSearch">>`
+
+!!Parameters
+
+|!Parameter |!Description |
+|!state |The state tiddler to use to store the state. Default: `$:/temp/search` |
+
+!! Example
+
+The code `<<search """$:/temp/otherSearch""">>` gives this output:
+
+<<search """$:/temp/otherSearch""">>
