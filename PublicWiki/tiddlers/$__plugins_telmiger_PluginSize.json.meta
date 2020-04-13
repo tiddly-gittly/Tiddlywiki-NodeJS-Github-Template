@@ -1,0 +1,15 @@
+author: Thomas Elmiger
+core-version: >=5.1.17
+created: 20190127213601512
+creator: Thomas Elmiger
+dependents: Editor Counter, RPN, Harvey Balls
+description: Plugin Size – calculate the extra weight
+list: readme
+modified: 20200409033735456
+modifier: Thomas Elmiger
+name: Plugin Size
+plugin-type: plugin
+source: https://tid.li/tw5/plugins.html
+title: $:/plugins/telmiger/PluginSize
+type: application/json
+version: 0.0.9

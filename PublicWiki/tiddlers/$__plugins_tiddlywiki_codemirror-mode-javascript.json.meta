@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20200411032813496
+dependents: 
+description: CodeMirror Mode: Javascript Highlighting
+list: readme
+modified: 20200411032813496
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-mode-javascript
+type: application/json
+version: 5.1.21

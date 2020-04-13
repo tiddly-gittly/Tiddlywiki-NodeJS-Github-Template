@@ -1,0 +1,9 @@
+caption: dynamic table, ever column is a tiddler, row is field
+created: 20200409142957012
+modified: 20200413113123112
+tags: $:/tags/TextEditor/Snippet [[Table Macros]]
+title: snippet/dynamic ColumnTable
+tmap.id: 12af23c6-392b-4b5f-876c-eaa5d6bd7f95
+type: text/vnd.tiddlywiki
+
+<<ColumnTable "[tag[Column Data]]" "field-filter">>

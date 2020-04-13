@@ -1,0 +1,25 @@
+{
+  "port": 11012,
+  "name": "PublicWiki",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "linonetwo <linonetwo012@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
+    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../PublicWiki ./PublicWiki",
+    "uninstall": "sh scripts/uninstall.sh",
+    "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --listen port=11012",
+    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:clean",
+    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages && mv ./PublicWiki/output/index.html ./public/index.html",
+    "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --rendertiddler sitemap sitemap.xml text/plain && mv ./PublicWiki/output/sitemap.xml ./public/sitemap.xml",
+    "build:mkdir": "mkdir -p ./public",
+    "build:clean": "rm -r ./PublicWiki/output"
+  },
+  "dependencies": {
+    "tiddlywiki": "^5.1.21"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.2"
+  }
+}

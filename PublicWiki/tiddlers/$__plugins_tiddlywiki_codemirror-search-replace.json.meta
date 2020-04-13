@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20200409033735280
+dependents: 
+description: CodeMirror AddOn: Search and Replace
+list: readme
+modified: 20200409033735280
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-search-replace
+type: application/json
+version: 5.1.21

@@ -1,0 +1,11 @@
+caption: Folders
+created: 20200408135222925
+creator: 
+modified: 20200413114259166
+modifier: 
+tags: WikiCustomization $:/tags/SideBar
+title: locator sidebar folder menu
+tmap.id: 89c66e50-1a73-40d9-a4d4-f9b08ce14647
+type: text/vnd.tiddlywiki
+
+<<locator-view baseTitle:"Index">>

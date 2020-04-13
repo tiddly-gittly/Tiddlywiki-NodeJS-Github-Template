@@ -1,0 +1,13 @@
+caption: Fields
+created: 20200408141821877
+creator: 
+modified: 20200413112810794
+modifier: 
+tags: $:/tags/SideBar WikiCustomization
+title: locator sidebar fields
+tmap.id: 1198f618-9560-4b71-a977-5996cd545d04
+type: text/vnd.tiddlywiki
+
+<$vars searchTiddler=" ">
+  <<locator-fields>>
+</$vars>

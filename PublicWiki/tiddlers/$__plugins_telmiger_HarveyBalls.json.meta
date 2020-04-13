@@ -1,0 +1,11 @@
+author: Thomas Elmiger
+core-version: 
+created: 20171005214018768
+description: HarveyBalls
+list: readme alternatives credits
+modified: 20200409033735473
+plugin-type: plugin
+source: https://tid.li/tw5/plugins.html
+title: $:/plugins/telmiger/HarveyBalls
+type: application/json
+version: 0.0.6

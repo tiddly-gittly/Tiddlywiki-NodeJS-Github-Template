@@ -1,0 +1,43 @@
+/** 不匹配工具栏上的按钮 */
+button:not(.tc-btn-invisible) {
+	color: #333;
+	background-color: rgba(0, 0, 0, 0.01);
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+	transition: background-color 0.2s;
+}
+button:not(.tc-btn-invisible) svg {
+	fill: #666;
+}
+
+button:not(.tc-btn-invisible):hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+/** Tab 上的按钮 */
+.tc-tab-buttons > button {
+	border-radius: 0px;
+}
+.tc-tab-buttons button:not(.tc-tab-selected) {
+	fill: none;
+	background-color: transparent;
+	border: none;
+}
+.tc-tab-buttons button:not(.tc-tab-selected):hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
+	border: none;
+	border-bottom: 2px solid silver;
+}
+
+/** 标签 */
+button.tc-tag-label, span.tc-tag-label {
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.1);
+	transition: background-color 0.2s;
+}
+button.tc-tag-label, span.tc-tag-label:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}

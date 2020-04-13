@@ -1,0 +1,11 @@
+author: Isaac Z. Schlueter
+core-version: >=5.0.0
+created: 20200411033448711
+dependents: 
+description: Wrapper for sax.js library by Isaac Z. Schlueter
+list: readme license
+modified: 20200411033448711
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/sax
+type: application/json
+version: 5.1.21

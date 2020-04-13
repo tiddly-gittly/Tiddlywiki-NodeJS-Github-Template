@@ -1,0 +1,19 @@
+color: #5778d8
+created: 20190421065036809
+creator: 
+modified: 20200413114234101
+modifier: 
+tags: Index tiddlywiki
+title: WikiCustomization
+tmap.id: cdb732d7-1239-470d-a482-c67509110ceb
+type: text/vnd.tiddlywiki
+
+Tagging tiddlers that modified the wiki.
+
+---
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
+
+---
+
+There are also snippets tagged with `$:/tags/TextEditor/Snippet`.

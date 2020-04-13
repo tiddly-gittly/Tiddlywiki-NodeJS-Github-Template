@@ -1,0 +1,5 @@
+created: 20200409033735861
+filter: [field:title{$:/temp/tmap/currentTiddler}] -[field:title{想法}] [field:tmap.id[5de5e414-bb14-46e0-af78-23674a9ea9a1]] [field:tmap.id[33ab22b3-257d-40ae-85bc-1249a2c60ca8]] [field:tmap.id[57d1f83c-4802-472c-a9d1-b4fc8061340e]]
+modified: 20200409033735861
+title: $:/plugins/felixhayashi/tiddlymap/graph/views/Live View/filter/nodes
+type: text/vnd.tiddlywiki
