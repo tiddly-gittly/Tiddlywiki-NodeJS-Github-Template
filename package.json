@@ -18,11 +18,11 @@
     "build:clean": "rm -r ./PublicWiki/output"
   },
   "dependencies": {
-    "tiddlywiki": "^5.1.21"
+    "tiddlywiki": "5.1.21"
   },
   "devDependencies": {
     "cross-env": "7.0.2",
-    "html-minifier-terser": "^5.0.5",
-    "terser": "^4.6.11"
+    "html-minifier-terser": "5.0.5",
+    "terser": "4.6.11"
   }
 }
