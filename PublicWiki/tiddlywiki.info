@@ -2,7 +2,6 @@
     "description": "Basic client-server edition",
     "plugins": [
         "tiddlywiki/tiddlyweb",
-        "tiddlywiki/filesystem",
         "tiddlywiki/highlight",
         "sitemap"
     ],
@@ -28,9 +27,13 @@
             "",
             "text/plain",
             "--rendertiddler",
-            "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
+            "$:/core/save/all-external-js",
             "index.html",
-            "text/plain"
+            "text/plain",
+            "--rendertiddler",
+            "$:/core/templates/tiddlywiki5.js",
+            "tiddlywiki5.js",
+            "application/javascript"
         ],
         "static": [
             "--rendertiddler",

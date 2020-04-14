@@ -23,7 +23,8 @@ const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
 ];
 
 process.env['TIDDLYWIKI_PLUGIN_PATH'] = `${tiddlyWikiFolder}/plugins`;
-$tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`, 'root-tiddler=$:/core/save/lazy-images'];
+// add tiddly filesystem back https://github.com/Jermolene/TiddlyWiki5/issues/4484#issuecomment-596779416
+$tw.boot.argv = ['+plugins/tiddlywiki/filesystem', tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`, 'root-tiddler=$:/core/save/lazy-images'];
 
 $tw.boot.boot();
 

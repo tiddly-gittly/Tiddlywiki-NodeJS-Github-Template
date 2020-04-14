@@ -1,9 +1,14 @@
 {
-  "name": "",
+  "name": "PLEASE-FILL-NAME-HERE",
   "version": 2,
   "public": true,
   "cleanUrls": true,
   "github": {
     "silent": true
-  }
+  },
+  "rewrites": [
+    { "source": "/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js", "destination": "/tiddlywiki5.js" },
+    { "source": "/status", "destination": "/status.json" },
+    { "source": "/recipes/default/tiddlers.json", "destination": "/tiddlers.json" }
+  ]
 }
