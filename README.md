@@ -2,7 +2,7 @@
 
 Knowledge base Template, with advanced filter search and faceted data aggregation.
 
-[wiki.onetwo.ren](https://wiki.onetwo.ren/) is an example of this template.
+[wiki.onetwo.ren](https://wiki.onetwo.ren/) is an example of this template. And [tiddlywiki-nodejs-github-template.now.sh](https://tiddlywiki-nodejs-github-template.now.sh/) is deployed example of this repo.
 
 This repo contains the wiki backup data and script to start a local wiki server on MacOS on start up.
 
