@@ -1,16 +1,28 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
+  console.log(`Yay! Workbox is loaded 🎉Service Worker is working!`);
 } else {
-  console.log(`Boo! Workbox didn't load 😬`);
+  console.log(`Boo! Workbox didn't load 😬Service Worker won't work properly...`);
 }
 
 const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
-const { CacheableResponsePlugin } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
-const { precacheAndRoute } = workbox.precaching;
+const { precacheAndRoute, matchPrecache } = workbox.precaching;
+
+// seems syncadaptor will fetch these files, we rename them to cached version
+addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.url.endsWith('/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js')) {
+    event.respondWith(matchPrecache('tiddlywiki5.js'));
+  } else if (request.url.endsWith('/status')) {
+    event.respondWith(matchPrecache('status.json'));
+  } else if (request.url.endsWith('/recipes/default/tiddlers.json')) {
+    event.respondWith(matchPrecache('tiddlers.json'));
+  }
+  return;
+});
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -24,7 +36,7 @@ registerRoute(
 );
 
 registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|woff2?|ttf)$/,
   // Use the cache if it's available.
   new CacheFirst({
     cacheName: 'image-cache',
@@ -35,9 +47,9 @@ registerRoute(
         // Cache for a maximum of a week.
         maxAgeSeconds: 7 * 24 * 60 * 60,
       }),
-      new CacheableResponsePlugin({ statuses: [0, 200] }),
     ],
   })
 );
 
 registerRoute(/\.js$/, new StaleWhileRevalidate());
+registerRoute(/(^\/$|index.html)/, new StaleWhileRevalidate());
