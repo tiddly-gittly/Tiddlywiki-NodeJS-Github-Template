@@ -7,12 +7,13 @@
     "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
     "uninstall": "sh scripts/uninstall.sh",
     "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
-    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:minify && npm run build:public && npm run build:clean",
+    "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minify && npm run build:precache && npm run build:clean",
+    "build:prepare": "rm -rf ./public",
+    "build:public": "cp -r ./PublicWiki/public/ ./public && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico && cp ./PublicWiki/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./PublicWiki/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
     "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --rendertiddler sitemap sitemap.xml text/plain && mv ./PublicWiki/output/sitemap.xml ./public/sitemap.xml",
-    "build:public": "cp ./PublicWiki/public/status.json ./public/status.json && cp ./PublicWiki/public/tiddlers.json ./public/tiddlers.json # && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico",
-    "build:mkdir": "mkdir -p ./public",
     "build:minify": "npm run build:minifyJS && npm run build:minifyHTML",
+    "build:precache": "workbox injectManifest workbox-config.js",
     "build:minifyJS": "terser --config-file ./terser.config.json --output public/tiddlywiki5.js -- ./PublicWiki/output/tiddlywiki5.js",
     "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./PublicWiki/output/index.html",
     "build:clean": "rm -r ./PublicWiki/output"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "cross-env": "7.0.2",
     "html-minifier-terser": "5.0.5",
-    "terser": "4.6.11"
+    "terser": "4.6.11",
+    "workbox-cli": "5.1.2"
   }
 }
