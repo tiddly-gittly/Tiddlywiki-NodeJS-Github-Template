@@ -3,7 +3,8 @@
     "plugins": [
         "tiddlywiki/tiddlyweb",
         "tiddlywiki/highlight",
-        "sitemap"
+        "sitemap",
+        "prevent-edit"
     ],
     "themes": [
         "tiddlywiki/vanilla"
