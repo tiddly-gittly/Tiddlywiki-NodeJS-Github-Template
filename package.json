@@ -2,24 +2,27 @@
   "port": 11012,
   "name": "PublicWiki",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "linonetwo <linonetwo012@gmail.com>",
-  "license": "MIT",
   "scripts": {
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
-    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../PublicWiki ./PublicWiki",
+    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
     "uninstall": "sh scripts/uninstall.sh",
-    "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --listen port=11012",
-    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:clean",
-    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages && mv ./PublicWiki/output/index.html ./public/index.html",
+    "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
+    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:minify && npm run build:public && npm run build:clean",
+    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --rendertiddler sitemap sitemap.xml text/plain && mv ./PublicWiki/output/sitemap.xml ./public/sitemap.xml",
+    "build:public": "cp ./PublicWiki/public/status.json ./public/status.json && cp ./PublicWiki/public/tiddlers.json ./public/tiddlers.json # && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico",
     "build:mkdir": "mkdir -p ./public",
+    "build:minify": "npm run build:minifyJS && npm run build:minifyHTML",
+    "build:minifyJS": "terser --config-file ./terser.config.json --output public/tiddlywiki5.js -- ./PublicWiki/output/tiddlywiki5.js",
+    "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./PublicWiki/output/index.html",
     "build:clean": "rm -r ./PublicWiki/output"
   },
   "dependencies": {
     "tiddlywiki": "^5.1.21"
   },
   "devDependencies": {
-    "cross-env": "7.0.2"
+    "cross-env": "7.0.2",
+    "html-minifier-terser": "^5.0.5",
+    "terser": "^4.6.11"
   }
 }

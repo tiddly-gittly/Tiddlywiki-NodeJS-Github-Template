@@ -1,5 +1,6 @@
 .DS_Store
 wiki.plist
 node_modules
-public
+/public
+PublicWiki/output
 PublicWiki/tiddlers/private-Meme-of-LinOnetwo
