@@ -19,7 +19,7 @@
     "build:clean": "rm -r ./PublicWiki/output"
   },
   "dependencies": {
-    "tiddlywiki": "5.1.21"
+    "tiddlywiki": "5.1.22"
   },
   "devDependencies": {
     "cross-env": "7.0.2",
