@@ -1,0 +1,8 @@
+created: 20200416093023091
+modified: 20200416093039098
+tags: Index
+title: TWModification
+tmap.id: 56f5703e-b838-48ea-ac28-00aee859ce9d
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

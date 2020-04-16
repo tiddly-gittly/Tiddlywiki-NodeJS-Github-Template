@@ -1,0 +1,9 @@
+caption: TodoList/使用当前标题作为命名空间
+created: 20200412105553404
+modified: 20200412111010152
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/使用当前标题的TodoList
+tmap.id: 65ccc710-cff7-48c0-aa46-ba9b07ab45c5
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="todolist-ui" caption="" base=<<currentTiddler>> />

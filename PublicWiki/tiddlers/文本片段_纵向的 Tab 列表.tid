@@ -1,0 +1,9 @@
+caption: 纵向的 Tab 列表
+created: 20200410155815256
+modified: 20200411090751529
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/纵向的 Tab 列表
+tmap.id: 5896fc4b-7815-4aef-a2f3-3e161c7755ba
+type: text/vnd.tiddlywiki
+
+<<tabs tabsList:"[tag[demo]!tag[advanced]]" default:"demo/why-todolist" class:"tc-vertical">>

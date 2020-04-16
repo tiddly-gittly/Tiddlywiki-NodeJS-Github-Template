@@ -11,19 +11,6 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute, matchPrecache } = workbox.precaching;
 
-// seems syncadaptor will fetch these files, we rename them to cached version
-addEventListener('fetch', (event) => {
-  const request = event.request;
-  if (request.url.endsWith('/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js')) {
-    event.respondWith(matchPrecache('tiddlywiki5.js'));
-  } else if (request.url.endsWith('/status')) {
-    event.respondWith(matchPrecache('status.json'));
-  } else if (request.url.endsWith('/recipes/default/tiddlers.json')) {
-    event.respondWith(matchPrecache('tiddlers.json'));
-  }
-  return;
-});
-
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(

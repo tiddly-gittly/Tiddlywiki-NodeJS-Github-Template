@@ -1,0 +1,11 @@
+contributor: Sylvain Comte
+created: 20200415161519739
+dependents: 
+description: Website visitor statistics from Google
+list: readme settings usage
+modified: 20200415161519739
+name: Google Analytics
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/googleanalytics
+type: application/json
+version: 5.1.22

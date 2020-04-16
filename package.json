@@ -3,18 +3,19 @@
   "name": "PublicWiki",
   "version": "1.0.0",
   "scripts": {
-    "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
-    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
-    "uninstall": "sh scripts/uninstall.sh",
-    "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
-    "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minify && npm run build:precache && npm run build:clean",
+    "install:wikiServer": "sudo node scripts/installServer.js install",
+    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../private-MyTiddlyWiki ./private-MyTiddlyWiki",
+    "uninstall:wikiServer": "sudo node scripts/installServer.js uninstall",
+    "install:windows:wikiServer": "node scripts/installServer.js install",
+    "install:windows:privateRepo": "cd ./PublicWiki/tiddlers && mklink /D/J .\\private-MyTiddlyWiki ..\\..\\..\\private-MyTiddlyWiki",
+    "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
+    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
+    "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
     "build:prepare": "rm -rf ./public",
     "build:public": "cp -r ./PublicWiki/public/ ./public && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico && cp ./PublicWiki/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./PublicWiki/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
     "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --rendertiddler sitemap sitemap.xml text/plain && mv ./PublicWiki/output/sitemap.xml ./public/sitemap.xml",
-    "build:minify": "npm run build:minifyJS && npm run build:minifyHTML",
     "build:precache": "workbox injectManifest workbox-config.js",
-    "build:minifyJS": "terser --config-file ./terser.config.json --output public/tiddlywiki5.js -- ./PublicWiki/output/tiddlywiki5.js",
     "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./PublicWiki/output/index.html",
     "build:clean": "rm -r ./PublicWiki/output"
   },
@@ -24,7 +25,11 @@
   "devDependencies": {
     "cross-env": "7.0.2",
     "html-minifier-terser": "5.0.5",
-    "terser": "4.6.11",
     "workbox-cli": "5.1.2"
+  },
+  "optionalDependencies": {
+    "node-linux": "0.1.12",
+    "node-mac": "0.1.8",
+    "node-windows": "1.0.0-beta.1"
   }
 }

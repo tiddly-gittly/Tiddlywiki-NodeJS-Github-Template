@@ -1,0 +1,11 @@
+color: #cb59ff
+created: 20200410173233692
+modified: 20200413072625939
+tags: Index
+title: APrivateContent
+tmap.id: b2623793-2e8e-46bc-82c5-a82caf9ac6ed
+type: text/vnd.tiddlywiki
+
+加密了的内容，放在私有 Github 仓库里，只有在本地才能浏览。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

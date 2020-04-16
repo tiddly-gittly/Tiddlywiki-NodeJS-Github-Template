@@ -1,0 +1,9 @@
+caption: 动态表格 每列一个tiddler 行是字段
+created: 20200409142957012
+modified: 20200411091256520
+tags: $:/tags/TextEditor/Snippet [[Table Macros]]
+title: 文本片段/动态表格ColumnTable
+tmap.id: 12af23c6-392b-4b5f-876c-eaa5d6bd7f95
+type: text/vnd.tiddlywiki
+
+<<ColumnTable "[tag[Column Data]]" "field-filter">>

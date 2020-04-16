@@ -1,0 +1,11 @@
+caption: 带「编辑此块」的引用Transclusion
+created: 20200408132341855
+creator: Lin Onetwo - 林一二
+modified: 20200411091356525
+modifier: Lin Onetwo - 林一二
+tags: [[macro 带有「编辑此块」的引用transclusion]] $:/tags/TextEditor/Snippet
+title: 文本片段/带修改按钮的Transclusion
+tmap.id: 387baf77-5d48-4b77-abf4-97bf089fd3d0
+type: text/vnd.tiddlywiki
+
+<<reuse-tiddler "title">>

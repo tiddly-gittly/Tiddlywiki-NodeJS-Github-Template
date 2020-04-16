@@ -1,9 +1,0 @@
-{
-  "compress": {
-    "drop_console": true,
-    "unsafe_math": true,
-    "unsafe_Function": true,
-    "unsafe_proto": true,
-    "ecma": "2017"
-  }
-}

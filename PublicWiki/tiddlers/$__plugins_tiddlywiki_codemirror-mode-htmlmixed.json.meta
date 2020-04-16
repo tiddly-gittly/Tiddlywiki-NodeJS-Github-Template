@@ -1,10 +1,11 @@
-author: JeremyRuston
-created: 20200411032812207
-dependents: 
-description: CodeMirror Mode: HTML Highlighting
+created: 20200415160851149
+dependents: $:/plugins/tiddlywiki/codemirror-mode-xml $:/plugins/tiddlywiki/codemirror-mode-javascript $:/plugins/tiddlywiki/codemirror-mode-css
+description: HTML mixed highlighting mode for CodeMirror
 list: readme
-modified: 20200411032812207
+modified: 20200415160851149
+name: CodeMirror Mode HTML Mixed
+parent-plugin: $:/plugins/tiddlywiki/codemirror
 plugin-type: plugin
 title: $:/plugins/tiddlywiki/codemirror-mode-htmlmixed
 type: application/json
-version: 5.1.21
+version: 5.1.22

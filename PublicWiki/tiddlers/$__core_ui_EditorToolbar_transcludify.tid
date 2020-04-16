@@ -1,11 +1,11 @@
 caption: {{$:/language/Buttons/Transcludify/Caption}}
 condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
 created: 20200408132942967
-creator: 
+creator: Lin Onetwo - 林一二
 description: {{$:/language/Buttons/Transcludify/Hint}}
 icon: $:/core/images/transcludify
 modified: 20200409033736271
-modifier: 
+modifier: Lin Onetwo - 林一二
 shortcuts: ((transcludify))
 tags: $:/tags/EditorToolbar
 title: $:/core/ui/EditorToolbar/transcludify

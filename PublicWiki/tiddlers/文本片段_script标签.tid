@@ -1,0 +1,9 @@
+caption: script标签
+created: 20200414144141316
+modified: 20200414144205172
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/script标签
+tmap.id: dc2cb5ea-e024-4b04-9fd5-fcfa056dab0d
+type: text/vnd.tiddlywiki
+
+<script type="text/javascript"> </script>
