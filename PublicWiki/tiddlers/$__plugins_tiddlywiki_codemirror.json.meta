@@ -1,10 +1,10 @@
-author: JeremyRuston
-created: 20200409033735338
+created: 20200415161746646
 dependents: 
-description: CodeMirror _Editor
+description: CodeMirror editor
 list: readme usage keyboard license
-modified: 20200409033735338
+modified: 20200415161746646
+name: CodeMirror
 plugin-type: plugin
 title: $:/plugins/tiddlywiki/codemirror
 type: application/json
-version: 5.1.21
+version: 5.1.22

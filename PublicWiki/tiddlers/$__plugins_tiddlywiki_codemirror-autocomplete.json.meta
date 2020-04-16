@@ -1,10 +1,11 @@
-author: JeremyRuston
-created: 20200409033735322
-dependents: 
-description: CodeMirror AddOn: Autocompletion
+created: 20200415160838693
+dependents: $:/plugins/tiddlywiki/codemirror-mode-css
+description: Autocompletion for CodeMirror
 list: readme
-modified: 20200409033735322
+modified: 20200415160838693
+name: CodeMirror Autocomplete
+parent-plugin: $:/plugins/tiddlywiki/codemirror
 plugin-type: plugin
 title: $:/plugins/tiddlywiki/codemirror-autocomplete
 type: application/json
-version: 5.1.21
+version: 5.1.22

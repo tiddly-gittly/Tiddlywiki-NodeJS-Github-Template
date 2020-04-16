@@ -1,0 +1,9 @@
+caption: 反向波兰表达式数学计算
+created: 20200410161410457
+modified: 20200411090346706
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/数学表达式计算macro
+tmap.id: 214c7945-5ce7-4804-b297-667324309881
+type: text/vnd.tiddlywiki
+
+<<rpn pi 2 * 3>>

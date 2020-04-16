@@ -1,9 +1,0 @@
-caption: reverse poland notation math calculation
-created: 20200410161410457
-modified: 20200413113037404
-tags: $:/tags/TextEditor/Snippet
-title: snippet/math calculate macro
-tmap.id: 214c7945-5ce7-4804-b297-667324309881
-type: text/vnd.tiddlywiki
-
-<<rpn pi 2 * 3>>

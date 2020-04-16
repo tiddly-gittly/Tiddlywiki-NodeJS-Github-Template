@@ -1,8 +1,8 @@
 created: 20200413051821745
-modified: 20200413073815611
-tags: 在一个TiddlyWiki里同时放公开内容和隐私内容 TW运维
+modified: 20200416093037250
+tags: 在一个TiddlyWiki里同时放公开内容和隐私内容 TWModification
 title: $:/config/FileSystemPaths
 type: text/vnd.tiddlywiki
 
-[tag[APrivateContent]addprefix[private-Meme-of-LinOnetwo/tiddlers/]]
-[tag[$:/tags/trashbin]addprefix[private-Meme-of-LinOnetwo/tiddlers/]]
+[tag[APrivateContent]addprefix[private-MyTiddlyWiki/tiddlers/]]
+[tag[$:/tags/trashbin]addprefix[private-MyTiddlyWiki/tiddlers/]]

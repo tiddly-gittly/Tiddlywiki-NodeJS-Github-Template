@@ -1,0 +1,31 @@
+created: 20200413064622509
+modified: 20200413074824703
+tags: 在一个TiddlyWiki里同时放公开内容和隐私内容
+title: 在一个TiddlyWiki里同时放公开内容和隐私内容/Github私有仓库方案
+tmap.id: 00b46d42-d7f7-4119-9253-d5f4e0e861b3
+type: text/vnd.tiddlywiki
+
+!! Github私有仓库方案
+
+我创建了一个私有仓库 https://github.com/linonetwo/private-MyTiddlyWiki ，在 clone 到本地后，我把它软连接到开放仓库里：
+
+```shell
+cd ./PublicWiki/tiddlers && ln -sfn ../../../private-MyTiddlyWiki ./private-MyTiddlyWiki
+```
+
+这样在启动 TiddlyWiki 时，私有仓库里的内容也会被一并读取，但是提交就是分开提交的了。
+
+参考 [[Customising Tiddler File Naming|https://tiddlywiki.com/#Customising%20Tiddler%20File%20Naming]] 修改 [[$:/config/FileSystemPaths]] ，使得加了 [[APrivateContent]] 这个 Tag 的所有 Tiddler 都自动被 NodeJS TiddlyWiki Server 保存到 `./PublicWiki/tiddlers/private-MyTiddlyWiki/tiddlers` 里面，也就是通过软连接保存到另一个私有的 git 仓库里。
+
+我还修改了[[自动提交脚本|自动备份TiddlyWiki]]，让它能同时监控私有仓库，并自动备份它。
+
+!!! 这个方案的缺点是：
+
+# 没法在 HTML 页面上输入密码解密内容（不过我暂时也不需要在移动端 HTML 版上查看和编辑私有内容，桌面端我都用 NodeJS 版的）
+
+!!! 优点是：
+
+# 可以加密隐私图片
+# 保留了文本和图片的 diff 信息
+# 如果某个私有的 Tiddler 没有被任何开放的 Tiddler 链接到，则它的标题也不会被外人知道
+# 不需要输入密码来加解密

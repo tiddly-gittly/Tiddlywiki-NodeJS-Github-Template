@@ -1,0 +1,32 @@
+created: 20200413015135813
+modified: 20200416093039034
+tags: TWModification
+title: 鼠标悬浮预览内部链接
+tmap.id: cf289727-f02c-4d07-b519-4d4b2d1dc1c4
+type: text/vnd.tiddlywiki
+
+[[Preview|http://tobibeer.github.io/tw5-plugins/#preview]] 鼠标悬浮链接查看预览，只展示内部链接，因为外部链接可能也是个 TiddlyWiki 而非常硕大。
+
+我在展示时使用了自己的模板，不展示具体内容，只展示 tag 和相关笔记，不然内容实在是太多了。真要看具体内容直接点击链接看不就好了。
+
+我还修改了原版的 JS ，从而让预览窗口在鼠标移开链接后就自动关闭，以免影响操作。
+
+```js
+            // Mouseout
+          } else {
+            // No more blocking of mouseover events
+            block = 0;
+            // No more waiting for the popup
+						const popupID = Math.max(0, getInfo(el).popupLevel);
+            clearTimeout(self.previewTimeout);
+            // close popup
+            $tw.popup.cancel(popupID);
+          }
+```
+
+---
+
+不过我发现，如果不让它自动关闭，我就可以通过在里面再 hover 其他链接，从而用这种简单的方式来遍历图。如果觉得内容太多，我修改[[tobibeer/preview/template]]让它变得简洁就好了。
+
+自带的逻辑是，点击某一层的弹出窗口会把层叠的窗口关闭到这一层之上，我觉得还蛮好用的。
+

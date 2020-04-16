@@ -1,15 +1,9 @@
-color: #cbcbcb
-created: 20190419034125236
-creator: 
-modified: 20200413114337502
-modifier: 
-tags: tiddlywiki
+created: 20200416091954144
+modified: 20200416092004190
 title: Index
-tmap.id: 4380dc9b-67a8-4b2e-a191-40d6b2a249b3
+tmap.id: bf042813-3d13-49cc-aa79-fad15be4e758
 type: text/vnd.tiddlywiki
 
-<<reuse-tiddler "tiddlywiki">>
+Root folder
 
----
-
-<<reuse-tiddler "TiddlersWithoutTag">>
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

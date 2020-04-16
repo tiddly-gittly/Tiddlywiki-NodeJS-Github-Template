@@ -1,9 +1,0 @@
-caption: draggable list
-created: 20200410073117423
-modified: 20200413114058409
-tags: WikiCustomization $:/tags/TextEditor/Snippet
-title: snippet/draggable list
-tmap.id: c8262376-3a02-4411-b53c-91ca63c811e6
-type: text/vnd.tiddlywiki
-
-<<list-tagged-draggable tag:"title">>

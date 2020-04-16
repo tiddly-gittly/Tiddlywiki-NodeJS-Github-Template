@@ -1,0 +1,12 @@
+author: JeremyRuston
+core-version: >=5.0.0
+created: 20200415161355312
+dependents: $:/plugins/tiddlywiki/dynaview
+description: Dynamic content annotation
+list: readme examples
+modified: 20200415161355312
+name: Dynannotate
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/dynannotate
+type: application/json
+version: 5.1.22

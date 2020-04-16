@@ -1,0 +1,26 @@
+created: 20200408145142997
+creator: Lin Onetwo - 林一二
+modified: 20200416093038700
+modifier: Lin Onetwo - 林一二
+tags: TWModification $:/tags/ViewTemplate
+title: 底部反向链接列表
+tmap.id: 083ceea2-d824-4343-ad8f-83b50f1b1fa0
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]backlinks[]first[]sort[title]]">
+	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">链入 (other)->(this)</label>
+</$list>
+
+<<list-links filter:"[all[current]backlinks[]]" class:"horizontal-list-links" >>
+
+<$list filter="[all[current]tagging[]first[]]">
+	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">此文件夹中的文件</label>
+</$list>
+
+<<list-links filter:"[all[current]tagging[]sort[title]]" class:"horizontal-list-links" >>
+
+<$list filter="[all[current]tags[]first[]]">
+	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">此文件所在的文件夹</label>
+</$list>
+
+<<list-links filter:"[all[current]tags[]sort[title]]" class:"horizontal-list-links" >>
