@@ -7,15 +7,21 @@ body.tc-body {
 	box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px;
 }
 /** 顶部标题栏半透明 */
+:root {
+	--menubar-height: 29px;
+}
+
 .tc-tiddler-title {
 	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
+	/** fix menubar with sticky title https://github.com/Jermolene/TiddlyWiki5/issues/4471#issuecomment-594456486*/
+	top: var(--menubar-height);
 }
 /** 编辑器工具栏浮动 */
 .tc-editor-toolbar {
 	position: sticky;
 	z-index: 499;
-	top: 39px;
+	top: calc(39px + var(--menubar-height));
 	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
 }
