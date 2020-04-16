@@ -9,7 +9,7 @@
     "install:windows:wikiServer": "node scripts/installServer.js install",
     "install:windows:privateRepo": "cd ./PublicWiki/tiddlers && mklink /D/J .\\private-MyTiddlyWiki ..\\..\\..\\private-MyTiddlyWiki",
     "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
-    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb PublicWiki --listen port=11013 \"root-tiddler=$:/core/save/lazy-images\"",
+    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
     "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
     "build:prepare": "rm -rf ./public",
     "build:public": "cp -r ./PublicWiki/public/ ./public && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico && cp ./PublicWiki/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./PublicWiki/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
