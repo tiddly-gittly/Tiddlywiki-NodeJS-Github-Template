@@ -10,7 +10,9 @@ The wiki is minimized using modern web dev-tool, and accompany with a service wo
 
 ## Setup
 
-In a new MacOS computer, please run all install npm script.
+[用TiddlyWiki替代Notion和EverNote作为个人知识管理系统 (Chinese)](https://onetwo.ren/%E7%94%A8tiddlywiki%E6%9B%BF%E4%BB%A3notion%E5%92%8Cevernote%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/)
+
+English translation comeout soon.
 
 ## Deployed to Now.sh
 
