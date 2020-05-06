@@ -5,7 +5,7 @@ const { existsSync } = require('fs');
 
 let Service;
 if (os.platform() === 'darwin') {
-  Service = require('node-mac').Service;
+  Service = require('node-mac-user').Service;
   if (!existsSync('/Library/Logs/TiddlyWiki')) {
     execSync('sudo mkdir -p /Library/Logs/TiddlyWiki && sudo chown -R $(whoami) /Library/Logs/TiddlyWiki');
   }

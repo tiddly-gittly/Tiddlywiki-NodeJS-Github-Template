@@ -12,6 +12,8 @@ const service = new Service({
   name: 'TiddlyWiki',
   description: 'Local TiddlyWiki server for my knowledge management.',
   script: scriptPath,
+  runAsAgent: true,
+  runAsUser: true,
 });
 
 service.on('install', () => {
