@@ -37,8 +37,5 @@ service.on('uninstall', () => {
   console.log('The service exists: ', typeof service.exists === 'function' ? service.exists() : service.exists);
 });
 
-if (process.argv[2] === 'install') {
-  service.install();
-} else if (process.argv[2] === 'uninstall') {
-  service.uninstall();
-}
+module.exports.install = service.install.bind(service);
+module.exports.uninstall = service.uninstall.bind(service);

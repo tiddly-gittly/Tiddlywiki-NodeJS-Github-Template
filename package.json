@@ -1,29 +1,20 @@
 {
-  "port": 11012,
+  "port": 5013,
   "name": "PublicWiki",
+  "userName": "林一二",
+  "privateWikiName": "private-MyTiddlyWiki",
   "version": "1.0.0",
   "scripts": {
-    "install:wikiServer": "node scripts/installServer.js install",
-    "install:privateRepo": "cd ./PublicWiki/tiddlers && ln -sfn ../../../private-MyTiddlyWiki ./private-MyTiddlyWiki",
-    "uninstall:wikiServer": "node scripts/installServer.js uninstall",
-    "install:windows:wikiServer": "node scripts/installServer.js install",
-    "install:windows:privateRepo": "cd ./PublicWiki/tiddlers && mklink /D/J .\\private-MyTiddlyWiki ..\\..\\..\\private-MyTiddlyWiki",
-    "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
-    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb PublicWiki --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
-    "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
-    "build:prepare": "rm -rf ./public",
-    "build:public": "cp -r ./PublicWiki/public/ ./public && cp ./PublicWiki/tiddlers/favicon.ico ./public/favicon.ico && cp ./PublicWiki/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./PublicWiki/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
-    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --build externalimages",
-    "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='PublicWiki/plugins' tiddlywiki PublicWiki --rendertiddler sitemap sitemap.xml text/plain && mv ./PublicWiki/output/sitemap.xml ./public/sitemap.xml",
-    "build:precache": "workbox injectManifest workbox-config.js",
-    "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./PublicWiki/output/index.html",
-    "build:clean": "rm -r ./PublicWiki/output"
+    "install:wikiServer": "node -e \"require('./scripts/installServer').install()\"",
+    "install:privateRepo": "node -e \"require('./scripts/installPrivateRepo')()\"",
+    "uninstall:wikiServer": "node -e \"require('./scripts/installServer').uninstall()\"",
+    "start:wikiServer": "node -e \"require('./scripts/startNodeJSWiki')()\"",
+    "build": "node -e \"require('./scripts/buildWiki')()\""
   },
   "dependencies": {
     "tiddlywiki": "5.1.22"
   },
   "devDependencies": {
-    "cross-env": "7.0.2",
     "html-minifier-terser": "5.1.1",
     "workbox-cli": "5.1.3"
   },
