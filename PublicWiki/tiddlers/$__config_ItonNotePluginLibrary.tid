@@ -1,0 +1,11 @@
+caption: ItonNote Plugin Library
+created: 20200605094940408
+modified: 20200605094940408
+tags: $:/tags/PluginLibrary
+title: $:/config/ItonNotePluginLibrary
+type: text/vnd.tiddlywiki
+url: https://wiki.onetwo.ren/library/index.html
+
+为方便大家使用我的模板，我将模板中用到的插件发布为插件库，当插件升级时，我会及时更新插件库，而装了这个插件库的 Wiki 就可以点按钮一键更新。
+
+把这个链接拖动到你的 Wiki 中来安装本插件库：  [[$:/config/ItonNotePluginLibrary]]
