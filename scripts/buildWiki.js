@@ -38,5 +38,5 @@ module.exports = function build() {
   // npm run build:clean
   execAndLog(`rm -r ${tiddlyWikiFolder}/output`, { cwd: repoFolder });
   // npm run build:pluginLibrary
-  execAndLog(`tiddlywiki ${wikiFolderName} --output public/library --build library`, { cwd: repoFolder });
+  // execAndLog(`tiddlywiki ${wikiFolderName} --output public/library --build library`, { cwd: repoFolder });
 };
