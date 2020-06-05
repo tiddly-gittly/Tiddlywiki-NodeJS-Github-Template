@@ -1,7 +1,0 @@
-created: 20200410073936273
-modified: 20200416093038313
-tags: TWModification
-title: $:/config/SaverFilter
-type: text/vnd.tiddlywiki
-
-[all[]] -[[$:/HistoryList]] -[[$:/StoryList]] -[[$:/Import]] -[[$:/isEncrypted]] -[[$:/UploadName]] -[prefix[$:/state/]] -[prefix[$:/temp/]] -[[$:/plugins/felixhayashi/tiddlymap/misc/defaultViewHolder]]

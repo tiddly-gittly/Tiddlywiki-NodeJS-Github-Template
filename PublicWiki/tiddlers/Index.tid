@@ -1,9 +1,0 @@
-created: 20200416091954144
-modified: 20200416092004190
-title: Index
-tmap.id: bf042813-3d13-49cc-aa79-fad15be4e758
-type: text/vnd.tiddlywiki
-
-Root folder
-
-<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

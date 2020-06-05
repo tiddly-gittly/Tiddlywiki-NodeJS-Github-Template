@@ -1,5 +1,0 @@
-created: 20200409033735861
-filter: [field:title{$:/temp/tmap/currentTiddler}] -[field:title{想法}]   
-modified: 20200416092058028
-title: $:/plugins/felixhayashi/tiddlymap/graph/views/Live View/filter/nodes
-type: text/vnd.tiddlywiki
