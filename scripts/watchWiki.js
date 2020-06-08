@@ -13,11 +13,12 @@ const tiddlyWikiFolder = path.join(tiddlyWikiRepo, wikiFolderName);
 
 const privateTiddlyWikiRepo = path.join(tiddlyWikiRepo, '..', privateWikiName);
 module.exports.privateTiddlyWikiRepo = privateTiddlyWikiRepo;
-const privateTiddlyWikiFolder = path.join(tiddlyWikiRepo, '..', privateWikiName, 'tiddlers');
+const privateTiddlyWikiFolder = path.join(tiddlyWikiRepo, '..', privateWikiName);
 
 const commitScriptPath = path.resolve(tiddlyWikiRepo, 'scripts', 'commit.sh');
 const syncScriptPath = path.resolve(tiddlyWikiRepo, 'scripts', 'sync.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = ['output', 'tiddlers/$__StoryList.tid'];
+const topLevelFoldersToIgnored = ['node_modules', '.git'];
 
 /** https://davidwalsh.name/javascript-debounce-function */
 function debounce(func, wait, immediate) {
@@ -93,9 +94,8 @@ function watchFolder(wikiFolderPath, repoPath) {
     wikiFolderPath,
     { recursive: true },
     debounce((_, fileName) => {
-      if (frequentlyChangedFileThatShouldBeIgnoredFromWatch.includes(fileName)) {
-        return;
-      }
+      if (topLevelFoldersToIgnored.some((name) => fileName.startsWith(name))) return;
+      if (frequentlyChangedFileThatShouldBeIgnoredFromWatch.includes(fileName)) return;
       console.log(`${fileName} change`);
 
       debounceCommitAndSync(repoPath);

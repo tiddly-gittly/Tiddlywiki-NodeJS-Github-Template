@@ -39,7 +39,7 @@
       "--setfield",
       "[is[binary]] [type[application/msword]]",
       "text",
-      "",
+      "$:/core/templates/canonical-uri-external-image",
       "text/plain",
       "--rendertiddler",
       "$:/core/save/all",
