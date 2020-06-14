@@ -386,7 +386,7 @@
             "tags": "$:/tags/Macro",
             "caption": "点击在新标签页打开Github大图",
             "type": "text/vnd.tiddlywiki",
-            "text": "\\define view-big-image(source)\n<a href=\"https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/Meme-of-LinOnetwo/tiddlers/$source$\" title=\"Click for a bigger version (opens in a separate tab)\" target=\"_blank\">\n <img src=\"https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/Meme-of-LinOnetwo/tiddlers/$source$\"/>\n</a>\n\\end"
+            "text": "\\define view-big-image(source)\n<a href=\"https://raw.githubusercontent.com/linonetwo/wiki/master/Meme-of-LinOnetwo/tiddlers/$source$\" title=\"Click for a bigger version (opens in a separate tab)\" target=\"_blank\">\n <img src=\"https://raw.githubusercontent.com/linonetwo/wiki/master/Meme-of-LinOnetwo/tiddlers/$source$\"/>\n</a>\n\\end"
         },
         "$:/plugins/linonetwo/itonnote/Macros/TransclusionWithEditMe": {
             "title": "$:/plugins/linonetwo/itonnote/Macros/TransclusionWithEditMe",
@@ -401,7 +401,7 @@
             "title": "$:/config/ItonNotePluginLibrary",
             "caption": "ItonNote Plugin Library",
             "tags": "$:/tags/PluginLibrary",
-            "url": "https://wiki.onetwo.ren/library/index.html",
+            "url": "https://onetwo.ren/wiki/library/index.html",
             "type": "text/vnd.tiddlywiki",
             "text": "为方便大家使用我的模板，我将模板中用到的插件发布为插件库，当插件升级时，我会及时更新插件库，而装了这个插件库的 Wiki 就可以点按钮一键更新。\n\n把这个链接拖动到你的 Wiki 中来安装本插件库：  [[$:/config/ItonNotePluginLibrary]]\n"
         },
