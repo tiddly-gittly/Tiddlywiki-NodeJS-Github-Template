@@ -21,6 +21,6 @@
   "optionalDependencies": {
     "node-linux": "0.1.12",
     "node-mac-user": "0.1.10",
-    "node-windows": "1.0.0-beta.1"
+    "node-windows": "1.0.0-beta.2"
   }
 }
