@@ -12,7 +12,7 @@
     "build": "node -e \"require('./scripts/buildWiki')()\""
   },
   "dependencies": {
-    "tiddlywiki": "5.1.22"
+    "tiddlywiki": "5.1.23"
   },
   "devDependencies": {
     "html-minifier-terser": "5.1.1",
