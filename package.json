@@ -1,26 +1,12 @@
 {
-  "port": 5013,
-  "name": "PublicWiki",
-  "userName": "林一二",
-  "privateWikiName": "private-MyTiddlyWiki",
-  "version": "1.0.0",
   "scripts": {
-    "install:wikiServer": "node -e \"require('./scripts/installServer').install()\"",
-    "install:privateRepo": "node -e \"require('./scripts/installPrivateRepo')()\"",
-    "uninstall:wikiServer": "node -e \"require('./scripts/installServer').uninstall()\"",
-    "start:wikiServer": "node -e \"require('./scripts/startNodeJSWiki')()\"",
-    "build": "node -e \"require('./scripts/buildWiki')()\""
+    "build": "node -e \"require('./scripts/build-wiki')()\""
   },
   "dependencies": {
-    "tiddlywiki": "5.1.22"
+    "@tiddlygit/tiddlywiki": "^5.2.0-prerelease-20210807"
   },
   "devDependencies": {
     "html-minifier-terser": "5.1.1",
     "workbox-cli": "6.1.5"
-  },
-  "optionalDependencies": {
-    "node-linux": "0.1.12",
-    "node-mac-user": "0.1.10",
-    "node-windows": "1.0.0-beta.5"
   }
 }
