@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "html-minifier-terser": "6.0.2",
-    "workbox-cli": "6.2.4"
+    "workbox-cli": "6.3.0"
   }
 }
