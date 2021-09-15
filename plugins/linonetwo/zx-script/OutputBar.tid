@@ -1,0 +1,6 @@
+creator: LinOnetwo
+tags: $:/tags/ViewTemplate
+title: $:/plugins/linonetwo/zx-script/OutputBar
+type: text/vnd.tiddlywiki
+
+<$zx-script-output title={{!!title}} />

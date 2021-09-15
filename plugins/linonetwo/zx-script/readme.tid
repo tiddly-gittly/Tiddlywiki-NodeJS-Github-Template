@@ -1,0 +1,19 @@
+title: $:/plugins/linonetwo/zx-script/readme
+created: 20210915220048497
+type: text/vnd.tiddlywiki
+
+!! Background
+
+[google/zx](https://github.com/google/zx) is a tool for writing better scripts, with Javascript.
+
+This tiddlywiki plugin enables you to run any tiddler with zx.
+
+!! Usage
+
+!!! Prerequisit
+
+This plugin requires [TiddlyGit](https://github.com/tiddly-gittly/TiddlyGit-Desktop) environment to function properly. It will send tiddler content to the `zx` inside TiddlyGit, and prints the output.
+
+!!! Button
+
+A ViewToolbar button is added. You can click on it to execute the script inside your tiddler.

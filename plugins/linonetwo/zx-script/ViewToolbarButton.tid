@@ -1,0 +1,9 @@
+tags: $:/tags/ViewToolbar
+title: $:/plugins/linonetwo/zx-script/ViewToolbarButton
+type: text/vnd.tiddlywiki
+list-before: $:/core/ui/Buttons/close
+caption: {{$:/core/images/video}}
+short-caption: zx script executor
+description: Run tiddler as ZX Script
+
+<$execute-zx-script content={{!!text}} title={{!!title}} />
