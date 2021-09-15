@@ -36,6 +36,8 @@
       if (!fileName.endsWith('.mjs') && !fileName.endsWith('.md')) {
         fileName += '.mjs';
       }
+
+      $tw.wiki.setText(stateTiddlerTitle, 'text', undefined, '');
       window.observables.native
         .executeZxScript$({
           fileContent,
