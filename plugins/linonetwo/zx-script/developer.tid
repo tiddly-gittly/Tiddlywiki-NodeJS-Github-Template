@@ -1,0 +1,28 @@
+title: $:/plugins/linonetwo/zx-script/developer
+type: text/vnd.tiddlywiki
+
+!! Developer guide
+
+!!! Icon
+
+If you want to change the icon/text of the button, you need to change both [[ViewToolbarButton.tid|$:/plugins/linonetwo/zx-script/ViewToolbarButton]]'s caption field, and [[button.js|$:/plugins/linonetwo/zx-script/button.js]]'s `importButton.innerHTML = xxxx`.
+
+Because we are using javascript to write the widget, it can't benefit from the caption field of tiddler that add tag [[$:/tags/ViewToolbar]].
+
+And so the caption add by javascript is shown not properly in view-toolbar, it will display both the icon and the text. So we need to use `.tc-tiddler-controls > button > .tc-button-zx-script-caption` to hide the text when it is in the view-toolbar.
+
+!!! List before
+
+We use
+
+```tid
+list-before: $:/plugins/linonetwo/inverse-link-and-folder/infobar
+```
+
+to make sure zx output is placed above the backlinks plugin.
+
+!!! Output
+
+We place output of zx to a temporary tiddler, whose name start with "$:/state/linonetwo/zx-script/output/"
+
+And we get the name of this tiddler in wikitext using `[{!!title}addprefix[$:/state/linonetwo/zx-script/output/]`, so it can be transcluded with `{{{ }}}`
