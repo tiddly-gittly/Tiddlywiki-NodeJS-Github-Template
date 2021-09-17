@@ -324,8 +324,8 @@ var assetList = [
         "core-version": ">=5.1.22",
         "plugin-type": "plugin",
         "version": "0.0.1",
+        "dependents": "$:/plugins/linonetwo/itonnote",
         "list": "readme developer",
-        "dependents": "",
         "type": "application/json",
         "readme": "!! Background\n\n[[google/zx|https://github.com/google/zx]] is a tool for writing better scripts, with Javascript.\n\nThis tiddlywiki plugin enables you to run any tiddler with zx.\n\n!! Usage\n\n!!! Tiddler Type\n\nTiddler with title extension `*.js *.md *.mjs` can be execute without problem. Other tiddler witout extension (no `.xxx`) will be executed as `*.md` file, for example, tid file without extions will be executed as `*.md`, but it works without problem too, even you are writing wiki text instead of markdown.\n\nIf you add filetype `application/javascript` to your tiddler, it will be recognized as `*.mjs`.\n\n!!! Prerequisit\n\nThis plugin requires [TiddlyGit](https://github.com/tiddly-gittly/TiddlyGit-Desktop) environment to function properly. It will send tiddler content to the `zx` inside TiddlyGit, and prints the output.\n\n!!! Button\n\nA ViewToolbar button is added. You can click on it to execute the script inside your tiddler.\n\nAnd the zx output will be printed below your tiddler content.\n\n!! Developer Documentation\n\nSee [[$:/plugins/linonetwo/zx-script/developer]]\n",
         "requires-reload": "yes"
