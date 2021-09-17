@@ -6,5 +6,8 @@
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
   "version": "0.0.1",
+  "dependents": [
+    "$:/plugins/linonetwo/itonnote"
+  ],
   "list": "readme developer"
 }
