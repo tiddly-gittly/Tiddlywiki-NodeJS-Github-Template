@@ -18,7 +18,9 @@
       this.computeAttributes();
       const importButton = this.document.createElement('button');
       importButton.classList.add('tc-btn-invisible');
-      importButton.innerHTML = `${$tw.wiki.getTiddlerText('$:/plugins/linonetwo/zx-script/zx-icon')}<span class="tc-btn-text tc-button-zx-script-caption">${$tw.wiki.getTiddlerText('$:/plugins/linonetwo/zx-script/zx-button-caption')}</span>`;
+      importButton.innerHTML = `${$tw.wiki.getTiddlerText(
+        '$:/plugins/linonetwo/zx-script/zx-icon',
+      )}<span class="tc-btn-text tc-button-zx-script-caption">${$tw.wiki.getTiddlerText('$:/plugins/linonetwo/zx-script/zx-button-caption')}</span>`;
       importButton.onclick = this.onExecuteButtonClick.bind(this);
       importButton.title = importButton.ariaLabel = 'ZX';
       parent.insertBefore(importButton, nextSibling);
@@ -29,8 +31,9 @@
      * Event listener of button
      */
     async onExecuteButtonClick() {
-      const title = this.getAttribute('title', 'aaa.md');
-      const type = this.getAttribute('type', 'text/vnd.tiddlywiki');
+      const title = this.getAttribute('title');
+      if (!title) return;
+      const type = this.getAttribute('type') || 'text/vnd.tiddlywiki';
       const stateTiddlerTitle = `$:/state/linonetwo/zx-script/output/${title}`;
       let fileName = title;
       let fileContent = this.getAttribute('content', '');
