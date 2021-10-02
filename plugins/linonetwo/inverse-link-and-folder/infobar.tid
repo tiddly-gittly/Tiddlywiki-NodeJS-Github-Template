@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">嵌出 (other)-{}->(this)</label>
 </$list>
 
-<<inverse-link-and-folder_list-links filter:"[all[current]transcludes[]]" class:"horizontal-list-links" >>
+<<inverse-link-and-folder_list-links filter:"[all[current]backtranscludes[]]" class:"horizontal-list-links" >>
 
 <$list filter="[all[current]transcludes[]first[]sort[title]]">
 	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">嵌入 (this)-{}->(other)</label>
