@@ -204,6 +204,13 @@ a.tc-tiddlylink-external:hover {
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
+.dbadge a,a:hover {
+  color: white !important;
+  border: unset;
+  -webkit-text-fill-color: unset !important;
+  font-weight: unset;
+  text-decoration: none;
+}
 
 a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-absolute:hover {
 	background-color: #999;
