@@ -33,20 +33,18 @@ module.exports = function build() {
   execAndLog(`tiddlywiki ${repoFolder} --build externalimages`, { cwd: repoFolder });
   execAndLog(`tiddlywiki ${repoFolder} --build externaljs`, { cwd: repoFolder });
   // npm run build:sitemap
-  execAndLog(
-    `tiddlywiki . --rendertiddler sitemap sitemap.xml text/plain && mv ${repoFolder}/output/sitemap.xml ${folderToServe}/sitemap.xml`,
-    { cwd: repoFolder }
-  );
+  execAndLog(`tiddlywiki . --rendertiddler sitemap sitemap.xml text/plain && mv ${repoFolder}/output/sitemap.xml ${folderToServe}/sitemap.xml`, {
+    cwd: repoFolder,
+  });
   // npm run build:minifyHTML
+  const htmlMinifyPath = `${repoFolder}/output/index-minify.html`;
   const htmlOutputPath = `${folderToServe}/index.html`;
-  execAndLog(
-    `html-minifier-terser -c ./html-minifier-terser.config.json -o ${htmlOutputPath} ${repoFolder}/output/index.html`,
-    { cwd: repoFolder }
-  );
+  execAndLog(`html-minifier-terser -c ./html-minifier-terser.config.json -o ${htmlMinifyPath} ${repoFolder}/output/index.html`, { cwd: repoFolder });
   // build dll.js and config tw to load it
   // original filename contains invalid char, will cause static server unable to load it
-  const htmlContent = fs.readFileSync(htmlOutputPath, 'utf-8');
-  fs.writeFileSync(htmlOutputPath, htmlContent.replace('%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js', 'tiddlywiki5.js'));
+  const htmlContent = fs.readFileSync(htmlMinifyPath, 'utf-8');
+  const htmlContentWithCorrectJsPath = htmlContent.replaceAll('%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js', 'tiddlywiki5.js');
+  fs.writeFileSync(htmlOutputPath, htmlContentWithCorrectJsPath);
   execAndLog(`mv ${repoFolder}/output/tiddlywiki5.js ${folderToServe}/tiddlywiki5.js`, { cwd: repoFolder });
   // npm run build:precache
   execAndLog(`workbox injectManifest workbox-config.js`, { cwd: repoFolder });
