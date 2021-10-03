@@ -1,0 +1,10 @@
+.commander-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px dotted gray;
+  border-radius: 0.25rem;
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+	
+}

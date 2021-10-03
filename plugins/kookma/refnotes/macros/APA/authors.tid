@@ -1,0 +1,31 @@
+created: 20210918154536732
+modified: 20210918182843051
+tags: 
+title: $:/plugins/kookma/refnotes/macros/apa/authors
+type: text/vnd.tiddlywiki
+
+\define show-authors-in-citation()
+<!-- used in ref macro APA7 -->
+<$vars number-authors={{{[<__tid__>get[bibtex-author]split[ and ]count[]]}}}>
+<$list filter="[<number-authors>compare:number:gt[2]]" emptyMessage="""<$view tiddler=<<__tid__>> field="bibtex-author"/>""">
+<$text text={{{[<__tid__>get[bibtex-author]split[ and ]first[]addsuffix[, et al.]]}}} />
+</$list>
+</$vars>
+\end
+
+\define show-authors-in-references()
+<!-- display authors as comma separated list, removes "and" -->
+<!-- used in template -->
+\whitespace trim
+<$vars authorlist={{!!bibtex-author}} replace1=" and " replace2=",([^,]*)$" >
+<$vars authors={{{ [<authorlist>search-replace:g:regexp<replace1>,[, ]search-replace:g:regexp<replace2>,[, and $1]]}}} >
+<<authors>>
+</$vars>
+</$vars>
+\end
+
+
+<!--
+- These macros help to format the author list in citation and references in closer format to APA7
+- The author list in referenc list is not exactly wahat APA7 standard says! to be fixed
+-->

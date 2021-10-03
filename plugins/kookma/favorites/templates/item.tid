@@ -1,0 +1,11 @@
+created: 20191226214526038
+modified: 20210423152034677
+title: $:/plugins/kookma/favorites/templates/item
+type: text/vnd.tiddlywiki
+
+\define tooltip() contains $(cnt)$ items
+<$vars cnt={{{[list<currentTiddler>count[]]}}}>
+<$link to="rr" tooltip=<<cnt>> >
+<$view field=caption/>
+</$link>
+</$vars>

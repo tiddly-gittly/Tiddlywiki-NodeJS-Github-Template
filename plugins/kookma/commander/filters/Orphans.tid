@@ -1,0 +1,7 @@
+created: 20190214135426497
+description: {{$:/language/Filters/Orphans}}
+filter: [all[orphans]sort[title]]
+modified: 20200324070652498
+tags: $:/tags/Commander/Filter
+title: $:/plugins/kookma/commander/filters/Orphans
+type: text/vnd.tiddlywiki

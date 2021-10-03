@@ -1,0 +1,47 @@
+created: 20150117184156000
+modified: 20200123200937571
+tags: $:/tags/Macro
+title: $:/plugins/kookma/utility/macro/wikitext-macros
+type: text/vnd.tiddlywiki
+
+\define wikitext-example(src)
+<div class="doc-example">
+
+<$macrocall $name="copy-to-clipboard-above-right" src=<<__src__>>/>
+
+```
+$src$
+```
+
+That renders as:
+
+$src$
+
+... and the underlying HTML is:
+
+$$$text/vnd.tiddlywiki>text/html
+$src$
+$$$
+</div>
+\end
+
+\define wikitext-example-without-html(src)
+<div class="doc-example">
+
+<$macrocall $name="copy-to-clipboard-above-right" src=<<__src__>>/>
+
+```
+$src$
+```
+
+That renders as:
+
+$src$
+</div>
+\end
+<!--
+; Credit
+:Jeremy Ruston TW 5.1.18
+
+The wiki-text macros are set of macro for documenting TW codes.
+-->

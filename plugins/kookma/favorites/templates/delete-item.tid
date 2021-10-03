@@ -1,0 +1,10 @@
+created: 20191220075034126
+modified: 20210423152034669
+title: $:/plugins/kookma/favorites/templates/delete-item
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible kk-btn-mini" tooltip="remove item from favorites">
+{{$:/core/images/close-button}}
+<$action-listops $tiddler=<<favlistTid>> $field="list" $subfilter="-[<currentTiddler>]"/>
+<$action-listops $tiddler=<<folder>> $field="list" $subfilter="-[<currentTiddler>]"/>
+</$button>&nbsp;

@@ -1,0 +1,14 @@
+caption: Field
+created: 20190212061551615
+list-after: $:/plugins/kookma/commander/tag/ui
+modified: 20200324070652439
+tags: $:/tags/Commander
+title: $:/plugins/kookma/commander/field/ui
+type: text/vnd.tiddlywiki
+
+<<tabs 
+tabsList:"[all[shadows+tiddlers]tag[$:/tags/Commander/FieldOps]!has[draft.of]]"
+default:"$:/plugins/kookma/commander/field/uicomp/add-fields" 
+class:"tc-vertical cmd-tab-colorful cmd-tab-wd"
+>>
+

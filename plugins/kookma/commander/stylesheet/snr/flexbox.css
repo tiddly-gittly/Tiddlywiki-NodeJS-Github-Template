@@ -1,0 +1,29 @@
+.cmd-snr-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.cmd-snr-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1
+}
+
+.cmd-snr-double-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2
+}
+
+@media screen and (min-width: 800px) {
+  .cmd-snr-column {
+    flex: 1
+  }
+
+  .cmd-snr-double-column {
+    flex: 2
+  }
+}

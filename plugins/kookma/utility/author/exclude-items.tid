@@ -1,0 +1,22 @@
+caption: Exclude items
+created: 20200313124437263
+modified: 20200322115519909
+tags: 
+title: $:/plugins/kookma/utility/author/exclude-items
+type: text/vnd.tiddlywiki
+
+\define showItems(label, filter)
+<h2>$label$</h2>
+<$list filter=<<__filter__>> >
+<$checkbox tiddler=<<currentTiddler>> tag="excluded"/>&nbsp;<$link to=<<currentTiddler>>><$text text=<<currentTiddler>>/></$link><br>
+</$list>
+\end
+<!-- drag and drop -->
+<<showItems label:"Disable drag and drop" filter:"[title[$:/config/DragAndDrop/Enable]]">>
+<!-- side bar items -->
+<<showItems label:"Sidebar tabs" filter:"[all[shadows+tiddlers]]+[tag[$:/tags/SideBar]]">>
+<!-- viewtoolbar items -->
+<<showItems label:"View toolbars" filter:"[all[shadows+tiddlers]prefix[$:/config/ViewToolbarButtons/Visibility]]">>
+<!-- Page controls -->
+<<showItems label:"Page controls" filter:"[all[shadows+tiddlers]prefix[$:/config/PageControlButtons/Visibility]]">>
+<$list filter="">

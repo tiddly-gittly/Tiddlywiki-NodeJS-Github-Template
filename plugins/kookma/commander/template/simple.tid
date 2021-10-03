@@ -1,0 +1,31 @@
+caption: simple
+created: 20190213200258460
+modified: 20200324070652975
+tags: $:/tags/Commander/Template
+title: $:/plugins/kookma/commander/template/simple
+type: text/vnd.tiddlywiki
+version: beta
+
+! Heading one
+This is sunsection i
+
+!! Heading two
+This is subsection ii.
+
+* one
+* two
+* three
+
+!!! Heading three
+This is subsction iii
+
+```
+A sample code
+```
+
+!! Sample table
+|Table 1. This is caption|c
+|Heading one|Heading Two|Heading Three|h
+|r1|100|200|
+|r2|02|03|
+|r3|-1|-2|

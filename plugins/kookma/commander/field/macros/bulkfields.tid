@@ -1,0 +1,70 @@
+created: 20200109104450902
+modified: 20200913180532516
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/field/macros/bulkfields
+type: text/vnd.tiddlywiki
+
+\define numfilter()     [range[1,$(flt)$]]
+\define id_fldName()    fldn$(cnt)$
+\define id_fldValue()   fldv$(cnt)$
+
+\define add-bulk-fields()
+<$set name="flt" tiddler=<<datafieldsTid>> field="counter" emptyValue="1"><!-- when the datafieldsTid is not exist, there is at least one field row -->
+<$list filter=<<numfilter>> variable="cnt">
+<$list filter="[<datafieldsTid>getindex<id_fldName>]" variable="newField">
+<$action-setfield $tiddler=<<newTitle>> 
+ $field={{{ [<newField>trim[]lowercase[]split[ ]join[_]]  }}}
+ $value={{{ [<datafieldsTid>getindex<id_fldValue>] }}} />
+</$list>
+</$list>
+</$set>
+\end
+
+\define getInputs()
+<$edit-text tiddler=<<datafieldsTid>> index=<<id_fldName>>  tag=input  default="" placeholder="field name" />
+<$edit-text tiddler=<<datafieldsTid>> index=<<id_fldValue>> tag=input  default="" placeholder="field value"/>
+\end
+
+\define add-reset()
+<$button>insert
+<$action-setfield $tiddler=<<datafieldsTid>> counter={{{[<datafieldsTid>get[counter]add[1]]~[[2]]}}}/>
+</$button>
+<$button>reset
+<$action-setfield $tiddler=<<datafieldsTid>> counter="1"/>
+<$action-setfield $tiddler=<<datafieldsTid>> text=""/>
+</$button>
+\end
+
+\define create-field-inputbox()
+<$wikify name=flt text={{{ [<datafieldsTid>get[counter]]~[[1]] }}} >
+<$list filter=<<numfilter>> variable=cnt>
+
+<<getInputs>>
+</$list>
+</$wikify>
+\end
+
+\define add-more-fields-ui(datafieldsTid:"")
+<$vars datafieldsTid=<<__datafieldsTid__>> >
+<<add-reset>>
+<<create-field-inputbox>>
+</$vars>
+\end
+
+\define add-more-fields-selective-ui(datafieldsTid:"", stateTiddler:"$:/state/commander/tiddler-addfields-status")
+<$checkbox 
+ tiddler=<<__stateTiddler__>>
+ field="text" 
+ checked="addfields"  unchecked="nofields"
+ default="nofields" > 
+ Add fields
+</$checkbox>
+<$reveal type="match" state=<<__stateTiddler__>> text="addfields" default="nofields" >
+<$vars datafieldsTid=<<__datafieldsTid__>> >
+<<add-reset>>
+<div style="padding-left:88px;">
+<<create-field-inputbox>>
+</div>
+</$vars>
+</$reveal>
+\end

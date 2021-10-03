@@ -1,0 +1,29 @@
+created: 20171005185418327
+creator: Thomas Elmiger
+modified: 20190426122338735
+modifier: Thomas Elmiger
+tags: 
+title: $:/plugins/telmiger/HarveyBalls/alternatives
+type: text/vnd.tiddlywiki
+
+!! Alternatives
+
+!!! SVG from Wikipedia
+On https://en.wikipedia.org/wiki/Harvey_Balls you will find alternative graphics in one single SVG file. There are neither tiltes nor descriptions in this image.
+
+!!! Fonts
+Some fonts like Arial Unicode MS contain symbols similar to Harvey balls:
+
+@@font-size:2em; 
+○●◯◔◑◕◐◒◓◖◗◝◞◟◜◝◡◉◌◍◎☹☺☻
+@@
+
+These are found starting around U+25CB (white circle). I don’t know if or how a screenreader would announce them. Other dedicated fonts with Harvey balls are available, I found some using the numbers from 0 to 9 and I guess a screenreader would announce them as such. Would numbers from 0 to 9 convey enough meaning to your users? Then you should use numbers instead of Harvey balls if you ask me.
+
+!! Accessibility
+
+In general font solutions as well as monolithic SVG graphics lack the ability to control or adapt the meaning of the symbols/characters.
+
+There is no hint popping up from a font if a user hovers over the icon with the pointer of the mouse. 
+
+With my SVG solution, the title is shown as a hint and ~VoiceOver on the Mac announces both title and desc attributes.

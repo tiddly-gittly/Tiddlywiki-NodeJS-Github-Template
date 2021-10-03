@@ -1,0 +1,22 @@
+created: 20190214132946159
+list-after: $:/plugins/kookma/commander/search/filter-button/search
+modified: 20200325055356645
+tags: $:/tags/Commander/Search/FilterButton
+title: $:/plugins/kookma/commander/search/filter-button/clear
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/commander/macros/definition
+
+<$reveal  type="nomatch" stateTitle=<<searchboxTid>> stateField="text" text="">
+<$button class="tc-btn-invisible" tooltip="clear search box and selected tiddlers">
+<$action-setfield $tiddler=<<searchboxTid>> $field="text" $value=""/>
+<$action-setfield $tiddler="$:/temp/commander" $field="text" $value=""/>
+<$action-setfield $tiddler="$:/state/commander/snr/select-tiddler" $field="text" $value=""/><!-- SNR selection -->
+<$action-setfield $tiddler="$:/state/compInspect/temp/commander/selectState-tiddler" $field="text" $value=""/> <!-- Inspect selection -->
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+
+<!--
+there is extra action should be removed
+-->

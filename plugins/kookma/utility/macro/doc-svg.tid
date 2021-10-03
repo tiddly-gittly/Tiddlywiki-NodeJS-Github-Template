@@ -1,0 +1,9 @@
+created: 20190722141637145
+modified: 20200123200937669
+tags: $:/tags/Macro
+title: $:/plugins/kookma/utility/macro/doc-svg
+type: text/vnd.tiddlywiki
+
+\define doc-svg(tiddler:"", color:"")
+<span class="kk-doc" style="fill:$color$;"><$transclude tiddler=<<__tiddler__>> /></span>
+\end

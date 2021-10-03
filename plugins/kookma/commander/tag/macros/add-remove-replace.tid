@@ -1,0 +1,55 @@
+created: 20190212063435548
+modified: 20200325055328754
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/tag/macros/add-remove-replace
+type: text/vnd.tiddlywiki
+
+\define add-new-tag-bulk(newTag:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore><!--check if filter is empty -->
+<$list filter="[<__newTag__>!is[blank]]" variable=null>
+<<create-log-tiddler "add-new-tag-bulk">>
+<$list filter="[subfilter<searchfilter>!tag<__newTag__>]">
+<$fieldmangler>
+<$action-sendmessage $message="tm-add-tag" $param=<<__newTag__>> />
+</$fieldmangler>
+<$macrocall $name="log-add-single-operation" msg="""new tag `$newTag$` added""" tidItem=<<currentTiddler>> />
+</$list>
+</$list>
+</$list>
+\end
+
+\define remove-old-tag-bulk(oldTag:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore>
+<$list filter="[<__oldTag__>!is[blank]]" variable=null>
+<<create-log-tiddler "remove-old-tag-bulk">>
+<$list filter="[subfilter<searchfilter>tag<__oldTag__>]">
+<$fieldmangler>
+<$action-sendmessage $message="tm-remove-tag" $param=<<__oldTag__>> />
+</$fieldmangler>
+<$macrocall $name="log-add-single-operation" msg="""old tag `$oldTag$` removed""" tidItem=<<currentTiddler>> />
+</$list>
+</$list>
+</$list>
+\end
+
+
+\define replace-tag-bulk(oldTag:"", newTag:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore>
+<$list filter="[<__oldTag__>!is[blank]]" variable=null>
+<$list filter="[<__newTag__>!is[blank]]" variable=null>
+<<create-log-tiddler "replace-tag-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="[<currentTiddler>tag<__oldTag__>]" variable=ignore
+  emptyMessage="""<$macrocall $name="log-add-single-operation" msg="//has not tag `$oldTag$`. Operation ignored.//" tidItem=<<currentTiddler>> /> """>
+<$fieldmangler>
+<$action-sendmessage $message="tm-add-tag" $param=<<__newTag__>> />
+<$action-sendmessage $message="tm-remove-tag" $param=<<__oldTag__>>  />
+</$fieldmangler>
+<$macrocall $name="log-add-single-operation" msg="""tag `$oldTag$` replaced with `$newTag$`""" tidItem=<<currentTiddler>> />
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end
+

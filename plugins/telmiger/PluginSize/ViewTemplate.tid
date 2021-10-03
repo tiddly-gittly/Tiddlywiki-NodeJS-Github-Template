@@ -1,0 +1,12 @@
+created: 20190122065955189
+creator: Thomas Elmiger
+list-after: $:/core/ui/ViewTemplate/plugin
+modified: 20200605060258345
+modifier: Thomas Elmiger
+tags: $:/tags/ViewTemplate
+title: $:/plugins/telmiger/PluginSize/ViewTemplate
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]">
+{{||$:/plugins/telmiger/PluginSize/template}}
+</$list>

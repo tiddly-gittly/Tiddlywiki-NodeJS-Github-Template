@@ -1,0 +1,31 @@
+created: 20200115050859257
+modified: 20200325055328524
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/inspect/comp/edit-preview
+type: text/vnd.tiddlywiki
+
+\define compInspect-edit-preview(tiddler, commonFields:"")
+<div class="tc-edit-fields">
+<table class="tc-edit-fields">
+<tbody>
+<tr class="tc-edit-field"><td class="tc-edit-field-name">title:</td>
+<td class="tc-edit-field-value"><$link to=<<__tiddler__>> ><$text text=<<__tiddler__>> /></$link></td>
+</tr>
+<tr class="tc-edit-field"><td class="tc-edit-field-name">tags:</td>
+<td class="tc-edit-field-value">{{$tiddler$||$:/core/ui/EditTemplate/tags}}</td>
+</tr>
+<tr class="tc-edit-field"><td class="tc-edit-field-name">text:</td>
+<td class="tc-edit-field-value"><$macrocall $name=compInspect-get-field tiddler=<<__tiddler__>>  field="text" tag="textarea" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<$tiddler tiddler=<<__tiddler__>> >
+<$macrocall $name="compInspect-edit-fileds" commonFields=<<__commonFields__>> />
+</$tiddler>
+\end
+
+\define compInspect-get-field(tiddler, field, tag:"input") 
+<$edit-text class="tc-edit-texteditor" tiddler=<<__tiddler__>> field=<<__field__>> tag=<<__tag__>> default="" placeholder={{$:/language/EditTemplate/Body/Placeholder}}/>
+\end

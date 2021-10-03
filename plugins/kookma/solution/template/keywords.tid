@@ -1,0 +1,22 @@
+created: 20181107203051789
+modified: 20200317220303318
+title: $:/plugins/kookma/solution/template/keywords
+type: text/vnd.tiddlywiki
+
+\define keywords-body(kwd)
+<$list filter="[tag[$kwd$]] [search:keywords[$kwd$]]" variable="itemTid">
+<$link to=<<itemTid>> ><$text text=<<itemTid>>/></$link>
+</$list>
+\end
+<!-- keywords-body lists all tiddler tagged with kwd or have kwd in their keywords field -->
+
+<$set name="transclusion" value=<<qualify "$:/state/popup/tag">> >
+<$button class="tc-btn-invisible sl-keywords" popup=<<transclusion>> >
+<$text text=<<currentTiddler>>/>
+</$button>
+<$reveal state=<<transclusion>> type="popup" position="below" animate="yes" class="tc-drop-down">
+<$link to=<<currentTiddler>> ><$text text=<<currentTiddler>>/></$link>
+<hr>
+<$macrocall $name="keywords-body" kwd=<<currentTiddler>> />
+</$reveal>
+</$set>

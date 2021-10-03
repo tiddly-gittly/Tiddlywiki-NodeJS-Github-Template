@@ -1,0 +1,15 @@
+created: 20210430083936628
+modified: 20210430103253596
+tags: 
+title: $:/plugins/kookma/hsl/ui/ControlPanel/setting-color-mode
+type: text/vnd.tiddlywiki
+
+\define setLight() <$action-listops $tiddler="$:/plugins/kookma/hsl/styles/dark.css"  $tags="-$:/tags/Stylesheet"/>
+\define setDark()  <$action-listops $tiddler="$:/plugins/kookma/hsl/styles/light.css" $tags="-$:/tags/Stylesheet"/>
+
+<$vars status={{{[[$:/plugins/kookma/hsl/configs]getindex[gutter-status]match[hide]then[yes]else[no]]}}}>
+
+;Color Mode 
+:<$checkbox disabled=<<status>> tiddler="$:/plugins/kookma/hsl/styles/light.css" tag="$:/tags/Stylesheet" checkactions=<<setLight>>> Light mode</$checkbox>
+:<$checkbox disabled=<<status>> tiddler="$:/plugins/kookma/hsl/styles/dark.css"  tag="$:/tags/Stylesheet" checkactions=<<setDark>>> Dark mode</$checkbox>
+</$vars>

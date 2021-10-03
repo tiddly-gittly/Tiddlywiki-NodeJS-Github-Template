@@ -1,0 +1,24 @@
+created: 20181210155346225
+modified: 20210917161905920
+tags: disp
+title: $:/plugins/kookma/refnotes/macros/numbered/refnum
+type: text/vnd.tiddlywiki
+
+\define refnum(tid)
+<$set name="ref-tid" tiddler=<<__tid__>> field="title" emptyValue="RefNotFound">
+<div class="refnotes-tooltip refcls">
+<$reveal type="match" default=<<ref-tid>> text="RefNotFound">
+<$link overrideClass="link-refcls">
+[<$view tiddler=<<__tid__>> field="title"/>]
+</$link>
+<div class="refnotes-tooltiptext ref-notfound"><b>Warning</b>: Reference Not Found.<br>Click to create it:<<create-notexisted-ref "$tid$">></div>
+</$reveal>
+<$reveal type="nomatch" default=<<ref-tid>> text="RefNotFound">
+[<$view tiddler=<<__tid__>> field="caption"><$view tiddler=<<__tid__>> field="title"/></$view>]
+<div class="refnotes-tooltiptext">
+<$macrocall $name="displayref-onhover" refTid=<<ref-tid>> />
+</div>
+</$reveal>
+</div>
+</$set>
+\end

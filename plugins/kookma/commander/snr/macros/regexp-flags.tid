@@ -1,0 +1,62 @@
+created: 20190306182052441
+modified: 20200325055328730
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/snr/macros/regexp-flags
+type: text/vnd.tiddlywiki
+
+\define snr-regexp-flags()
+
+<form class="cmd-snr-form">
+<fieldset>
+<legend>Search flags</legend>
+
+<$checkbox 
+  tiddler="$:/state/commander/snr/case-sensitive" 
+  field="text" 
+  checked="i" 
+  unchecked=""
+/>&nbsp; ignore case<br>
+
+<$checkbox 
+  tiddler="$:/state/commander/snr/whole-words" 
+  field="text" 
+  checked="words" 
+  unchecked="characters"
+/>&nbsp; whole words<br>
+
+<$checkbox 
+  tiddler="$:/state/commander/snr/unicode" 
+  field="text" 
+  checked="u" 
+  unchecked=""
+/>&nbsp; unicode<br>
+
+<br>
+
+<$radio
+  tiddler="$:/state/commander/snr/gm" 
+  field="text" 
+  value="">&nbsp; first match 
+</$radio><br>
+
+<$radio
+  tiddler="$:/state/commander/snr/gm" 
+  field="text" 
+  value="g">&nbsp; global match
+</$radio><br>
+
+<$radio
+  tiddler="$:/state/commander/snr/gm" 
+  field="text" 
+  value="m">&nbsp; multiline mode
+</$radio><br>
+
+<$radio
+  tiddler="$:/state/commander/snr/gm" 
+  field="text" 
+  value="mg">&nbsp; global multiline mode
+</$radio>
+
+</fieldset>
+</form>
+\end

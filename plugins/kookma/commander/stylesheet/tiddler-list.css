@@ -1,0 +1,15 @@
+.kk-commander-tiddler-list {
+  font-size:small; 
+	border-left:0.5px 
+	dotted grey;
+	padding-left:10px;
+	overflow-y:auto;
+	max-width:100%;
+	max-height:$(height)$;
+}
+
+.kk-commander-columns1   { display:block; column-count:1; column-gap:1em; }
+.kk-commander-columns2   { display:block; column-count:2; column-gap:1em; }
+.kk-commander-columns3   { display:block; column-count:3; column-gap:1em; }
+.kk-commander-columns4   { display:block; column-count:4; column-gap:1em; }
+.kk-commander-columns5   { display:block; column-count:5; column-gap:1em; }

@@ -1,0 +1,35 @@
+created: 20141231095518178
+modified: 20210917161905924
+tags: $:/tags/Macro
+title: $:/plugins/kookma/refnotes/macros/search-ui
+type: text/vnd.tiddlywiki
+
+\define searchTid() xx$:/temp/search
+\define bibtexFields() [!is[shadow]!is[system]has[bibtex-title]fields[]prefix[bibtex-]sort[]]
+\define mainFields() bibtex-title bibtex-author bibtex-year
+\define searchUi()
+<div class="tc-search">
+<$edit-text tiddler=<<searchTid>> type="search" tag="input" placeholder="search terms" default=""/> <$select field="field" tiddler=<<searchTid>> default="bibtex-author">
+<$set name=allfields filter= "[subfilter<bibtexFields>split[ ]join[,]]" >
+<option value=<<allfields>> >all fields</option>
+</$set>
+<optgroup label="Main fields">
+<$list filter="[enlist<mainFields>removeprefix[bibtex-]]" variable="field">
+<option value={{{[<field>addprefix[bibtex-]]}}} ><<field>></option>
+</$list>
+</optgroup>
+<optgroup label="Other fields">
+<$list filter="[subfilter<bibtexFields>] -[enlist<mainFields>] +[removeprefix[bibtex-]]" variable="field">
+<option value={{{[<field>addprefix[bibtex-]]}}} ><<field>></option>
+</$list>
+</optgroup>
+</$select>
+
+<$reveal state=<<searchTid>> type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler=<<searchTid>> text=""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</div>
+\end

@@ -1,0 +1,47 @@
+div.remembertwo {
+	border-left: 3px solid <<colour tag-background>>;
+	padding-left: 0.5em;
+	margin-bottom: 22px; /* line-height of the selfidentification block */
+}
+
+div.remembertwo .tr-ritem p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 2em;
+}
+
+div.remembertwo .tr-ritem div {
+	font-weight: bold;
+	color: <<colour primary>>;
+	float: left;
+}
+
+div.remembertwo div.tr-selfidentification {
+	float: right;
+	color: <<colour muted-foreground>>;
+}
+
+div.remembercz {
+	border-left: 3px solid <<colour tag-background>>;
+	padding-left: 0.5em;
+	line-height: 22px; /* default; setting explicitly */
+}
+
+.remembercz > span.cloze-identifier {
+	color: <<colour tag-background>>;
+}
+
+.remembercz div.tr-selfidentification {
+	float: right;
+	margin-left: 0.5em;
+	color: <<colour muted-foreground>>;
+}
+
+/* the separate reference and ID fields are only for TR's benefit */
+div.remembertwo div.tr-reference, .remembercz div.tr-reference {
+	display: none;
+}
+
+div.remembertwo div.rid, .remembercz div.rid {
+	display: none;
+}

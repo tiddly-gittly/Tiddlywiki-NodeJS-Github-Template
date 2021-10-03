@@ -1,0 +1,32 @@
+caption: Remove chars
+created: 20190217092719245
+list-after: $:/plugins/kookma/commander/title/uicomp/add-remove-suffix
+modified: 20200325055328894
+tags: $:/tags/Commander/TitleOps
+title: $:/plugins/kookma/commander/title/uicomp/add-remove-chars
+type: text/vnd.tiddlywiki
+
+\define rngcat() [range[0,$(minchars)$]] -0 
+
+<label style="width:30ch;">Number of chars</label>
+<$select tiddler="$:/temp/commander/title-remove-chars"  default="0" class="cmd-sl">
+<$list filter="[subfilter<searchfilter>length[]minall[]subtract[1]] -Infinity" variable="minchars">
+<$list filter=<<rngcat>> >
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$list>
+</$select><br>
+
+<$button class="cmd-btn cmd-btn-wd"> First n characters
+<$macrocall 
+ $name="remove-chars-from-begining-tiltle-bulk" 
+ num={{$:/temp/commander/title-remove-chars}} />
+</$button>
+
+<$button class="cmd-btn cmd-btn-wd"> Last n characters
+<$macrocall 
+ $name="remove-chars-from-end-tiltle-bulk" 
+ num={{$:/temp/commander/title-remove-chars}} />
+</$button>
+
+

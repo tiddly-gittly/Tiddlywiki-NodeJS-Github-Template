@@ -1,0 +1,29 @@
+caption: Select tiddlers
+created: 20190725144912018
+modified: 20200325055328684
+title: $:/plugins/kookma/commander/search/selection
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/commander/macros/definition
+<$checkbox tiddler=<<selectiveOpsTid>> field="text" checked="yes" unchecked="no" default="no" uncheckactions=<<deselect-all>> > Selective operation?</$checkbox>
+
+<$reveal type="nomatch" stateTitle=<<selectiveOpsTid>> stateField="text" text="yes" tag="div" class="kk-commander-tiddler-list  kk-commander-columns3">
+<$list filter="[subfilter<filtertext>!prefix[$:/temp/commander]!is[missing]]"><$link/><br></$list>
+</$reveal>
+<$reveal type="match" stateTitle=<<selectiveOpsTid>> stateField="text" text="yes" tag="div">
+<$button actions=<<select-all>> > Select all</$button> <$button actions=<<deselect-all>> > Deselect all</$button>
+<small style="margin-left:10px;">Number of tiddlers selected: <$count filter="[tag<workingTag>]" /></small><br>
+<<warn-for-selectedTids-from-previous-operation>>
+</$reveal>
+
+
+<$reveal type="match" stateTitle=<<selectiveOpsTid>> stateField="text" text="yes" tag="div" class="kk-commander-tiddler-list  kk-commander-columns3">
+<$list filter="[subfilter<filtertext>!prefix[$:/temp/commander]!is[missing]]">
+<$checkbox tag=<<workingTag>>> <$link/></$checkbox><br>
+</$list>
+</$reveal>
+
+<!-- Description
+This tiddler implement interface to selectivly add tiddlers for commander operations.
+Each selected tiddler gets a working tag
+-->

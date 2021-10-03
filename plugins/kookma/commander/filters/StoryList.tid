@@ -1,0 +1,7 @@
+created: 20190214135246552
+description: {{$:/language/Filters/StoryList}}
+filter: [list[$:/StoryList]] -$:/AdvancedSearch
+modified: 20200324070652532
+tags: $:/tags/Commander/Filter
+title: $:/plugins/kookma/commander/filters/StoryList
+type: text/vnd.tiddlywiki

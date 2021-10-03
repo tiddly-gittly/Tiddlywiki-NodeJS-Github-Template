@@ -1,0 +1,18 @@
+created: 20191223204533023
+modified: 20210423152034563
+title: $:/plugins/kookma/favorites/macros/definition
+type: text/vnd.tiddlywiki
+
+\define folderpath()     $:/favorites/folder
+\define favlistTid()     $:/favorites/favlist
+\define foldertagTid()   $:/tags/Favorites/Folder
+\define folders()        [tag[$(foldertagTid)$]]
+\define recentlyAdded()  $:/plugins/kookma/favorites/recent
+
+\define temppath()       $:/temp/favorites
+
+\define selectionTid()   $(temppath)$/selection
+\define tempNewTid()     $(temppath)$/new-folder
+\define temppopupTid()   $(temppath)$/delete-confirm
+\define tempreorderTid() $(temppath)$/reorder
+\define saveTid()        $(temppath)$/savetitle

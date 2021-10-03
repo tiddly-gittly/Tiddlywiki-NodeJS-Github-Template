@@ -1,0 +1,34 @@
+created: 20170126185919666
+creator: Thomas Elmiger
+list-before: $:/core/ui/EditTemplate/type
+modified: 20200605055914338
+modifier: Thomas Elmiger
+tags: $:/tags/EditTemplate EditorCounter
+title: $:/plugins/telmiger/EditorCounter/EditTemplate
+type: text/vnd.tiddlywiki
+
+<div class="te-editor-counter">
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/characters">
+<$editor-counter tiddler=<<currentTiddler>> colors='black:0,gray:140,green:300,indianred:800,red:1600'/> characters </$reveal>
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/autosave">
+<span class="tc-muted"><span class="tc-dirty-indicator">•</span> <$editor-counter mode=autosave savelimit={{$:/plugins/telmiger/EditorCounter/settings/autosave!!limit}}/> saved</span>
+</$reveal>
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/characters"> &nbsp;&nbsp; 
+</$reveal>
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/words">
+<$editor-counter mode=word colors='black:0,gray:200,green:300,indianred:1000,red:2000'/> words &nbsp;&nbsp; 
+</$reveal>
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/autosave-pause">
+<$checkbox tiddler="$:/plugins/telmiger/EditorCounter/settings/autosave" field="text" checked="yes" unchecked="no" default="no"> Autosave</$checkbox>
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/autosave">
+ (uncheck to pause)
+</$reveal>
+</$reveal>
+</div>
+<style>
+.te-editor-counter { margin-top: -.25rem; margin-bottom: 0.75rem; }
+</style>
+<!--
+* Show the number of characters and/or words entered in edit mode.
+* Show the number of characters at last autosave (autosave at a character difference as defined in settings).
+-->

@@ -1,0 +1,57 @@
+created: 20190719143452217
+modified: 20210422161832839
+title: $:/plugins/kookma/todolist/macros/explore-internalTids
+type: text/vnd.tiddlywiki
+
+\define todolist-fullbaseName() $(td-basePath)$$(baseName)$
+
+\define todolist-explore-data-tiddlers()
+
+><b>Number of internal tiddlers found: <$count filter="[all[tiddlers+shadows]prefix<td-basePath>]" /></b><br>
+><$macrocall $name="todolist-delete-all-tids" filter=<<dataTids>> />
+
+<h2> Todo lists</h2>
+<$list filter="[all[shadows+tiddlers]removeprefix<td-basePath>splitbefore[/]removesuffix[/]sort[]]" variable="baseName">
+
+<$set name=bsFilter value="[prefix<todolist-fullbaseName>sort[]]">
+<h3><<todolist-delete-all-tids-baseName>> <<baseName>></h3>
+<blockquote>
+<$list filter=<<bsFilter>> variable="internalTid" emptyMessage="//No internal data tiddlers is found!//">
+<div class="kk-todolist-row">
+<div class="kk-todolist-delete"><$macrocall $name="todolist-delete-single-iternalTid" /></div>
+<div class="kk-todolist-desc"><$link to=<<internalTid>>><$view tiddler=<<internalTid>> field="title"/></$link></div>
+</div>
+</$list>
+</blockquote>
+</$set>
+
+</$list>
+
+\end
+
+
+\define todolist-delete-single-iternalTid()
+<$button class="tc-btn-invisible tc-tiddlylink">
+	{{$:/plugins/kookma/todolist/images/times.svg}}
+	<$action-deletetiddler $tiddler=<<internalTid>> />
+</$button>
+\end
+
+\define todolist-delete-all-tids-baseName()
+<$button class="tc-btn-invisible tc-tiddlylink" tooltip="Delete all data tiddlers in this Todo list?"> {{$:/core/images/delete-button}}
+ <$action-deletetiddler $filter=<<bsFilter>> />
+</$button>
+\end
+
+\define todolist-delete-all-tids()
+<!-- uses confirm delete macro to notify user when delete all internal tiddlers -->
+<$macrocall $name="todolist-confirm-delete" 
+btnLabel="Delete all interal tiddlers?"
+stateTiddler="temp"
+countFilter="[all[tiddlers+shadows]prefix<td-basePath>]"
+actionMacro=<<action-empty-archive>>
+/>
+\end
+\define action-empty-archive()
+<$action-deletetiddler $filter="[all[tiddlers+shadows]prefix<td-basePath>]" />
+\end	 

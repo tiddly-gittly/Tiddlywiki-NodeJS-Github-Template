@@ -1,0 +1,60 @@
+caption: Bibliography
+created: 20181220153648454
+description: This code adds the `bibtex-entry` tag to all tiddlers imported by `BibTeX Importer` plugin thus having a `bibtex-title` field.
+modified: 20210917161906108
+tags: $:/tags/SideBar
+title: $:/plugins/kookma/refnotes/ui/bibtexlibrary
+type: text/vnd.tiddlywiki
+
+\define dispEntry()
+<$link/>
+<$macrocall $name=stretchText text="""
+<$view field="bibtex-author"/>. (<$view field="bibtex-year"/>). <$view field="bibtex-title"/>.""" />
+\end
+
+
+\define searchFilter() [has[bibtex-title]search:$(sField)$[$(sTerm)$]]
+
+\define bibLibrary()
+<$vars sField={{{[<searchTid>get[field]] ~[[bibtex-author]]}}} sTerm={{{[<searchTid>get[text]]}}}>
+
+<!-- show hide entry details -->
+<div class="tc-search refnotes-library" style="margin:10px 0 0 20px;">
+Show and Hide Details: &nbsp;
+<$button class="tc-btn-invisible">{{$:/core/images/down-arrow}}
+<$list filter="[subfilter<searchFilter>]">
+<$action-setfield $tiddler=<<tTemp>> text=show />
+</$list>
+</$button>
+<$button class="tc-btn-invisible">{{$:/core/images/up-arrow}}
+<$list filter="[subfilter<searchFilter>]">
+<$action-deletetiddler $tiddler=<<tTemp>> />
+</$list>
+</$button>
+</div>
+
+<!-- show the library data -->
+<ol>
+<$list filter="[subfilter<searchFilter>]">
+<li><<dispEntry>></li>
+</$list>
+</ol>
+</$vars>
+\end
+
+<!-- interface -->
+<div style="margin-bottom:8px;">
+<<process-entries "Process New Entries">>
+{{$:/plugins/kookma/refnotes/ui/dropzone}}
+</div>
+
+<!-- make this optional
+[[Bibliography Table]]
+-->
+
+<<searchUi>>
+
+<<bibLibrary>>
+
+
+

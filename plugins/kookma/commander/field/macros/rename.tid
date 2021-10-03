@@ -1,0 +1,25 @@
+created: 20200107051937869
+modified: 20200325055328448
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/field/macros/rename
+type: text/vnd.tiddlywiki
+
+\define rename-field-bulk(oldField:"", newField:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore>
+<$list filter="[<__oldField__>!is[blank]]" variable=null>
+<$list filter="[<__newField__>!is[blank]]" variable=null>
+<<create-log-tiddler "rename-field-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="[<currentTiddler>has:field[$oldField$]]" variable=ignore
+  emptyMessage="""<$macrocall $name="log-add-single-operation" msg="//has not field `$oldField$`. Operation ignored.//" tidItem=<<currentTiddler>> /> """>
+<$set name=oldValue tiddler=<<currentTiddler>> field=<<__oldField__>> >	
+<$action-setfield $tiddler=<<currentTiddler>> $field=<<__newField__>> $value=<<oldValue>>/>
+</$set>
+<$action-deletefield $tiddler=<<currentTiddler>> $field=<<__oldField__>> />
+<$macrocall $name="log-add-single-operation" msg="""fied `$oldField$` renamed to `$newField$`""" tidItem=<<currentTiddler>> />
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end

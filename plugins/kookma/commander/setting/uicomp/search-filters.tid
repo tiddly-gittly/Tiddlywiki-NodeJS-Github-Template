@@ -1,0 +1,19 @@
+caption: Search filter
+created: 20200116114041370
+modified: 20200325055328703
+tags: $:/tags/Commander/Setting
+title: $:/plugins/kookma/commander/setting/uicomp/search-filters
+type: text/vnd.tiddlywiki
+
+The below list shows the Commander search filter. To edit click on the link and edit tiddler for filter syntax or description
+
+<details>
+<summary>Commander saved filter search</summary>
+<dl>
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/Commander/Filter]]" >
+<dt><$link/></dt>
+<dd><span style="display:inline-block;font-weight:700;width:100px">Description:</span><$view field="description"/></dd>
+<dd><span style="display:inline-block;font-weight:700;width:100px">Filter:</span><$view field="filter"/></dd>
+</$list>
+</dl>
+</details>

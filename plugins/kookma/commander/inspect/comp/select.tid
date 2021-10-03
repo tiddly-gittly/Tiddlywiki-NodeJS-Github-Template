@@ -1,0 +1,36 @@
+created: 20190308070713468
+modified: 20200325055328546
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/inspect/comp/select
+type: text/vnd.tiddlywiki
+
+\define compSelect(filter:"", stateTiddler:"", default:"", class:"", showButtons:"show")
+<$select tiddler=<<__stateTiddler__>> default=<<__default__>> class=<<__class__>> >
+<option value="">None</option>
+<$list filter=<<__filter__>> variable=item>
+<option value=<<item>>><$text text=<<item>> /></option>
+</$list>
+</$select>
+<$reveal type="match" text="show" default=<<__showButtons__>> >
+<$vars myfilter=<<__filter__>> mystateTiddler=<<__stateTiddler__>> myitem={{{ [<__stateTiddler__>get[text]] }}} >
+<$button actions=<<cs-prev-item>> class="cmd-btn"> prev </$button>
+<$button actions=<<cs-next-item>> class="cmd-btn"> next </$button>
+</$vars>
+</$reveal>
+\end
+
+\define cs-prev-item()
+<$list filter="[subfilter<myfilter>] +[before<myitem>]" variable="prev-item" >
+<$action-setfield $tiddler=<<mystateTiddler>> text=<<prev-item>> />
+</$list>
+\end
+
+\define cs-next-item()
+<$list filter="[subfilter<myfilter>] +[after<myitem>]" variable="next-item" >
+<$action-setfield $tiddler=<<mystateTiddler>> text=<<next-item>> />
+</$list>
+\end
+
+<!-- used by
+ - $:/plugins/kookma/commander/compInspect/main
+-->

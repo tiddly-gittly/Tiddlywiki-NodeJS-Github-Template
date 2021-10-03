@@ -1,0 +1,52 @@
+created: 20190719141644069
+modified: 20210422161832777
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/archive-operations
+type: text/vnd.tiddlywiki
+
+\define todolist-list-archived-items(nameSpace:"")
+<$vars
+ archiveTiddler="""$nameSpace$/archive"""
+ priorityTiddler="""$nameSpace$/priority"""
+>
+<$list filter="[<archiveTiddler>indexes[]!sort[]]" variable="item">
+<div class="kk-todolist-row">
+  <div class="kk-todolist-delete"><<todolist-delete-item>></div>
+	<div class="kk-todolist-priority"><<todolist-show-priority-level>></div>
+  <div class="kk-todolist-desc">
+	<span class="kk-todolist-date">
+	<$view tiddler=<<item>> field="title" format="date" template="mmm 0DD, YYYY 0hh:0mm"/></span>
+	<$transclude tiddler=<<archiveTiddler>> index=<<item>>/>
+	</div>
+</div>
+</$list>
+</$vars>
+\end
+
+\define todolist-show-priority-level()
+<$button class="tc-btn-invisible" tooltip="Prority of archived items cannot be changed">
+<$macrocall $name="disp-priority-badge" color={{{[<priorityTiddler>getindex<item>]}}} />
+</$button>
+\end
+
+\define todolist-delete-item()
+<$button class="tc-btn-invisible">
+{{$:/plugins/kookma/todolist/images/times.svg}}
+<$action-setfield $tiddler=<<archiveTiddler>>  $index=<<item>> />
+<$action-setfield $tiddler=<<priorityTiddler>> $index=<<item>> />
+</$button>
+\end
+
+\define todolist-empty-archived-tiddler(nameSpace)
+<$vars
+ archiveTiddler="""$nameSpace$/archive"""
+ priorityTiddler="""$nameSpace$/priority"""
+>
+<$button class="tc-btn-invisible tc-tiddlylink" tooltip="Empty archive"> {{$:/core/images/delete-button}} Delete archive
+<$list filter="[<archiveTiddler>indexes[]!sort[]]" variable="item">
+ <$action-setfield $tiddler=<<archiveTiddler>>  $index=<<item>> />
+ <$action-setfield $tiddler=<<priorityTiddler>> $index=<<item>> />
+</$list>
+</$button>
+</$vars>
+\end	 

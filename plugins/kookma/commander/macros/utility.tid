@@ -1,0 +1,50 @@
+created: 20190315092752816
+modified: 20200325055356631
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/macros/utility
+type: text/vnd.tiddlywiki
+
+\define display(label,text)
+<$set name="stateTid" value="$:/temp/commander/display/popup/$label$" >
+<$button popup=<<stateTid>> class="tc-btn-invisible"><span style="text-decoration: underline">$label$</span></$button>
+<$reveal type="nomatch" text="" default="" state=<<stateTid>> animate="yes">
+<span style="color:blue;"><$text text=<<__text__>> /></span></$reveal>
+</$set>
+\end
+
+\define is-filterSeearch-newer-than-selectedTitles(TidA, TidB)
+<$set name="tidAMod" value={{{ [[$TidA$]get[modified]] }}}>
+<$set name="tidBMod" value={{{ [[$TidB$]get[modified]] }}}>
+<$set name="tidAText" value={{{ [[$TidA$]get[text]] }}}>
+<$set name="tidBText" value={{{ [[$TidB$]get[text]] }}}>
+<$list filter="[<__TidB__>get[text]minlength[1]]" variable=ignore>
+<$reveal type="nomatch" default=<<tidAText>> text=<<tidBText>>>
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]removesuffix<tidBMod>]">
+A new filter search has been detected, click on the search button to apply it.
+</$list>
+</$reveal>
+</$list>
+</$set>
+</$set>
+</$set>
+</$set>
+\end
+
+!!Remarks
+;is-filterSeearch-newer-than-selectedTitles
+* Checks `TidA` and `TidB` for modified date and text
+* If They are not empty, then
+** checks if the text of two are equal, if not
+** checks to see if `TidB` is newer or not
+** if newer shows a message, to apply the new search filter
+* Note
+** `TidA="$:/temp/commander"`
+** `TidB="$:/temp/commander/search-box"`
+* is-filterSeearch-newer-than-selectedTitles is called from $:/plugins/kookma/commander/search/ui
+
+;display
+* gets a label and a text
+* create an inline label
+* on click label, the text is displayed as temporary popup
+* losing focus, the text goes hidden
+* this macro is used in customized compSelective to show the active filter

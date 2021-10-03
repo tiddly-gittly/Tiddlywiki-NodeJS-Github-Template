@@ -1,0 +1,16 @@
+author: Jeremy Ruston
+created: 20200210134515855
+description: creates a unique id for permanent state tiddler
+modified: 20200210134635362
+tags: $:/tags/Macro
+title: $:/plugins/kookma/utility/macro/unique-id
+type: text/vnd.tiddlywiki
+
+\define create_id_from_timedata(prefix) $prefix$-<<now [UTC]YYYY0MM0DD0hh0mm0ssXXX>>
+
+\define unique-id(prefix:id)
+<$wikify name=id text=<<create_id_from_timedata """$prefix$""">>  >
+<$button tooltip="create unique id" class="tc-btn-invisible" message="tm-copy-to-clipboard" param=<<id>> >{{$:/core/images/copy-clipboard}} 
+</$button> <$text text=<<id>>/>
+</$wikify>
+\end

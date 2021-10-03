@@ -1,0 +1,19 @@
+created: 20190215195221625
+modified: 20200325055328801
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/tiddler/macros/delete
+type: text/vnd.tiddlywiki
+
+\define log-delete-selectively(item, msg:"Tiddler deleted")
+<$action-setfield $tiddler={{$:/state/commander/log-tiddler}} $index=<<__item__>> $value="$msg$" />
+\end
+
+\define delete-tiddlers-selective-bulk()
+<$list filter="[subfilter<searchfilter>limit[1]]" variable="ignore"><!-- at least searchfilter shall return one tiddler-->
+<<create-log-tiddler "delete-tiddler-selectively">>
+<$list filter="[subfilter<searchfilter>]" variable="Item">
+<$action-deletetiddler $tiddler=<<Item>> />
+<$macrocall $name="log-delete-selectively" item=<<Item>> />
+</$list>
+</$list>
+\end

@@ -1,0 +1,7 @@
+created: 20191224190957179
+modified: 20210423152034594
+tags: 
+title: $:/plugins/kookma/favorites/manager
+type: text/vnd.tiddlywiki
+
+<<tabs tabsList:"[all[tiddlers+shadows]tag[$:/favorites/Manager]!has[draft.of]!sort[caption]]" default:"$:/plugins/kookma/favorites/manager/search">>

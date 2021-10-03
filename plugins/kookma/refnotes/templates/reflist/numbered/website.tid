@@ -1,0 +1,16 @@
+created: 20210407034338287
+list: website
+modified: 20210917161906093
+tags: 
+title: $:/plugins/kookma/refnotes/templates/reflist/numbered/website
+type: text/vnd.tiddlywiki
+
+<$wikify name=bibtexEntryTiddler text=<<reference>> >
+<$set name="curtid" tiddler=<<bibtexEntryTiddler>> field="title" emptyValue="RefNotFound">
+<$reveal type="nomatch" default="RefNotFound" text=<<curtid>> >
+<li><span style="text-transform: capitalize;"><$view field="bibtex-title" tiddler=<<curtid>>/></span>, <a href={{{[<curtid>get[bibtex-url]]}}} target="_blank"><$text text={{{ [<curtid>get[bibtex-url]] }}}/></a>, <$view field="bibtex-year" tiddler=<<curtid>>/>.</li>
+</$reveal>
+<$reveal type="match" default="RefNotFound" text=<<curtid>> >
+<li>Reference <b>$p$</b> NOT FOUND. Check your input.</li>
+</$reveal>
+</$set></$wikify>

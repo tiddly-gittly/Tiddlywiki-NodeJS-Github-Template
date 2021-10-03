@@ -1,0 +1,11 @@
+.bibtex-dropzone{
+	min-height:30px;
+	max-width:100%;
+	margin:4px auto;
+	border:2px dotted green;
+	text-align:center;
+}
+
+.bibtex-dropzone:focus {
+	background: #fffedd;
+}

@@ -1,0 +1,12 @@
+{
+    "title": "$:/plugins/kookma/utility",
+    "name": "Utility",
+    "description": "Small tools for authors and developers",
+    "author": "Mohammad Rahmani",
+    "version": "2.1.6",
+    "core-version": ">=5.1.24",
+    "source": "https://github.com/kookma/TW-Utility",
+    "list": "readme license history",
+    "plugin-type": "plugin",
+    "dependents": ""
+}

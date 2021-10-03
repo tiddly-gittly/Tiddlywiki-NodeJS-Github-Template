@@ -1,0 +1,50 @@
+created: 20190718070116654
+modified: 20210422161832831
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/draggable-list
+type: text/vnd.tiddlywiki
+
+\define draggable-list(targetTiddler)
+\whitespace trim
+<$vars targetTiddler=<<__targetTiddler__>> >
+<span class="kk-todolist-draggable-list">
+<$list filter="[list<targetTiddler>]" variable="item">
+<$droppable actions=<<droppable-actions>>>
+    <div class="tc-droppable-placeholder kk-todolist-placeholder"></div> 
+    <$draggable tiddler=<<item>> >
+    <$transclude tiddler="$:/plugins/kookma/todolist/template/undone-task" field="text"/>
+    </$draggable>
+</$droppable>
+</$list>
+<<disp-empty-placeholder>>
+</span>
+</$vars>
+\end
+
+\define droppable-actions()
+<!-- the $list checks to prvents drag items not listed in this Todolist -->
+<$list filter="[<targetTiddler>contains<actionTiddler>]" variable=ignore>
+<$action-listops $tiddler=<<targetTiddler>> $field="list" $subfilter="+[insertbefore:item<actionTiddler>]"/>
+</$list>
+\end
+
+\define xxdisp-empty-placeholder()
+<$tiddler tiddler=""><!-- an empty place holder-->
+<$droppable actions=<<droppable-actions>> tag="div">
+<div style="height:0.5em;"/>
+<div class="tc-droppable-placeholder kk-todolist-placeholder">&nbsp;</div>
+</$droppable>
+</$tiddler>
+\end
+
+
+\define disp-empty-placeholder()
+<$tiddler tiddler="">
+<$droppable actions=<<droppable-actions>> tag="div" enable=<<tv-enable-drag-and-drop>>>
+<div class="tc-droppable-placeholder kk-todolist-placeholder">
+&nbsp;
+</div>
+<div style="height:0.5em;"/>
+</$droppable>
+</$tiddler>
+\end

@@ -1,0 +1,7 @@
+/*Borderless table*/
+.refnotes-table-borderless, 
+.refnotes-table-borderless th, 
+.refnotes-table-borderless tr, 
+.refnotes-table-borderless td{
+  border:0;
+}

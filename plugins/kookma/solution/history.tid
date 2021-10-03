@@ -1,0 +1,10 @@
+created: 20200317173938372
+modified: 20200317192434399
+tags: 
+title: $:/plugins/kookma/solution/history
+type: text/vnd.tiddlywiki
+
+Full change log  https://kookma.github.io/TW-Solution/#ChangeLog
+
+* ''1.1.0'' -- 2020.03.17 -- fixed issues on empty responder field
+* ''1.0.0'' -- 2018.10.06 -- initial public release

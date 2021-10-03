@@ -1,0 +1,33 @@
+created: 20190322161929431
+description: Slider macro shows (hides) its content.
+modified: 20210808052511326
+tags: $:/tags/Macro
+title: $:/plugins/kookma/shiraz/macros/slider
+type: text/vnd.tiddlywiki
+
+\define slider(label, src, labelClass, srcClass, status:"closed")
+<$vars revealState = """$:/state/shiraz/slider-macro/$(currentTiddler)$/$label$"""
+       source      = {{{ [<__src__>get[text]else<__src__>] }}} >
+
+
+<h2 class="$labelClass$">
+  <$reveal type="nomatch" state=<<revealState>> text="open" default="$status$">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="open">
+     <span class="kk-sh-slider"><$transclude tiddler="$:/core/images/right-arrow" /></span>
+    </$button>
+  </$reveal>
+  <$reveal type="match" state=<<revealState>> text="open" default="$status$">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="closed">
+      <span class="kk-sh-slider"><$transclude tiddler="$:/core/images/down-arrow" /></span>
+    </$button>
+  </$reveal>
+  $label$
+</h2>
+
+<$reveal type="match" state=<<revealState>> text="open" default="$status$" class="$srcClass$" tag=div>
+
+<<source>>
+</$reveal>
+
+</$vars>
+\end

@@ -1,0 +1,37 @@
+caption: Export tiddlers
+created: 20200112093148417
+list-after: $:/plugins/kookma/commander/tiddler/uicomp/delete-tiddlers
+modified: 20200325055328851
+tags: $:/tags/Commander/TiddlerOps
+title: $:/plugins/kookma/commander/tiddler/uicomp/export-tiddlers
+type: text/vnd.tiddlywiki
+
+\define export-tiddler-ui(baseFilename)
+<$set name="exportList" filter=<<searchfilter>> ><!-- without this $SetWidget the exportButton does not work -->
+<$vars tv-config-toolbar-text="yes" tv-config-toolbar-class="tc-button tt-button">
+<$macrocall $name="commander-exportButton" exportFilter=<<exportList>> lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename="""$baseFilename$"""/>
+</$vars>
+</$set>
+\end
+
+\define exportFileName-and-Tags-ui() 
+<label class="kk-cmd-label2">Export filename</label><$edit-text tiddler="$:/temp/commander/exportFilename" tag=input default="tiddlers" placeholder="tiddlers" class="cmd-txt-area"/>
+<br>
+
+<label class="kk-cmd-label2">Export tags</label><$edit-text tiddler="$:/temp/commander/exportTag" tag=input default="exported" placeholder="exported" class="cmd-txt-area"/><br>
+\end
+
+<$set name=numTids value={{{[subfilter<searchfilter>!is[missing]count[]] }}}>
+<$reveal type="match" text="0" default=<<numTids>> >
+No tiddlers is selected for export!
+</$reveal>
+
+<$reveal type="gt" text="0" default=<<numTids>> >
+
+Number of tiddlers selected for export: <<numTids>><br>
+
+<<exportFileName-and-Tags-ui>>
+<$macrocall $name="export-tiddler-ui" baseFilename={{{[[$:/temp/commander/exportFilename]get[text]]~[[tiddlers]]}}} />
+</$reveal>
+</$set>
+

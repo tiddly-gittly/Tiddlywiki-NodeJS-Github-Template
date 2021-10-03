@@ -1,0 +1,15 @@
+created: 20210430092742281
+modified: 20210430103250277
+tags: 
+title: $:/plugins/kookma/hsl/ui/ControlPanel/setting-show-all-linenumbers
+type: text/vnd.tiddlywiki
+
+\define chkactions() <$action-listops $tiddler="$:/plugins/kookma/hsl/styles/linenumbers.css"  $tags="+$:/tags/Stylesheet"/>
+
+
+<$vars status={{{[[$:/plugins/kookma/hsl/configs]getindex[gutter-status]match[hide]then[yes]else[no]]}}}>
+
+; Line numbers
+:<$checkbox disabled=<<status>> tiddler="$:/plugins/kookma/hsl/styles/show-all-line-numbers.css" tag="$:/tags/Stylesheet" checkactions=<<chkactions>>> Show line numbers for all lines
+</$checkbox>
+</$vars>

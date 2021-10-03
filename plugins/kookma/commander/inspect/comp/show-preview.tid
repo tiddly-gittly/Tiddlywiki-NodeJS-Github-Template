@@ -1,0 +1,33 @@
+created: 20190308070953891
+modified: 20200325055328553
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/inspect/comp/show-preview
+type: text/vnd.tiddlywiki
+
+\define compInspect-show-preview(tiddler, commonFields:"")
+<$vars mainFields="title tags text">
+<table class="cmd-ci-table">
+<tr><td class="leftcol">title</td>
+<td class="rightcol"><$link to=<<__tiddler__>> ><$text text=<<__tiddler__>> /></$link></td>
+</tr>
+
+<tr><td class="leftcol">tags</td>
+<td style="padding:3px;"><$macrocall $name=showTags tiddler=<<__tiddler__>> /></td>
+</tr>
+<tr><td class="leftcol">text</td>
+<td><$transclude tiddler=<<__tiddler__>> field="text" mode="block"/></td>
+</tr>
+<$list filter="[<__tiddler__>fields[]] -[enlist<mainFields>] -[enlist<__commonFields__>]" variable="otherFld">
+<tr><td class="leftcol"><<otherFld>></td>
+<td class="rightcol"><$transclude tiddler=<<__tiddler__>> field=<<otherFld>> mode="inline"/></td>
+</tr>
+</$list>
+</table>
+</$vars>
+\end
+
+\define showTags(tiddler)
+<$list filter="[<__tiddler__>tags[]]" variable=tagItem >
+<$macrocall $name=tag tag=<<tagItem>> />
+</$list>
+\end

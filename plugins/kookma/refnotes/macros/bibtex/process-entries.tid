@@ -1,0 +1,31 @@
+created: 20210405065852415
+modified: 20210917161905883
+tags: $:/tags/Macro
+title: $:/plugins/kookma/refnotes/macros/bibtex/process-entries
+type: text/vnd.tiddlywiki
+
+\define title-tolowercase()
+<$vars curTitle=<<currentTiddler>> newTitle={{{[<currentTiddler>lowercase[]]}}}>
+<$list filter="[<curTitle>!match<newTitle>]" variable=null>
+<$action-sendmessage $message="tm-rename-tiddler" from=<<currentTiddler>> to=<<newTitle>> />
+</$list>
+</$vars>
+\end
+
+\define tag-entries()
+<!-- change entry type to lower case -->
+<$action-setfield $tiddler=<<currentTiddler>> bibtex-entry-type={{{[<currentTiddler>get[bibtex-entry-type]lowercase[]]}}} />
+<!-- add bibtex-entry -->
+<$fieldmangler>
+<$action-sendmessage $message="tm-add-tag" $param="bibtex-entry" />
+</$fieldmangler>
+\end
+
+\define process-entries(title:"Process New Bibtex Entries")
+<$button> $title$
+<$list filter="[has[bibtex-title]]">
+<<tag-entries>>
+<<title-tolowercase>>
+</$list>
+</$button>
+\end

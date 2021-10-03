@@ -1,0 +1,18 @@
+created: 20190722034557852
+modified: 20210422161832879
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/toggle-timestamp
+type: text/vnd.tiddlywiki
+
+\define todolist-toggle-timestamp()
+<$reveal type="nomatch" stateTitle=<<stateTiddler>> stateIndex="timestamp" text="show">
+<$button class="tc-btn-invisible" setTitle=<<stateTiddler>> setIndex="timestamp" setTo="show" tooltip="Show timestamp">
+{{$:/core/images/timestamp-on}}
+</$button>
+</$reveal>
+<$reveal type="match" stateTitle=<<stateTiddler>> stateIndex="timestamp"  text="show">
+<$button class="tc-btn-invisible" setTitle=<<stateTiddler>> setIndex="timestamp" setTo="hide" tooltip="Hide timestamp">
+{{$:/core/images/timestamp-off}}
+</$button>
+</$reveal>
+\end

@@ -1,0 +1,14 @@
+created: 20181022071907838
+modified: 20210917161905845
+tags: $:/tags/Macro
+title: $:/plugins/kookma/refnotes/macros/abbr
+type: text/vnd.tiddlywiki
+
+\define abbr(term:"", dict:"Glossary")
+<$set name="abbreviation" 
+ tiddler=<<__dict__>>
+ index=<<__term__>>
+ emptyValue="Term not found">
+ <span class=refnotes-abbr><abbr title=<<abbreviation>> ><$text text=<<__term__>> /></abbr></span>
+</$set>
+\end

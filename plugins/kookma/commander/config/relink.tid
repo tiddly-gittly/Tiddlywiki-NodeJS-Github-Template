@@ -1,0 +1,12 @@
+created: 20190911153159143
+modified: 20200324070652362
+tags: 
+title: $:/plugins/kookma/commander/config/relink
+type: text/vnd.tiddlywiki
+
+\define relink-plugin-notExisted() Update title in //tags// and //list// fields of other tiddlers
+<$checkbox tiddler="$:/config/RelinkOnRename" field="text" checked="yes" unchecked="no" default="no">
+<$list filter="[[$:/plugins/flibbles/relink]] +[has[title]]" emptyMessage=<<relink-plugin-notExisted>> >
+Use //Relink// to update title across all other tiddlers
+</$list>
+</$checkbox>

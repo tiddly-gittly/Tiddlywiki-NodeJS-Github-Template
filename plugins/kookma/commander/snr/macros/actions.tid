@@ -1,0 +1,120 @@
+created: 20190307164924193
+modified: 20200325055328711
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/snr/macros/actions
+type: text/vnd.tiddlywiki
+
+\define regexp-flags()
+{{$:/state/commander/snr/gm}}{{$:/state/commander/snr/case-sensitive}}{{$:/state/commander/snr/unicode}}
+\end
+
+\define snr-ui-show-diffs()
+<form class="cmd-snr-form" style="width:100%;">
+  <fieldset>
+   <legend style="color:#FF0000;">Differences</legend>
+Tiddler: <$link to={{$:/state/commander/snr/select-tiddler}}><$text text={{$:/state/commander/snr/select-tiddler}}/></$link>
+
+<$wikify name=flags text=<<regexp-flags>> >
+
+<$macrocall $name="replace-text-diff" 
+ tiddler={{$:/state/commander/snr/select-tiddler}} 
+ field={{$:/state/commander/snr/select-tiddler/field}} 
+ replace={{$:/state/commander/snr/replace-text}} 
+ replaceWith={{$:/state/commander/snr/replace-text-with}} 
+ flags=<<flags>> 
+ wholeWords={{$:/state/commander/snr/whole-words}}
+/>
+
+</$wikify>
+</fieldset>
+</form>
+\end
+
+\define snr-check-diffs(tiddler:"", field:"")
+\whitespace trim
+<$wikify name=flags text=<<regexp-flags>> >
+<$wikify name="result" text="""
+<$macrocall $name="replace-text" 
+ tiddler=<<__tiddler__>>
+ field=<<__field__>>
+ replace={{$:/state/commander/snr/replace-text}} 
+ replaceWith={{$:/state/commander/snr/replace-text-with}} 
+ flags=<<flags>> 
+ wholeWords={{$:/state/commander/snr/whole-words}}
+/>""">
+<$reveal type="match" text={{{ [<__tiddler__>get<__field__>] }}} default=<<result>> >
+same
+</$reveal>
+<$reveal type="nomatch" text={{{ [<__tiddler__>get<__field__>] }}} default=<<result>> >
+different
+</$reveal>
+</$wikify>
+</$wikify>
+\end
+
+\define search-replace-in-tiddler-field(tiddler:"",field:"",replace:"",replaceWith:"")
+<$wikify name=ss text=<<snr-check-diffs """$tiddler$""" """$field$""">> >
+<$list filter="[<ss>] -same" variable=ignore>
+<$list filter="[<__tiddler__>has[title]]" variable="ignore">
+<$wikify name=flags text=<<regexp-flags>> >
+<$macrocall $name="replace-text-button" 
+ tiddler=<<__tiddler__>> 
+ field=<<__field__>>
+ replace=<<__replace__>>
+ replaceWith=<<__replaceWith__>> 
+ flags=<<flags>> 
+ wholeWords={{$:/state/commander/snr/whole-words}}
+/>
+<$macrocall $name="log-add-single-operation" msg="""`$field$` field has been changed""" tidItem=<<__tiddler__>> />
+<$macrocall $name="clear-select-tiddler-if-field-is-title" tiddler=<<__tiddler__>>  field=<<__field__>> />
+</$wikify>
+</$list>
+</$list>
+</$wikify>
+\end
+
+\define clear-select-tiddler-if-field-is-title(tiddler, field)
+<$list filter="[<__field__>] +[search[title]]" variable="ignore">
+<$action-setfield $tiddler="$:/state/commander/snr/select-tiddler" text=""/>
+<$action-setfield $tiddler="$:/temp/commander/selected-titles" $index=<<__tiddler__>> />
+</$list>
+\end
+
+\define search-replace-in-field-bulk()
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore><!--check if filter is empty -->
+<<create-log-tiddler "SNR operation">>
+<$list filter="[subfilter<searchfilter>!is[missing]]" >
+  <$macrocall 
+    $name="search-replace-in-tiddler-field"
+    tiddler=<<currentTiddler>> 
+    field={{$:/state/commander/snr/select-tiddler/field}} 
+    replace={{$:/state/commander/snr/replace-text}} 
+    replaceWith={{$:/state/commander/snr/replace-text-with}}   
+  />
+</$list>
+</$list>
+\end
+
+\define search-replace-in-field-single-tiddler()
+<<create-log-tiddler "SNR operation">>
+  <$macrocall 
+    $name="search-replace-in-tiddler-field"
+    tiddler={{$:/state/commander/snr/select-tiddler}}
+    field={{$:/state/commander/snr/select-tiddler/field}} 
+    replace={{$:/state/commander/snr/replace-text}} 
+    replaceWith={{$:/state/commander/snr/replace-text-with}}   
+  />
+\end
+
+\define snr-actions()
+<$button actions=<<search-replace-in-field-single-tiddler>> tooltip="search and replace in a single tiddler" class="cmd-btn">
+Replace?
+</$button>&nbsp;
+<!-- replace in bulk tiddler with confirmation -->
+<$macrocall $name="compConfirmAction"
+countFilter=<<searchfilter>>
+actionMacro="search-replace-in-field-bulk"
+stateTiddler="$:/state/commander/SelectiveReplaceAllDropdown"
+confirmMessage="Are you sure you wish to replace text in" 
+btnLabel="Replace all?"/>
+\end

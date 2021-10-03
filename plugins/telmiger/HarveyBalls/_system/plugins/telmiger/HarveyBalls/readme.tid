@@ -1,0 +1,92 @@
+created: 20171001103302730
+creator: Thomas Elmiger
+modified: 20190426122338661
+modifier: Thomas Elmiger
+tags: 
+title: $:/plugins/telmiger/HarveyBalls/readme
+type: text/vnd.tiddlywiki
+
+\define tr(variant,nr:"")
+<$vars tit="$:/language/HarveyBalls/$variant$/title" desc="$:/language/HarveyBalls/$variant$/desc" nr="""$nr$""">
+<tr><td>{{$:/plugins/telmiger/HarveyBalls/$variant$/icon.svg}} </td><td><<nr>></td><td><$link to=<<tit>>><$transclude tiddler=<<tit>>/></$link> </td><td><$link to=<<desc>>><$transclude tiddler=<<desc>>/></$link></td></tr>
+</$vars>
+\end
+
+!! Harvey Balls
+
+Harvey Balls are round ideograms used for visual communication of qualitative information. They are commonly used in comparison tables to indicate the degree to which a particular item meets a particular criterion.
+
+!!! Macros for display
+The same as `{{$:/plugins/telmiger/HarveyBalls/half/icon.svg}}` – the Harvey ball <<HB2>> – would be displayed for all three of the following macros:
+
+`<<HarveyBall half>>`
+`<<HB2>>`
+`<<HB 2>>`
+
+Titles or numbers of the following tables can be used.
+
+!!! Available ideograms
+
+//1) more colour is better//
+
+<table>
+<tr><th>icon </th><th># </th><th>title </th><th>desc </th></tr>
+<<tr empty 0>>
+<<tr quarter 1>>
+<<tr half 2>>
+<<tr quarter-empty 3>>
+<<tr full 4>>
+</table>
+
+//2) less colour is better//
+
+<table>
+<tr><th>icon </th><th># </th><th>title </th><th>desc </th></tr>
+<<tr chaotic 34>>
+<<tr complex 21>>
+<<tr complicated 13>>
+<<tr obvious 8>>
+<<tr simple 5>>
+</table>
+
+!!! Adapt or translate for better accessibility
+To convey another meaning with your Harvey Balls, it is possible to adapt or translate titles and descriptions. So it is possible to use them e.g. for a performance ratings or a score like:
+
+* poor
+* fair
+* good
+* very good
+* excellent
+
+Just click the text in the table above and adapt the content to your needs. The warning is just a reminder that you are overwriting the standard text. You can always delete your own version to return to the original.
+
+!!! Control dimensions via font size
+
+Inside surrounding text, the Harvey balls adapt themselves in size. Examples:
+
+! Title H1 {{$:/plugins/telmiger/HarveyBalls/empty/icon.svg}}
+
+!! Title H2 {{$:/plugins/telmiger/HarveyBalls/full/icon.svg}} more text
+
+!!! Title H3 {{$:/plugins/telmiger/HarveyBalls/quarter/icon.svg}} more text
+
+!!!! Title H4 {{$:/plugins/telmiger/HarveyBalls/half/icon.svg}} more text
+
+Normal text paragraph {{$:/plugins/telmiger/HarveyBalls/quarter-empty/icon.svg}} more text or apply [[styling via Wikitext|http://tiddlywiki.com/#Styles%20and%20Classes%20in%20WikiText]]: 
+
+@@font-size:2em; 
+You will need some text {{$:/plugins/telmiger/HarveyBalls/full/icon.svg}} to make this big.
+@@
+
+!!! Adjust colours via CSS
+The styling of the balls can be changed 
+
+# by adapting the style sheet $:/plugins/telmiger/HarveyBalls/icons.css
+# by adapting surrounding text color in case of the //less colour is better// version (it uses fill="currentColor")
+
+
+<style>
+th {
+   text-align: left;
+}
+</style>

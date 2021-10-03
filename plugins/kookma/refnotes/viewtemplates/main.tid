@@ -1,0 +1,16 @@
+created: 20181220142502642
+modified: 20210917161906181
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/refnotes/viewtemplates/main
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]has[bibtex-title]]">
+<$vars currentType={{{[<currentTiddler>get[bibtex-entry-type]lowercase[]] ~[[miscellaneous]]}}} >
+<$set name="bodyLookup" 
+      filter="[all[tiddlers+shadows]tag[$:/tags/Refnotes/Template]contains:list<currentType>] +[limit[1]get[title]]"
+			value=<<bodyLookup>> 
+      emptyValue="$:/plugins/kookma/refnotes/viewtemplates/default">
+<$transclude tiddler=<<bodyLookup>> field="text" mode="inline"/>
+</$set>
+</$vars>
+</$list>

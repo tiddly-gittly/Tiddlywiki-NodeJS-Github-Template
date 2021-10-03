@@ -1,0 +1,37 @@
+caption: documentation
+created: 20190213200338381
+modified: 20200324070652969
+tags: $:/tags/Commander/Template
+title: $:/plugins/kookma/commander/template/doc
+type: text/vnd.tiddlywiki
+version: beta
+
+!! Introduction
+<<<
+short introduction
+<<<
+
+!! Content and parameters
+<<<
+The content, attributes and parameters
+
+|!Parameter |!Description |
+|par1 |description |
+|par2 |description |
+<<<
+
+!! Example i
+<<<
+example here
+<<<
+
+!! Example ii
+<<<
+another example here
+<<<
+
+!! References
+<<<
+# one
+# Two
+<<<

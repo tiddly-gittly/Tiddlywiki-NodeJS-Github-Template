@@ -1,0 +1,22 @@
+created: 20190122231405826
+creator: Thomas Elmiger
+modified: 20200605060258415
+modifier: Thomas Elmiger
+tags: $:/tags/Stylesheet
+title: $:/plugins/telmiger/PluginSize/styles.css
+type: text/vnd.tiddlywiki
+
+.tiddler-size-indicator {
+   width: 100%;
+   background-color: rgba(125,125,125,0.3);
+   padding: 0.25rem;
+   margin-bottom: 1rem;
+}
+
+.te-info-panel .tc-plugin-info {
+   margin-bottom: 0;
+}
+
+.te-info-panel .tc-plugin-info-dropdown {
+   margin-top: -1px;
+}

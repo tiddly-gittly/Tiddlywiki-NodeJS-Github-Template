@@ -1,0 +1,20 @@
+created: 20210411092205967
+list: inproceedings
+modified: 20210918173627363
+tags: $:/tags/Refnotes/ReflistTemplate
+title: $:/plugins/kookma/refnotes/templates/reflist/inproceedings
+type: text/vnd.tiddlywiki
+
+<$wikify name=bibtexEntryTiddler text=<<reference>> >
+<$set name=currentTiddler tiddler=<<bibtexEntryTiddler>> field=title emptyValue="RefNotFound">
+<$reveal type="nomatch" default="RefNotFound" text=<<currentTiddler>> >
+<li><<show-authors-in-references>>. (<$view field="bibtex-year"/>). <$text  text={{{ [{!!bibtex-title}lowercase[]sentencecase[]] }}} />. In <span style="font-style:italic"><$view field="bibtex-booktitle"/></span>. pp. <$view field="bibtex-pages"/>. <a href={{{[<currentTiddler>get[bibtex-doi]]}}}><$view field="bibtex-doi"/></a></li>
+</$reveal>
+<$reveal type="match" default="RefNotFound" text=<<currentTiddler>> >
+<li>Reference <b><$text text=<<reference>>/></b> NOT FOUND. Check your input.</li>
+</$reveal>
+</$set></$wikify>
+
+<!-- APA 7
+Author, A. A. (Date). Title of paper. In A. Editor & B. Editor (Eds.), Title of proceedings (page numbers). Publisher. DOI OR URL if relevant.
+-->

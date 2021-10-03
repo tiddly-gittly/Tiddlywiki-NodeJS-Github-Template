@@ -1,0 +1,36 @@
+caption: Export
+created: 20191226173845382
+modified: 20210423152034603
+tags: $:/favorites/Manager
+title: $:/plugins/kookma/favorites/manager/export
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/favorites/macros/definition
+\define lingo-base() $:/language/Search/
+
+Export and delete favorites
+
+<$vars selection={{{ [<selectionTid>get[text]] }}} >
+
+<div class="tc-search tc-advanced-search fv-form">
+<$select tiddler=<<selectionTid>> class="sltext" field="text" default="message">
+<option value="message" disabled selected>Select a folder</option>
+<$list filter=<<folders>> >
+<option value=<<currentTiddler>>><$transclude field=caption/></option>
+</$list>
+<$list filter="[subfilter<folders>count[]!match[0]]">
+<option disabled>&#9472;&#9472;&#9472;&#9472;&#9472;</option>
+<option value="$:/favorites/favlist" style="font-weight:500;">all favorites</option>
+</$list>
+</$select>
+<$list filter="[all[shadows+tiddlers]prefix[$:/plugins/kookma/favorites/manager/exptab]!has[draft.of]]"><$transclude/></$list>
+</div>
+
+<$set name="resultCount" value="""<$count filter="[list<selection>]"/>""">
+<div class="tc-search-results">
+<<lingo Filter/Matches>>
+<$list filter="[list<selection>]" template="$:/core/ui/ListItemTemplate"/>
+</div>
+</$set>
+
+</$vars>

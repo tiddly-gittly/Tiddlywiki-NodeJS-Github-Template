@@ -1,0 +1,29 @@
+caption: Add remove prefix
+created: 20190212141758567
+modified: 20200325055328903
+tags: $:/tags/Commander/TitleOps
+title: $:/plugins/kookma/commander/title/uicomp/add-remove-prefix
+type: text/vnd.tiddlywiki
+
+<$edit-text
+tiddler="$:/temp/commander/title-prefix"
+tag="input"
+default=""
+class="cmd-txt-area"
+placeholder=" prefix"
+/> <br>
+
+<$button class="cmd-btn cmd-btn-wd"> Add prefix
+<$macrocall 
+ $name="addPrefix-to-tiltle-bulk" 
+ prefix={{$:/temp/commander/title-prefix}} 
+/>
+</$button>
+
+<$button class="cmd-btn cmd-btn-wd"> Remove prefix
+<$macrocall 
+ $name="removePrefix-from-tiltle-bulk" 
+ prefix={{$:/temp/commander/title-prefix}} 
+/>
+</$button>
+

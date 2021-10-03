@@ -1,0 +1,68 @@
+created: 20191219070911471
+description: do not delete, part of example 103
+modified: 20210423152034558
+title: $:/plugins/kookma/favorites/macros/combo-search
+type: text/vnd.tiddlywiki
+
+\define standardSearch() [list<favlistTid>search<searchTerms>]
+\define filterSearch()   [list<favlistTid>]+[subfilter<searchTerms>]
+
+\define displayResult(filter)
+<!-- other folders -->
+<$list filter="[<recentlyAdded>]" variable=folder>
+<b><$view tiddler=<<folder>> field=caption/></b><br>
+<$list filter=<<__filter__>> variable=item >
+<$list filter="[<folder>search:list<item>]">
+<span style="margin-left:8px;"><$link to=<<item>>/></span><br>
+</$list>
+</$list>
+</$list>
+
+<!-- other folders -->
+<$list filter="[subfilter<folders>]-[<recentlyAdded>]" variable=folder>
+<b><$view tiddler=<<folder>> field=caption/></b><br>
+<$list filter=<<__filter__>> variable=item >
+<$list filter="[<folder>search:list<item>]">
+<span style="margin-left:8px;"><$link to=<<item>>/></span><br>
+</$list>
+</$list>
+</$list>
+\end
+
+
+\define combo-search(stateTiddler:"")
+<$vars pattern="^\["
+       stateTid={{{ [[$:/temp/combosearch/]addsuffix[$stateTiddler$]addsuffix<qualify>] }}}>	 
+<!--UI -->
+<div class="tc-search tc-advanced-search">
+<$edit-text tiddler=<<stateTid>> tag=input default="" placeholder="search by keyword or filter" class="sltext"/>			
+
+<!-- show results if any-->
+<$reveal state=<<stateTid>> type="nomatch" text=""><!--do not display when searchbox is empty-->
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler=<<stateTid>> $field="text" $value=""/>
+{{$:/core/images/close-button}}
+</$button>
+
+<$set name=searchTerms tiddler=<<stateTid>> field=text>
+
+<$list filter="[<searchTerms>trim[]minlength[3]limit[1]]" emptyMessage="Search text too short" variable=ignore>
+
+<!-- Check input search term -->
+<div class="tc-search-results">
+<$list filter="[<searchTerms>regexp<pattern>then[filterSearch]else[standardSearch]]" variable=searchMethod >
+<$reveal type=nomatch default="filterSearch" text=<<searchMethod>> >
+<$macrocall $name=displayResult filter=<<standardSearch>> />
+</$reveal>
+<$reveal type=match default="filterSearch" text=<<searchMethod>> >
+<$macrocall $name=displayResult filter=<<filterSearch>> />
+</$reveal>
+
+</$list>
+</div>
+</$list>
+</$set>
+</$reveal>
+</div>
+</$vars>
+\end

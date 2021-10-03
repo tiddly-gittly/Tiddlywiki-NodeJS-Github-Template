@@ -1,0 +1,26 @@
+caption: Add remove tags
+created: 20190212063924640
+modified: 20200325055328771
+tags: $:/tags/Commander/TagOps
+title: $:/plugins/kookma/commander/tag/uicomp/add-remove-tags
+type: text/vnd.tiddlywiki
+
+<label class="kk-cmd-label">New tag</label><$edit-text
+tiddler="$:/temp/commander/tag-add-remove/new"
+tag="input"
+default=""
+class="cmd-txt-area"
+placeholder=" new tag"/>
+<$button class="cmd-btn cmd-btn-wd"> Add new tag
+<$macrocall $name="add-new-tag-bulk" newTag={{$:/temp/commander/tag-add-remove/new}} />
+</$button>
+
+<label class="kk-cmd-label">Old tag</label><$select class="cmd-select-wd" tiddler="$:/temp/commander/tag-add-remove/old" default="" >
+<$list filter="[subfilter<searchfilter>!is[missing]tags[]sort[]]-[<workingTag>]" >
+<option><$view field="title"/></option>
+</$list>
+</$select>
+<$button class="cmd-btn cmd-btn-wd"> Remove old tag
+<$macrocall $name="remove-old-tag-bulk" oldTag={{$:/temp/commander/tag-add-remove/old}} />
+</$button>
+

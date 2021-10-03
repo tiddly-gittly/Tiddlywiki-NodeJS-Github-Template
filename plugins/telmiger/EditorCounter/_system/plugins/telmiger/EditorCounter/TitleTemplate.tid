@@ -1,0 +1,27 @@
+created: 20170213190419968
+creator: Thomas Elmiger
+list-before: $:/core/ui/EditTemplate/tags
+modified: 20200605055914365
+modifier: Thomas Elmiger
+tags: $:/tags/EditTemplate EditorCounter
+title: $:/plugins/telmiger/EditorCounter/TitleTemplate
+type: text/vnd.tiddlywiki
+
+<$reveal type="match" text="yes" state="$:/plugins/telmiger/EditorCounter/settings/title">
+<div class="te-title-counter" title="Title length">
+<$editor-counter tiddler=<<currentTiddler>> field="draft.title" colors='green:20,indianred:30,red:40'/> chars
+</div>
+<style>
+.te-title-counter { position:absolute; right:1rem; margin-top:-2.25rem; padding-right:0.125rem; opacity:0.6; }
+@media (min-width: 30em) {
+.te-title-counter { right:2rem; }
+}
+@media (min-width: 42em) {
+.te-title-counter { right:4rem; }
+}
+</style>
+</$reveal>
+
+<!--
+Show the number of characters in the title
+-->

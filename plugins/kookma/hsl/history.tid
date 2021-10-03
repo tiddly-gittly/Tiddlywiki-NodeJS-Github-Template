@@ -1,0 +1,14 @@
+created: 20210427144241683
+modified: 20210507183022462
+tags: 
+title: $:/plugins/kookma/hsl/history
+type: text/vnd.tiddlywiki
+
+Full change log  https://kookma.github.io/TW-hsl/#ChangeLog
+
+* ''1.0.1'' -- 2020.05.07 -- bugfix in the sidebar UI and typos in documentation
+* ''1.0.0'' -- 2020.05.06 -- bugfix in styles and sidebar UI
+* ''0.9.0'' -- 2020.05.01 -- documentation improved, minor bug fixed
+* ''0.8.0'' -- 2020.04.30 -- major improvement and shipping several color palettes
+* ''0.5.0'' -- 2021.04.27 -- first public release
+* ''0.1.0'' -- 2021.01.08 -- prototyping and first implementation

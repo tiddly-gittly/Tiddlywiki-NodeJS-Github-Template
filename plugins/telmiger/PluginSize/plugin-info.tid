@@ -1,0 +1,28 @@
+caption: {{$:/core/images/info-button}} Plugin Info
+created: 20190308213013859
+creator: Thomas Elmiger
+list-after: $:/core/ui/ControlPanel/Plugins
+modified: 20200605060258392
+modifier: Thomas Elmiger
+tags: $:/tags/ControlPanel
+title: $:/plugins/telmiger/PluginSize/plugin-info
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ControlPanel/Plugins/
+
+\define plugin-table(type)
+<$set name="plugin-type" value="""$type$""">
+<$set name="qualified-state" value=<<qualify "$:/state/plugin-info">>>
+<$list filter="[!has[draft.of]plugin-type[$type$]sort[description]]" emptyMessage=<<lingo "Empty/Hint">> >
+<div class="te-info-panel">
+{{||$:/core/ui/Components/plugin-info}}
+</div>
+{{||$:/plugins/telmiger/PluginSize/template}}
+</$list>
+</$set>
+</$set>
+\end
+
+<<lingo Installed/Hint>>
+
+<<tabs "[[$:/core/ui/ControlPanel/Plugins/Installed/Plugins]] [[$:/core/ui/ControlPanel/Plugins/Installed/Themes]] [[$:/core/ui/ControlPanel/Plugins/Installed/Languages]]" "$:/core/ui/ControlPanel/Plugins/Installed/Plugins">>

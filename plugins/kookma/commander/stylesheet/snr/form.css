@@ -1,0 +1,28 @@
+.cmd-snr-form{
+  width:100%;
+}
+
+.cmd-snr-textbox {
+  width:100%;
+  box-sizing: border-box;
+  max-width:40ch;
+  }
+
+.cmd-snr-form select, .cmd-snr-form input{
+  margin: 0.2rem;
+}
+.cmd-snr-form legend{
+  background: #f5f5f5;
+  padding: 3px 6px;
+}
+
+.cmd-snr-form { padding:20px; }
+.cmd-snr-form .item { padding: 2px; margin:2px; }
+.cmd-snr-form .item label { display:inline-block; width:100px; margin-left:5px; }
+.cmd-snr-form .item input { display:inline-block; }
+.cmd-snr-form .item select { display:inline-block; }
+
+/* only for relink checkbox on renaming tiddler */
+.cmd-snr-form .item-relink { padding: 2px; margin:2px; }
+
+     

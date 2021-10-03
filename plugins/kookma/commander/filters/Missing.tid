@@ -1,0 +1,7 @@
+created: 20190214140029091
+description: {{$:/language/Filters/Missing}}
+filter: [all[missing]sort[title]]
+modified: 20200324070652492
+tags: $:/tags/Commander/Filter
+title: $:/plugins/kookma/commander/filters/Missing
+type: text/vnd.tiddlywiki

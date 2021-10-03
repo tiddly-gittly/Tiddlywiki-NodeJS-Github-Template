@@ -1,0 +1,41 @@
+created: 20190212122742891
+modified: 20200325055328857
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/title/macros/prefix
+type: text/vnd.tiddlywiki
+
+\define log-changePrefix(message, oldTitle, newTitle)
+<$macrocall $name="log-add-single-operation" msg="""$message$. New title [[$newTitle$]]""" tidItem=<<__oldTitle__>> />
+\end
+
+\define addPrefix-to-tiltle-bulk(prefix:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore><!--check if filter is empty -->
+<$list filter="[<__prefix__>!is[blank]]" variable=null>
+<<create-log-tiddler "addPrefix-to-tiltle-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="""[<currentTiddler>addprefix[$prefix$]] -[<currentTiddler>]""" variable="newTitle">
+<$list filter="[<newTitle>]  -[has[title]]" variable="ignore">
+  <$action-sendmessage $message="tm-rename-tiddler" from=<<currentTiddler>> to=<<newTitle>> />
+  <$macrocall $name=log-changePrefix message="title prefix: `$prefix$` added" oldTitle=<<currentTiddler>> newTitle=<<newTitle>> />
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end
+
+\define removePrefix-from-tiltle-bulk(prefix:"")
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore><!--check if filter is empty -->
+<$list filter="[<__prefix__>!is[blank]]" variable=null>
+<<create-log-tiddler "removePrefix-from-tiltle-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="""[<currentTiddler>removeprefix[$prefix$]]   -[<currentTiddler>]""" variable="newTitle">
+<$list filter="[<newTitle>]  -[has[title]]" variable="ignore">
+  <$action-sendmessage $message="tm-rename-tiddler" from=<<currentTiddler>> to=<<newTitle>> />
+  <$macrocall $name=log-changePrefix message="title prefix: `$prefix$` removed" oldTitle=<<currentTiddler>> newTitle=<<newTitle>> />
+</$list>  
+</$list>
+</$list>
+</$list>
+</$list>
+\end

@@ -1,0 +1,32 @@
+caption: Log status
+created: 20190221152805807
+modified: 20200324070652656
+tags: 
+title: $:/plugins/kookma/commander/log/ui
+type: text/vnd.tiddlywiki
+
+<div class="commander-alert" style="padding:5px;font-size:0.90em;">
+<$button class="tc-btn-invisible tc-tiddlylink" actions=<<delete-all-log-tiddlers>>>Clear log</$button>
+<$set name="resultCount" value="""<$count filter="[tag[$:/tags/Commander/LogOps]]" />""">
+<div class="tc-search-results">
+<span class="kk-commander-log-note">Recent number of operations: <<resultCount>></span><br>
+<$list filter="[tag[$:/tags/Commander/LogOps]] +[!sort[created]]" variable="logTid">
+<b><$view tiddler=<<logTid>> field="created" format="date" template="YYYY-0MM-0DD 0hh:0mm:0ss"/>  
+<$view tiddler=<<logTid>> field="caption">
+   <$view tiddler=<<logTid>> field="title"></$view>
+</$view>
+</b>
+<ol><$list filter="[<logTid>indexes[]]" variable="item">
+<li><$link to=<<item>>><<item>></$link>
+<$set name="myItem" tiddler=<<logTid>> index=<<item>> >
+<$list filter="[<myItem>!search[existed]]" variable="ignore" 
+  emptyMessage="""<span style="color:red;"><<myItem>></span>""" >
+<span class="kk-commander-log-item"><<myItem>></span>
+</$list>
+</$set>
+</li>
+</$list></ol>
+</$list>
+</div>
+</$set>
+</div>

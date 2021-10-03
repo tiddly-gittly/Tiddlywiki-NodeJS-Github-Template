@@ -1,0 +1,16 @@
+created: 20210407034324705
+list: book
+modified: 20210918164607908
+tags: 
+title: $:/plugins/kookma/refnotes/templates/reflist/numbered/book
+type: text/vnd.tiddlywiki
+
+<$wikify name=bibtexEntryTiddler text=<<reference>> >
+<$set name=currentTiddler tiddler=<<bibtexEntryTiddler>> field=title emptyValue="RefNotFound">
+<$reveal type="nomatch" default="RefNotFound" text=<<currentTiddler>> >
+<li><<show-authors-in-references>>, <span style="text-transform: capitalize;font-style:italic;"><$view field="bibtex-title"/></span>, <$view field="bibtex-edition"/>, <$view field="bibtex-year"/>, <$view field="bibtex-address"/>, <$view field="bibtex-publisher"/>.</li>
+</$reveal>
+<$reveal type="match" default="RefNotFound" text=<<currentTiddler>> >
+<li>Reference <b>$p$</b> NOT FOUND. Check your input.</li>
+</$reveal>
+</$set></$wikify>

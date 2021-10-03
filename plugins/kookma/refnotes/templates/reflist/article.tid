@@ -1,0 +1,20 @@
+created: 20210406035737424
+list: article
+modified: 20210918154925145
+tags: $:/tags/Refnotes/ReflistTemplate
+title: $:/plugins/kookma/refnotes/templates/reflist/article
+type: text/vnd.tiddlywiki
+
+<$wikify name=bibtexEntryTiddler text=<<reference>> >
+<$set name=currentTiddler tiddler=<<bibtexEntryTiddler>> field=title emptyValue="RefNotFound">
+<$reveal type="nomatch" default="RefNotFound" text=<<currentTiddler>> >
+<li><<show-authors-in-references>>. (<$view field="bibtex-year"/>). <$text  text={{{ [{!!bibtex-title}lowercase[]sentencecase[]] }}} />. <span style="font-style:italic"><$view field="bibtex-journal"/></span>. <$view field="bibtex-volume"/>. <$view field="bibtex-pages"/>. <a href={{{[<currentTiddler>get[bibtex-doi]]}}}><$view field="bibtex-doi"/></a></li>
+</$reveal>
+<$reveal type="match" default="RefNotFound" text=<<currentTiddler>> >
+<li>Reference <b><$text text=<<reference>>/></b> NOT FOUND. Check your input.</li>
+</$reveal>
+</$set></$wikify>
+
+<!-- APA 7 
+Author. (Year). Title [Translated Title] [Type of Article] [Reviewed Item]|. Journal|, Volume|(Issue)|, Pages|, Article Article Number|.| `https://doi.org/`DOI (Reprint Edition) (Original Publication) (Errata)
+-->

@@ -1,0 +1,29 @@
+.sd-input textarea:focus, .sd-input input:focus { outline: none;}
+.sd-input textarea, .sd-input input { border:none; border-bottom: 1px dotted gray; margin-left:0px; width:75%;}
+
+.kk-custom-drop-down .tc-drop-down{min-width:60px;}
+
+.kk-favorites svg{
+    fill:#aaaaaa;
+}
+.kk-favorites button:hover svg {
+    fill: #000000; 
+}
+
+.kk-btn-mini svg { font-size: 0.7em; fill: #bbb; }
+
+/* in folding-editor*/
+.fv-folding-button button svg{
+	 font-size:0.8em;
+	 vertical-align: middle;
+}
+
+.fv-folding-button input[type="radio"] {
+  width: 0.8em; !important;
+  height: 0.8em; !important;
+  vertical-align: middle !important;
+}
+
+/* form elements */
+.fv-form label  { display:inline-block; width:130px; margin-left:5px; }
+.fv-form input, .fv-form select { display:inline-block; width:320px;}

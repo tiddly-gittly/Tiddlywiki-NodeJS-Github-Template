@@ -1,0 +1,36 @@
+created: 20190122222437252
+creator: Thomas Elmiger
+list-after: $:/core/ui/ViewTemplate/plugin
+modified: 20200605060258457
+modifier: Thomas Elmiger
+title: $:/plugins/telmiger/PluginSize/template
+type: text/vnd.tiddlywiki
+
+\define harveyBall(size)
+<$reveal type="lt" text="500001" default=$size$>
+<$reveal type="gt" text="100000" default=$size$>
+<<HB21>>
+</$reveal>
+<$reveal type="lt" text="100001" default=$size$>
+<$reveal type="gt" text="50000" default=$size$>
+<<HB13>>
+</$reveal>
+<$reveal type="lt" text="50001" default=$size$>
+<$reveal type="gt" text="25000" default=$size$>
+<<HB8>>
+</$reveal>
+<$reveal type="lt" text="25001" default=$size$>
+<<HB5>>
+</$reveal>
+</$reveal>
+</$reveal>
+</$reveal>
+<$reveal type="gt" text="500000" default=$size$>
+<<HB34>>
+</$reveal>
+\end
+<div class="tiddler-size-indicator">
+<$wikify name="size" text="""<$editor-counter tiddler=<<currentTiddler>> field="text" mode="character"/>""">
+<$macrocall $name="harveyBall" size=<<size>>/> – plugin size: <$macrocall $name="rpn" a=<<size>> b="1000" operation="/" decimals="1" locale="en-GB"/> k characters (<<size>>)
+</$wikify>
+</div>

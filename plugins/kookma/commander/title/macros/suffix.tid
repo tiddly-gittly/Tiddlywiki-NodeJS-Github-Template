@@ -1,0 +1,41 @@
+created: 20190212143639636
+modified: 20200325055328886
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/title/macros/suffix
+type: text/vnd.tiddlywiki
+
+\define log-changeSuffix(message, oldTitle, newTitle)
+<$macrocall $name="log-add-single-operation" msg="""$message$. New title [[$newTitle$]]""" tidItem=<<__oldTitle__>> />
+\end
+
+\define addSuffix-to-tiltle-bulk(suffix:"")
+<$list filter="[<__suffix__>!is[blank]]" variable=null>
+<$list filter="[subfilter<searchfilter>limit[1]]" variable=ignore><!--check if filter is empty -->
+<<create-log-tiddler "addSufffix-to-tiltle-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="""[<currentTiddler>addsuffix[$suffix$]] -[<currentTiddler>]""" variable="newTitle">
+<$list filter="[<newTitle>]  -[has[title]]" variable="ignore">
+  <$action-sendmessage $message="tm-rename-tiddler" from=<<currentTiddler>> to=<<newTitle>> />
+  <$macrocall $name=log-changeSuffix message="title suffix: `$suffix$` added" oldTitle=<<currentTiddler>> newTitle=<<newTitle>> />
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end
+
+\define removeSuffix-from-tiltle-bulk(suffix:"")
+<$list filter="[<__suffix__>!is[blank]]" variable=null>
+<$list filter="[subfilter<searchfilter>!is[missing]limit[1]]" variable=ignore><!--check if filter is empty -->
+<<create-log-tiddler "removeSuffix-from-tiltle-bulk">>
+<$list filter="[subfilter<searchfilter>]">
+<$list filter="""[<currentTiddler>removesuffix[$suffix$]] -[<currentTiddler>]""" variable="newTitle">
+<$list filter="[<newTitle>]  -[has[title]]" variable="ignore">
+  <$action-sendmessage $message="tm-rename-tiddler" from=<<currentTiddler>> to=<<newTitle>> />
+  <$macrocall $name=log-changeSuffix message="title suffix: `$suffix$` removed" oldTitle=<<currentTiddler>> newTitle=<<newTitle>> />
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end

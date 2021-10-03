@@ -1,0 +1,123 @@
+caption: Folders
+created: 20191226064442751
+modified: 20210423170253500
+tags: $:/favorites/Manager
+title: $:/plugins/kookma/favorites/manager/folders
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/favorites/macros/definition
+\define add() [[$(saveTitle)$]]
+\define newtitle() $(folderpath)$-{{{[tag<foldertagTid>count[]add[1]addprefix[0000]split[]last[3]join[]]}}}
+
+
+\define add-new-fav-folder-actions()
+<$list filter="[<tempNewTid>get[text]!is[blank]]" variable=null>
+<$vars 
+  folderName ={{{ [<tempNewTid>get[text]] }}} 
+	saveTitle={{{[<saveTid>get[text]]}}} >
+<$wikify name=ntitle text=<<newtitle>> >	
+<$action-createtiddler 
+  $basetitle=<<ntitle>>
+	$savetitle=<<saveTid>>
+	caption=<<folderName>>
+	tags=<<foldertagTid>> />
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]]" />
+<!-- clear edit-text temp tiddler-->
+<$action-setfield $tiddler=<<tempNewTid>> text=""/>
+</$wikify>
+</$vars>
+</$list>
+\end
+
+
+\define new-fav-folder()
+<$keyboard key=enter actions=<<add-new-fav-folder-actions>> >
+<$edit-text tag=input tiddler=<<tempNewTid>> default="" placeholder="enter a folder name"/>
+</$keyboard>
+<$button tooltip="create new folder" class="tc-btn-invisible" 
+actions=<<add-new-fav-folder-actions>> disabled= {{{ [<tempNewTid>get[text]!is[blank]then[no]else[yes]] }}}>
+{{$:/core/images/new-button}}
+</$button>
+\end
+
+\define folder-reorder(listTid)
+<$tiddler tiddler={{{ [<tempreorderTid>get[text]] }}} >
+<span style="display:inline-block;min-width:120px;font-weight:700;"><$view field=caption/></span>
+
+<$button class="tc-btn-invisible">down
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move<currentTiddler>]"/>
+</$button>
+&nbsp;
+<$button class="tc-btn-invisible">up
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move:-1<currentTiddler>]"/>
+</$button>
+&nbsp;
+<$button class="tc-btn-invisible">putfirst
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="[<currentTiddler>]+[putfirst[]]"/>
+</$button>
+&nbsp;
+<$button class="tc-btn-invisible">putlast
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[putlast[]]"/>
+</$button>
+&nbsp;
+<$button class="tc-btn-invisible">sort downwards
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[sort[caption]]"/>
+</$button>
+&nbsp;
+<$button class="tc-btn-invisible">sort upwards
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[!sort[caption]]"/>
+</$button>
+</$tiddler>
+\end
+
+
+
+\define remove-all-favs()
+<$button class="tc-btn-invisible tc-btn-mini"  popup=<<qualify $(temppopupTid)$>> >
+''Remove all favorite items''
+</$button>
+<$reveal state=<<qualify $(temppopupTid)$>> type="popup" position="belowleft" animate="yes">
+<div class="tc-block-dropdown-wrapper">
+<div class="tc-block-dropdown tc-edit-type-dropdown">
+<div class="tc-dropdown-item-plain">
+<$set name="resultCount" value="""<$count filter="[list<favlistTid>]"/>""">
+Remove all <<resultCount>> favorite item(s)?
+</$set>
+</div>
+<div class="tc-dropdown-item-plain">
+<$button class="tc-button tt-button"> delete
+<$list filter="[<favlistTid>] [subfilter<folders>]">
+<$action-setfield $tiddler=<<currentTiddler>> $field="list" $value=""/>
+</$list>  
+</$button>
+</div>
+</div>
+</div>
+</$reveal>
+\end
+
+
+<!-- Create the UI --->
+
+Create, rename, rearrange and delete folders
+
+
+!! Create
+<<<
+<div class="fv-form">
+<label>Add new folder:</label><<new-fav-folder>>
+</div>
+<<<
+
+!! Rearrange
+<<<
+Rearrange folder:&nbsp;<$macrocall $name="folder-reorder" listTid="$(foldertagTid)$" />
+<<<
+
+!! Structure
+<<<
+<$vars fv-config-buttons=yes>
+<$transclude tiddler="$:/plugins/kookma/favorites/macros/sidebar" field=text/>
+</$vars>
+<<remove-all-favs>>
+<<<

@@ -1,0 +1,9 @@
+.refnotes-details > summary{
+	padding-left:0;
+	padding-top:15px;
+	padding-bottom:15px;
+	width: 160px;
+	cursor: pointer;
+	font-weight:bold;
+}
+

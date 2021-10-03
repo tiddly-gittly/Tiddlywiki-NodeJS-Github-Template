@@ -1,0 +1,25 @@
+created: 20190716075847899
+modified: 20210422161832854
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/options
+type: text/vnd.tiddlywiki
+
+\define todolist-options-button()
+<$reveal type="nomatch" stateTitle=<<stateTiddler>> stateIndex="option" text="yes">
+<$button class="tc-btn-invisible" tooltip="Show options" setTitle=<<stateTiddler>> setIndex="option" setTo="yes">
+{{$:/core/images/options-button}}
+</$button>
+</$reveal>
+<$reveal type="match" stateTitle=<<stateTiddler>> stateIndex="option" text="yes">
+<$button class="tc-btn-invisible" tooltip="Hide options" setTitle=<<stateTiddler>> setIndex="option" setTo="no">
+{{$:/core/images/options-button}}
+</$button>
+</$reveal>
+\end
+
+\define todolist-options-content()
+<$reveal type="match" stateTitle=<<stateTiddler>> stateIndex="option" text="yes">
+<<todolist-mark-all-button>> <<todolist-archive-completed-items>> <<todolist-display-archived-items>> <<todolist-toggle-timestamp>>&nbsp;<<todolist-all-tasks-unfinished>>
+</$reveal>
+\end
+

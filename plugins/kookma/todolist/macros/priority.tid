@@ -1,0 +1,42 @@
+created: 20190718170817837
+modified: 20210422161832861
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/priority
+type: text/vnd.tiddlywiki
+
+\define categoryColors()
+<$list filter="[[$:/plugins/kookma/todolist/settings/colors]indexes[]sortby{$:/plugins/kookma/todolist/settings/colors!!list}]" variable=color>
+<<color>>
+</$list>
+\end
+
+\define todolist-set-priority()
+<$wikify name=colors text=<<categoryColors>> >
+<$macrocall $name="todolist-cycle-color" arraySet=<<colors>> stateTiddler=<<priorityTiddler>> stateIndex=<<item>> />
+</$wikify>
+\end
+
+\define disp-priority-badge(color)
+<svg width="12" height="12" >
+<circle cx="6" cy="6" r="5"  stroke="grey" fill="$color$" />
+</svg>
+\end
+
+
+\define todolist-cycle-color(arraySet:"", stateTiddler:"", stateIndex:"txt")
+<$vars array=<<__arraySet__>>  currentColor={{{[<__stateTiddler__>getindex<__stateIndex__>]}}} >
+<$button class="tc-btn-invisible" tooltip="Set priority level">
+    <$macrocall $name="disp-priority-badge" color=<<currentColor>> />
+    <$set
+      filter='[enlist<array>after<currentColor>]'
+      name=NextItem
+      emptyValue={{{[enlist<array>first[]]}}}
+    >
+    <$action-setfield
+     $tiddler=<<__stateTiddler__>>
+     $index=<<__stateIndex__>>
+     $value=<<NextItem>> />
+      </$set>
+  </$button>
+</$vars>	
+\end

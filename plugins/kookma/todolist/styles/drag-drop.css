@@ -1,0 +1,9 @@
+/*  drag and drop elements */
+.kk-todolist-placeholder { 
+	position:relative; 
+	height:0; 	
+	border:0 !important; 
+	border-bottom:1px dotted grey !important; 
+}
+
+.kk-todolist-draggable-list .tc-draggable  { cursor: default !important; }

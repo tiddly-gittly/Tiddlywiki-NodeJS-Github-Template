@@ -1,0 +1,14 @@
+/**
+.cmd-btn{
+ font-size:0.85em;
+ font-size:300;
+ color: #666666;
+ background-color: #d8d8d8;
+ padding: 3px 8px 3px 8px;
+ border: 1px solid #a1a1a1;
+}
+**/
+
+.cmd-btn-wd{
+	width:20ch;
+}

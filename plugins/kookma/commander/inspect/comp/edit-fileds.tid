@@ -1,0 +1,122 @@
+created: 20190313061511585
+modified: 20200325055328517
+tags: $:/tags/Commander/Macro
+title: $:/plugins/kookma/commander/inspect/comp/edit-fileds
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/EditTemplate/
+\define config-title()
+$:/config/EditTemplateFields/Visibility/$(currentField)$
+\end
+
+\define config-filter()
+[[hide]] -[title{$(config-title)$}] 
+\end
+
+\define new-field()
+<$vars name={{$:/temp/newfieldname}}>
+<$reveal type="nomatch" text="" default=<<name>>>
+<$button class="cmd-btn">
+<$action-sendmessage $message="tm-add-field"
+$name=<<name>>
+$value={{$:/temp/newfieldvalue}}/>
+<$action-deletetiddler $tiddler="$:/temp/newfieldname"/>
+<$action-deletetiddler $tiddler="$:/temp/newfieldvalue"/>
+<<lingo Fields/Add/Button>>
+</$button>
+</$reveal>
+<$reveal type="match" text="" default=<<name>>>
+<$button class="cmd-btn">
+<<lingo Fields/Add/Button>>
+</$button>
+</$reveal>
+</$vars>
+\end
+
+\define compInspect-edit-fileds(commonFields:"")
+
+<div class="tc-edit-fields">
+<table class="tc-edit-fields">
+<tbody>
+<$list filter="[all[current]fields[]] +[sort[title]]" variable="currentField">
+<$list filter=<<config-filter>> variable="temp">
+<tr class="tc-edit-field">
+<td class="tc-edit-field-name">
+<$text text=<<currentField>>/>:</td>
+<td class="tc-edit-field-value">
+<$edit-text tiddler=<<currentTiddler>> field=<<currentField>> placeholder={{$:/language/EditTemplate/Fields/Add/Value/Placeholder}}/>
+</td>
+<td class="tc-edit-field-remove">
+<$button class="tc-btn-invisible" tooltip={{$:/language/EditTemplate/Field/Remove/Hint}} aria-label={{$:/language/EditTemplate/Field/Remove/Caption}}>
+<$action-deletefield $field=<<currentField>>/>
+{{$:/core/images/delete-button}}
+</$button>
+</td>
+</tr>
+</$list>
+</$list>
+
+
+<$list filter="created creator modified modifier -[enlist<__commonFields__>]" variable="currentField">
+<tr class="tc-edit-field">
+<td class="tc-edit-field-name">
+<$text text=<<currentField>>/>:</td>
+<td class="tc-edit-field-value">
+<$edit-text tiddler=<<currentTiddler>> field=<<currentField>> placeholder={{$:/language/EditTemplate/Fields/Add/Value/Placeholder}}/>
+</td>
+<td class="tc-edit-field-remove">
+<$button class="tc-btn-invisible" tooltip={{$:/language/EditTemplate/Field/Remove/Hint}} aria-label={{$:/language/EditTemplate/Field/Remove/Caption}}>
+<$action-deletefield $field=<<currentField>>/>
+{{$:/core/images/delete-button}}
+</$button>
+</td>
+</tr>
+</$list>
+
+
+
+
+</tbody>
+</table>
+</div>
+
+<$fieldmangler>
+<div class="tc-edit-field-add">
+<em class="tc-edit">
+<<lingo Fields/Add/Prompt>>
+</em>
+<span class="tc-edit-field-add-name">
+<$edit-text tiddler="$:/temp/newfieldname" tag="input" default="" placeholder={{$:/language/EditTemplate/Fields/Add/Name/Placeholder}} focusPopup=<<qualify "$:/state/popup/field-dropdown">> class="tc-edit-texteditor tc-popup-handle"/>
+</span>
+<$button popup=<<qualify "$:/state/popup/field-dropdown">> class="tc-btn-invisible tc-btn-dropdown" tooltip={{$:/language/EditTemplate/Field/Dropdown/Hint}} aria-label={{$:/language/EditTemplate/Field/Dropdown/Caption}}>{{$:/core/images/down-arrow}}</$button>
+<$reveal state=<<qualify "$:/state/popup/field-dropdown">> type="nomatch" text="" default="">
+<div class="tc-block-dropdown tc-edit-type-dropdown">
+<$linkcatcher to="$:/temp/newfieldname">
+<div class="tc-dropdown-item">
+<<lingo Fields/Add/Dropdown/User>>
+</div>
+<$list filter="[!is[shadow]!is[system]fields[]search:title{$:/temp/newfieldname}sort[]] -created -creator -draft.of -draft.title -modified -modifier -tags -text -title -type"  variable="currentField">
+<$link to=<<currentField>>>
+<<currentField>>
+</$link>
+</$list>
+<div class="tc-dropdown-item">
+<<lingo Fields/Add/Dropdown/System>>
+</div>
+<$list filter="[fields[]search:title{$:/temp/newfieldname}sort[]] -[!is[shadow]!is[system]fields[]]" variable="currentField">
+<$link to=<<currentField>>>
+<<currentField>>
+</$link>
+</$list>
+</$linkcatcher>
+</div>
+</$reveal>
+<span class="tc-edit-field-add-value">
+<$edit-text tiddler="$:/temp/newfieldvalue" tag="input" default="" placeholder={{$:/language/EditTemplate/Fields/Add/Value/Placeholder}} class="tc-edit-texteditor"/>
+</span>
+<span class="tc-edit-field-add-button">
+<$macrocall $name="new-field"/>
+</span>
+</div>
+</$fieldmangler>
+\end

@@ -1,0 +1,30 @@
+caption: RememberCz
+condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+created: 20200517155905263
+description: Remember Cloze Deletion
+icon: $:/plugins/sobjornstad/TiddlyRemember/icons/lightbulb-black.svg
+list-after: $:/plugins/sobjornstad/TiddlyRemember/toolbar/rememberq
+modified: 20200517162124307
+shortcuts: ((remembercz))
+tags: $:/tags/EditorToolbar
+title: $:/plugins/sobjornstad/TiddlyRemember/toolbar/remembercz
+type: text/vnd.tiddlywiki
+
+\define getMacro()
+<<remembercz "$(clozeid)$"
+	"Cloze">>
+\end
+
+\define prefixId() $(theprefix)$$(thetime)$
+
+<$set name=thetime value=<<now "[UTC]YYYY0MM0DD0hh0mm0ss0XXX">> >
+<$set name=theprefix value={{$:/config/TiddlyRemember/IdPrefix}}>
+<$set name=clozeid value=<<prefixId>> >
+	<$action-sendmessage
+		$message="tm-edit-text-operation"
+		$param="replace-selection"
+		text=<<getMacro>>
+	/>
+</$set>
+</$set>
+</$set>

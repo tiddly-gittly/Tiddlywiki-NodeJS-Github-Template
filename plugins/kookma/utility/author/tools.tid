@@ -1,0 +1,77 @@
+caption: Hide bulk of UI elements
+created: 20200313111922410
+modified: 20200322160845236
+title: $:/plugins/kookma/utility/author/tools
+type: text/vnd.tiddlywiki
+
+\define configTid() $:/config/utility/author
+\define add-remove-tag(msg:"", tag:"")
+<$fieldmangler><!--msg: tm-add-tag tm-remove-tag-->
+<$action-sendmessage $message="$msg$" $param="$tag$"/>
+</$fieldmangler>
+\end
+
+\define hide-elements()
+<!-- hide side bar items -->
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/SideBar]!tag[excluded]]">
+<$action-setfield $tiddler=<<configTid>> $index=<<currentTiddler>> $value="$:/tags/SideBar"/>
+<$macrocall $name="add-remove-tag" msg="tm-remove-tag" tag="$:/tags/SideBar"/>
+</$list>
+<!-- hide view toolbars -->
+<$list filter="[all[shadows+tiddlers]prefix[$:/config/ViewToolbarButtons/Visibility]!tag[excluded]]">
+<$reveal type=match stateTitle=<<currentTiddler>> stateField="text" text="show">
+<$action-setfield $tiddler=<<configTid>> $index=<<currentTiddler>> $value="show"/>
+<$action-setfield $tiddler=<<currentTiddler>> $field="text" $value="hide"/>
+</$reveal>
+</$list>
+<!-- hide page controls -->
+<$list filter="[all[shadows+tiddlers]prefix[$:/config/PageControlButtons/Visibility]!tag[excluded]]">
+<$reveal type=match stateTitle=<<currentTiddler>> stateField="text" text="show">
+<$action-setfield $tiddler=<<configTid>> $index=<<currentTiddler>> $value="show"/>
+<$action-setfield $tiddler=<<currentTiddler>> $field="text" $value="hide"/>
+</$reveal>
+</$list>
+<!-- disable dropzone -->
+<$list filter="[[$:/config/DragAndDrop/Enable]!tag[excluded]]" variable=ignore>
+<$action-setfield $tiddler="$:/config/DragAndDrop/Enable" $field="text" $value="no"/>
+</$list>
+\end
+
+\define unhide-elements()
+<!-- Revert view toolbar and page controls -->
+<$list filter="[<configTid>indexes[]]">
+<$reveal type=match stateTitle=<<configTid>> stateIndex=<<currentTiddler>> text="show">
+<$action-setfield $tiddler=<<currentTiddler>> $field="text" $value="show"/>
+</$reveal>
+</$list>
+<!-- Revert sidebar tabs -->
+<$list filter="[<configTid>indexes[]]">
+<$reveal type=match stateTitle=<<configTid>> stateIndex=<<currentTiddler>> text="$:/tags/SideBar">
+<$macrocall $name="add-remove-tag" msg="tm-add-tag" tag="$:/tags/SideBar"/>
+</$reveal>
+</$list>
+<!-- delete the configTid -->
+<$action-deletetiddler $tiddler=<<configTid>>/>
+<!-- enable dropzone -->
+<$list filter="[[$:/config/DragAndDrop/Enable]!tag[excluded]]" variable=ignore>
+<$action-deletetiddler $tiddler="$:/config/DragAndDrop/Enable"/>
+</$list>
+\end
+
+<$reveal type=nomatch state=<<configTid>> text="">
+<$button actions=<<unhide-elements>> tooltip="Unhide UI elements">Author mode</$button>
+</$reveal>
+<$reveal type=match state=<<configTid>> text="" default="">
+<$button actions=<<hide-elements>> tooltip="Hide UI elements">Reader mode</$button>
+</$reveal>
+<small><ul>
+<li>Author mode: all UI elements are visible</li>
+<li>Redaer mode: all UI elements are hidden except those excluded</li>
+</ul></small>
+<$reveal type=match state=<<configTid>> text="" default="">
+<details>
+<summary>Select items to be excluded</summary>
+<div style="padding-left:30px">{{$:/plugins/kookma/utility/author/exclude-items}}
+</div>
+</details>
+</$reveal>

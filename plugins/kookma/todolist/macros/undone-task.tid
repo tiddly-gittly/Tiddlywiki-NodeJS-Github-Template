@@ -1,0 +1,27 @@
+created: 20190715190405259
+modified: 20210422161832892
+tags: $:/tags/Todolist/Macro
+title: $:/plugins/kookma/todolist/macros/undone-task
+type: text/vnd.tiddlywiki
+
+\define todolist-undone-task()
+<$checkbox 
+tiddler=<<statusTiddler>> 
+index=<<item>> 
+checked="done" 
+unchecked="undone" 
+default="undone"
+uncheckactions=<<tdl-undone-actions>>
+>
+</$checkbox>
+\end
+
+\define tdl-undone-actions()
+<$action-setfield 
+$tiddler=<<taskTiddler>>
+$index=<<item>>
+$value={{{ [<doneTiddler>getindex<item>] }}}
+/><
+<$macrocall $name="todolist-add-item-to-list" targetTiddler=<<taskTiddler>> item=<<item>> />
+<$action-setfield $tiddler=<<doneTiddler>> $index=<<item>> />
+\end

@@ -1,0 +1,13 @@
+created: 20171005185503725
+creator: Thomas Elmiger
+modified: 20190426122338718
+modifier: Thomas Elmiger
+tags: 
+title: $:/plugins/telmiger/HarveyBalls/credits
+type: text/vnd.tiddlywiki
+
+!!! Credits
+Inspired by ~RunningUtes in a [[Google Group discussion|https://groups.google.com/d/msg/tiddlywiki/utsLmgHZAhM/bxKkdwT2CAAJ]] and these great articles:
+
+* https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
+* https://developer.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/

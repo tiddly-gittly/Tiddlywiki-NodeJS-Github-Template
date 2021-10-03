@@ -1,0 +1,26 @@
+caption: Add remove suffix
+created: 20190212143434676
+list-after: $:/plugins/kookma/commander/title/uicomp/add-remove-prefix
+modified: 20200325055328912
+tags: $:/tags/Commander/TitleOps
+title: $:/plugins/kookma/commander/title/uicomp/add-remove-suffix
+type: text/vnd.tiddlywiki
+
+<$edit-text
+tiddler="$:/temp/commander/title-suffix"
+tag="input" default=""
+class="cmd-txt-area" placeholder=" suffix" /><br>
+
+<$button class="cmd-btn cmd-btn-wd"> Add suffix
+<$macrocall 
+ $name="addSuffix-to-tiltle-bulk" 
+ suffix={{$:/temp/commander/title-suffix}} />
+</$button>
+
+<$button class="cmd-btn cmd-btn-wd"> Remove suffix
+<$macrocall 
+ $name="removeSuffix-from-tiltle-bulk" 
+ suffix={{$:/temp/commander/title-suffix}} 
+/>
+</$button>
+

@@ -1,0 +1,20 @@
+created: 20200209153246553
+modified: 20210808073255865
+tags: $:/tags/Table/Macro
+title: $:/plugins/kookma/shiraz/macros/dtables/maths
+type: text/vnd.tiddlywiki
+
+\define average(pn:0) <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>average[]] }}}/>
+\define median(pn:0)  <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>median[]]  }}}/>
+
+\define count()   <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>count[]]     }}}/>
+\define sum()     <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>sum[]]       }}}/>
+\define product() <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>product[]]   }}}/>
+
+\define minall() <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>minall[]] }}}/>
+\define maxall() <$text text={{{ [subfilter<inputFilter>$(getFieldOrIndex)$<currentColumn>maxall[]] }}}/>
+
+
+
+
+

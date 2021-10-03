@@ -1,0 +1,48 @@
+/* completed item */
+
+.kk-todolist-item-done {
+	text-decoration: red line-through;
+	font-style: italic;
+}
+
+/* inputbox for add-task */
+.kk-todolist-input-textbox {
+	width:100%;
+	padding-left: 5px;
+	border: none;
+	border-bottom: 1px dotted grey;
+}
+
+.kk-todolist-input-textbox:focus {
+	outline: none;
+	border-bottom: 1px solid #5778d8;
+	background: transparent;
+}
+
+/* item timestamp */
+.kk-todolist-date {
+	font-size:0.8em;
+	color:#c0c0c0;
+}
+
+/* Item categories */
+.kk-todolist-category-c1,
+.kk-todolist-category-c2 {
+	padding-right:3px;
+}
+
+.kk-todolist-category-c1 svg, 
+.kk-todolist-category-c2 svg  {
+	opacity:0.70;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+}
+
+.kk-todolist-category-c1 svg{
+	fill:#8B0000;
+}
+
+.kk-todolist-category-c2 svg{
+	fill:#006400;
+}

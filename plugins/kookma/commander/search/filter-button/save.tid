@@ -1,0 +1,44 @@
+created: 20190214141644228
+list-after: $:/plugins/kookma/commander/search/filter-button/clear
+modified: 20200325055356657
+tags: $:/tags/Commander/Search/FilterButton
+title: $:/plugins/kookma/commander/search/filter-button/save
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/commander/macros/definition
+
+<$reveal  type="nomatch" stateTitle=<<searchboxTid>> stateField="text" text="">
+<$button class="tc-btn-invisible" tooltip="save current search" popup=<<qualify "$:/state/commander/SaveDropdown">> >
+{{$:/core/images/file}}
+</$button>
+</$reveal>
+
+<$reveal state=<<qualify "$:/state/commander/SaveDropdown">> type="popup" class="tc-popup-keep" position="belowleft" animate="yes">
+<div class="tc-block-dropdown-wrapper">
+<div class="tc-block-dropdown tc-edit-type-dropdown">
+<div class="tc-dropdown-item-plain">
+Save new search filter<br><br>
+<$edit-text
+tiddler="$:/temp/commander/save-new-filter"
+tag="input"
+default=""
+class="cmd-txt-area"
+placeholder="description for new filter"
+/> <br><br>
+
+<$button class="tc-btn"> Save new filter
+<$macrocall $name="create-new-filter" 
+  description={{$:/temp/commander/save-new-filter}} 
+	basetitle="$:/plugins/kookma/commander/filters/yourFilter"  
+	filter={{{[<searchboxTid>get[text]]}}} 	/>
+<$action-deletetiddler $tiddler="$:/temp/commander/save-new-filter"/>
+<$action-deletetiddler $tiddler=<<qualify "$:/state/commander/SaveDropdown">> />
+</$button>
+</div>
+</div>
+</div>
+</$reveal>
+
+<!-- ToDO
+correct classes for textbox
+-->

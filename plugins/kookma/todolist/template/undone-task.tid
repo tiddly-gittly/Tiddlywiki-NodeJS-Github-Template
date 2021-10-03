@@ -1,0 +1,12 @@
+created: 20200402103007259
+modified: 20210422161832949
+tags: 
+title: $:/plugins/kookma/todolist/template/undone-task
+type: text/vnd.tiddlywiki
+
+<div class="kk-todolist-row">
+	<div class="kk-todolist-done"><<todolist-done-task>></div>
+	<div class="kk-todolist-desc"><<todolist-show-task>></div>
+	<div class="kk-todolist-priority"><<todolist-set-priority>></div>
+	<div class="kk-todolist-delete"><$macrocall $name="todolist-delete-task" dataTiddler=<<taskTiddler>>/></div>
+</div>

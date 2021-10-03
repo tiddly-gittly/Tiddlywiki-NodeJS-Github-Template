@@ -1,0 +1,42 @@
+created: 20181220161713706
+modified: 20210917161905970
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/refnotes/styles/bibtex
+type: text/vnd.tiddlywiki
+
+.ref-nonumber{
+/* color:blue;*/
+ font-size:90%;
+ list-style-type:none;
+}
+
+.ref-nonumber li{
+  padding-bottom:8px;
+}
+
+.ref-list{
+/* color:blue;*/
+ font-size:90%;
+}
+
+.link-refcls{
+ font-weight:400;
+/* color:#00008B;*/ /*darkblue*/
+ text-decoration:none;
+ color: <<colour tiddler-link-foreground>>; 	
+}
+
+.refcls{
+/* color:#00008B;*/
+ color: <<colour tiddler-link-foreground>>; 
+/* text-transform: capitalize;*/
+}
+
+.ref-notfound{
+/*  color: #856404 !important;*/
+/*  background-color: #fff3cd !important;*/
+}
+
+.ref-author{
+/*  color:#00008B;*/ /*color for author in tooltip*/
+}

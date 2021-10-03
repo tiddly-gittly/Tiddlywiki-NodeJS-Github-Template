@@ -1,0 +1,16 @@
+created: 20210423151018021
+modified: 20210423153414882
+tags: 
+title: $:/plugins/kookma/favorites/readme
+type: text/vnd.tiddlywiki
+
+; Favorites
+A favorite item also called a bookmark is a shortcut, you are creating for quick access to it. You can access that bookmark at any time and view that as many times as you want without having to search and find it again.
+
+Favorites plugin is a set of tool for creating favorites (bookmarks) in Tiddlywiki. Each favorite item is a shortcut to a tiddler.
+
+;Code and demo
+For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
+
+* Demo: https://kookma.github.io/TW-Favorites/
+* Code: https://github.com/kookma/TW-Favorites
