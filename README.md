@@ -1,6 +1,6 @@
 # Tiddlywiki-NodeJS-Github-Template
 
-I created an App based on this, [TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop), which can generate template wiki on one-click.
+Wiki template for [TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop), an App that can generate template wiki on one-click.
 
 Knowledge base Template, with advanced filter search and faceted data aggregation.
 
