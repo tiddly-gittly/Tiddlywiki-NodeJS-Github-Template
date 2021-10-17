@@ -1,0 +1,11 @@
+author: LinOnetwo
+core-version: >=5.1.22
+created: 20211017133000515
+dependents: 
+description: 提供模糊搜索和拼音搜索的能力
+list: readme
+modified: 20211017133000515
+plugin-type: plugin
+title: $:/plugins/linonetwo/pinyin-fuzzy-search
+type: application/json
+version: 0.0.1
