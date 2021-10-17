@@ -1,7 +1,0 @@
-created: 20200524224655528
-modified: 20200605060258364
-tags: 
-title: $:/plugins/telmiger/PluginSize/about
-type: text/vnd.tiddlywiki
-
-This plugin calculates the size of all installed plugins, including themes and languages. It adds a tab //Plugin Info// to the [[$:/ControlPanel]] – the one with the {{$:/core/images/info-button}} icon.

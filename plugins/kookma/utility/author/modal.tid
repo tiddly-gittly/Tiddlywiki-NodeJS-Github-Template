@@ -1,7 +1,0 @@
-created: 20190912073245120
-modified: 20200316124818329
-tags: 
-title: $:/plugins/kookma/utility/author/modal
-type: text/vnd.tiddlywiki
-
-<<tabs tabsList:"$:/plugins/kookma/utility/author/tools $:/plugins/kookma/utility/author/individual-items" default:"$:/plugins/kookma/utility/author/tools">>

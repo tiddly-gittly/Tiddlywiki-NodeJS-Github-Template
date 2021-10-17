@@ -1,7 +1,0 @@
-created: 20190725091830350
-description: General filter
-filter: [all[shadows+tiddlers]search[your keywrods]]
-modified: 20200324070652484
-tags: $:/tags/Commander/Filter
-title: $:/plugins/kookma/commander/filters/geneal
-type: text/vnd.tiddlywiki

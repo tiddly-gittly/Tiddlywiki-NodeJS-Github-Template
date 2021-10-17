@@ -1,9 +1,0 @@
-created: 20171005184808610
-creator: Thomas Elmiger
-modified: 20190426122338726
-modifier: Thomas Elmiger
-tags: $:/tags/Image
-title: $:/plugins/telmiger/HarveyBalls/complex/icon.svg
-type: text/vnd.tiddlywiki
-
-<svg class="em-icon harvey-ball ball-complex" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="currentColor" viewBox="0 0 128 128" role="img" aria-labelledby="title desc"><title id="title">{{$:/language/HarveyBalls/complex/title}}</title><desc id="desc">{{$:/language/HarveyBalls/complex/desc}}</desc><path d="M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm48-64c0 .19-48 0-48 0V16c26.51 0 48 21.49 48 48z"/></svg>

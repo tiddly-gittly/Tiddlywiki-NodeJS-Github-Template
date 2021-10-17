@@ -1,9 +1,0 @@
-created: 20171001114641516
-creator: Thomas Elmiger
-modified: 20190426122338679
-modifier: Thomas Elmiger
-tags: $:/tags/Image
-title: $:/plugins/telmiger/HarveyBalls/quarter-empty/icon.svg
-type: text/vnd.tiddlywiki
-
-<svg class="em-icon harvey-ball ball-quarter-empty" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" viewBox="0 0 128 128" role="img" aria-labelledby="title desc"><title id="title">{{$:/language/HarveyBalls/quarter-empty/title}}</title><desc id="desc">{{$:/language/HarveyBalls/quarter-empty/desc}}</desc><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zM16 64c0 .19 48 0 48 0V16c-26.51 0-48 21.49-48 48z"/></svg>
