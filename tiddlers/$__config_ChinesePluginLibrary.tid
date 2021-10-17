@@ -1,0 +1,11 @@
+caption: 太微中文社区插件库
+created: 20211017092614890
+modified: 20211017092614890
+tags: $:/tags/PluginLibrary
+title: $:/config/ChinesePluginLibrary
+type: text/vnd.tiddlywiki
+url: https://tw-cn.netlify.app/library/index.html
+
+太微中文社区插件库希望为中国的太微用户提供一键安装、更新插件的体验，使用方法详见[[中文社区共建的太微（TiddlyWiki）教程|https://tw-cn.netlify.app]]里插件相关的部分。
+
+要添加这个插件库到你的 Wiki 中，只需鼠标拖动这个链接到你的 Wiki 里即可：[[太微中文社区插件库|$:/config/ChinesePluginLibrary]]
