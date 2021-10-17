@@ -1,0 +1,13 @@
+author: Mohammad Rahmani
+core-version: >=5.1.23
+created: 20211017131632488
+dependents: 
+description: create bookmarks, shortcuts and favorite items as flat and structured lists
+list: readme license history
+modified: 20211017131632488
+name: Favorites
+plugin-type: plugin
+source: https://github.com/kookma/TW-Favorites
+title: $:/plugins/kookma/favorites
+type: application/json
+version: 4.5.1
