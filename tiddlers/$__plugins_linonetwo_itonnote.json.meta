@@ -1,0 +1,12 @@
+author: LinOnetwo
+core-version: >=5.1.22
+created: 20211017093008305
+dependents: $:/plugins/bimlas/locator
+description: Heavy lifting for new users to set up a powerful and opinionated knowledge management system.
+list: readme description ControlPanel
+modified: 20211017093008305
+name: ItonNote
+plugin-type: plugin
+title: $:/plugins/linonetwo/itonnote
+type: application/json
+version: 0.2.0
