@@ -1,0 +1,11 @@
+created: 20211017130411184
+dependents: $:/plugins/tiddlywiki/codemirror-search-replace $:/plugins/tiddlywiki/codemirror-closebrackets
+description: Keymap compatible with Sublime Text for CodeMirror
+list: readme
+modified: 20211017130411184
+name: CodeMirror Keymap Sublime Text
+parent-plugin: $:/plugins/tiddlywiki/codemirror
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-keymap-sublime-text
+type: application/json
+version: 5.2.0

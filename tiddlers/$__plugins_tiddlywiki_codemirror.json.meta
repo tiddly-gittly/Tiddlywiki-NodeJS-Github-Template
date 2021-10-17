@@ -1,0 +1,10 @@
+created: 20211017130453639
+dependents: 
+description: CodeMirror editor
+list: readme usage keyboard license
+modified: 20211017130453639
+name: CodeMirror
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror
+type: application/json
+version: 5.2.0

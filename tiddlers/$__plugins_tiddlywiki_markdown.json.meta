@@ -1,0 +1,10 @@
+created: 20211017130756415
+dependents: 
+description: Markdown parser based on remarkable by Jon Schlinkert and remarkable-katex by Brad Howes
+list: readme usage remarkable-license remarkable-katex-license
+modified: 20211017130756415
+name: Markdown
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/markdown
+type: application/json
+version: 5.2.0
