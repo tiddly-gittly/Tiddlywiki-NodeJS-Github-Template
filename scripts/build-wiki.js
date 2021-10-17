@@ -48,8 +48,4 @@ module.exports = function build() {
   execAndLog(`mv ${repoFolder}/output/tiddlywiki5.js ${folderToServe}/tiddlywiki5.js`, { cwd: repoFolder });
   // npm run build:precache
   execAndLog(`workbox injectManifest workbox-config.js`, { cwd: repoFolder });
-  // npm run build:clean
-  // execAndLog(`rm -r ${repoFolder}/output`, { cwd: repoFolder });
-  // npm run build:pluginLibrary
-  execAndLog(`tiddlywiki ${repoFolder} --output ${folderToServe}/library --build library`, { cwd: repoFolder });
 };
