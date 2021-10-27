@@ -1,12 +1,12 @@
 author: LinOnetwo
 core-version: >=5.1.22
-created: 20211017092957010
+created: 20211027175535155
 dependents: 
 description: VSCode style opened files top bar
 list: Readme LICENSE
-modified: 20211017092957010
+modified: 20211027175535155
 name: Opened Tiddlers Bar
 plugin-type: plugin
 title: $:/plugins/linonetwo/opened-tiddlers-bar
 type: application/json
-version: 0.0.1
+version: 0.1.0
