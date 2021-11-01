@@ -1,11 +1,11 @@
 author: Flibbles
 core-version: >=5.1.22
-created: 20211027175542698
+created: 20211101182239067
 demo: http://flibbles.github.io/tw5-relink/
 dependents: 
 description: Flexibility when relinking renamed tiddlers
 list: readme configuration license
-modified: 20211027175542698
+modified: 20211101182239067
 name: Relink
 plugin-type: plugin
 source: https://github.com/flibbles/tw5-relink
