@@ -6,7 +6,7 @@
     "@tiddlygit/tiddlywiki": "5.2.2-prerelease-2021-12-10"
   },
   "devDependencies": {
-    "html-minifier-terser": "6.0.2",
+    "html-minifier-terser": "6.1.0",
     "workbox-cli": "6.4.2"
   }
 }
