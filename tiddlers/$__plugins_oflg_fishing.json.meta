@@ -1,11 +1,11 @@
 author: oflg
 core-version: >=5.2.1
 dependents: 
-description: Flashcards and Incremental Reading integrated in TiddlyWiki, fishing with algorithm of Anki
+description: Incremental Learning program based on TiddlyWiki
 list: readme license
 name: Fishing
 plugin-type: plugin
 source: https://github.com/oflg/fishing
 title: $:/plugins/oflg/fishing
 type: application/json
-version: 1.5.12
+version: 2.0.1+1
