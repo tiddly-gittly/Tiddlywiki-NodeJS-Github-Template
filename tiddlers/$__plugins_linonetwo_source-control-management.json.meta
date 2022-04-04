@@ -7,4 +7,4 @@ name: NodeJS Wiki TiddlyGit Github Sync
 plugin-type: plugin
 title: $:/plugins/linonetwo/source-control-management
 type: application/json
-version: 0.1.1
+version: 0.1.3

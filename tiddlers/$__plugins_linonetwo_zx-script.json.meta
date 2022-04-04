@@ -7,4 +7,4 @@ name: ZX Script Executor
 plugin-type: plugin
 title: $:/plugins/linonetwo/zx-script
 type: application/json
-version: 0.1.2
+version: 0.1.3
