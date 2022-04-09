@@ -3,7 +3,7 @@
     "build": "node -e \"require('./scripts/build-wiki')()\""
   },
   "dependencies": {
-    "@tiddlygit/tiddlywiki": "5.2.2-prerelease-2021-12-10"
+    "@tiddlygit/tiddlywiki": "5.2.3-prerelease-2022-04-09"
   },
   "devDependencies": {
     "html-minifier-terser": "6.1.0",
