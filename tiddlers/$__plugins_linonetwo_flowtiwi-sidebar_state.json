@@ -203,9 +203,9 @@
             "static": false
         },
         {
-            "w": 1,
-            "h": 2,
-            "x": 3,
+            "w": 2,
+            "h": 1,
+            "x": 2,
             "y": 0,
             "i": "$:/plugins/kookma/favorites/sidebar-tab",
             "moved": false,
@@ -214,8 +214,8 @@
         {
             "w": 2,
             "h": 3,
-            "x": 0,
-            "y": 7,
+            "x": 2,
+            "y": 1,
             "i": "$:/core/ui/SideBar/Recent",
             "moved": false,
             "static": false
@@ -224,7 +224,7 @@
             "w": 2,
             "h": 2,
             "x": 0,
-            "y": 10,
+            "y": 7,
             "i": "$:/core/ui/SideBar/Tools",
             "moved": false,
             "static": false
@@ -248,7 +248,7 @@
             "static": false
         },
         {
-            "w": 3,
+            "w": 2,
             "h": 4,
             "x": 0,
             "y": 0,
@@ -260,7 +260,7 @@
             "w": 2,
             "h": 2,
             "x": 0,
-            "y": 12,
+            "y": 9,
             "i": "$:/plugins/linonetwo/itonnote/Sidebar/Locator Fields",
             "moved": false,
             "static": false

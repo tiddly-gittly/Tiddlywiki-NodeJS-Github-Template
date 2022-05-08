@@ -7,4 +7,4 @@ name: FlowTiwi Multi-column draggable resizable sidebar
 plugin-type: plugin
 title: $:/plugins/linonetwo/flowtiwi-sidebar
 type: application/json
-version: 0.1.6
+version: 0.1.7

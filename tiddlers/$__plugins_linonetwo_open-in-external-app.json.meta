@@ -7,4 +7,4 @@ name: Open In External App
 plugin-type: plugin
 title: $:/plugins/linonetwo/open-in-external-app
 type: application/json
-version: 0.0.2
+version: 0.0.4
