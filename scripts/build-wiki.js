@@ -16,7 +16,11 @@ module.exports = function build() {
   execAndLog(`rm -rf ${folderToServe}`);
   // npm run build:public
   execAndLog(`cp -r ${repoFolder}/public/ ${folderToServe}`, { cwd: repoFolder });
-  execAndLog(`cp ${repoFolder}/vercel.json ${folderToServe}/vercel.json`, { cwd: repoFolder });
+  try {
+    execAndLog(`cp ${repoFolder}/vercel.json ${folderToServe}/vercel.json`, { cwd: repoFolder });
+  }  catch (error) {
+    console.log(error);
+  }
   // try copy some static assets, don't cause error if some of them been removed by the user
   try {
     // npm run build:public
