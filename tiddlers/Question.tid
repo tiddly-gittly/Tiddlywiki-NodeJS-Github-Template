@@ -1,0 +1,74 @@
+code-body: yes
+tags: $:/tags/QuestionTemplate
+title: Question
+tmap.id: aaae22ad-d3ed-4ee2-b298-528623555c64
+type: text/vnd.tiddlywiki
+
+<div
+    class="tc-tiddler-body"
+>
+    {{!!title}}
+    <$reveal
+        default={{{ [list[$:/temp/fishing]first[]] }}}
+        type="match"
+        text=<<currentTiddler>>
+        animate="yes"
+    >
+        <$edit
+            tiddler="$:/temp/fishing"
+            placeholder={{$:/language/EditTemplate/Body/Placeholder}}
+            minHeight="15px"
+            class="tc-edit-texteditor tc-edit-texteditor-body"
+        >
+            <$set
+                value=<<currentTiddler>>
+                name="targetTiddler"
+            >
+                <$list
+                    filter="[all[shadows+tiddlers]tag[$:/tags/EditorToolbar]!is[draft]]"
+                >
+                    <$reveal
+                        type="nomatch"
+                        state=<<config-visibility-title>>
+                        text="hide"
+                        class="tc-text-editor-toolbar-item-wrapper"
+                        style="display: none;"
+                    >
+                        <$transclude
+                            tiddler="$:/core/ui/EditTemplate/body/toolbar/button"
+                            mode="inline"
+                        />
+                    </$reveal>
+                </$list>
+                <$list
+                    filter="[all[shadows+tiddlers]tag[$:/tags/EditorTools]!is[draft]]"
+                >
+                    <$list
+                        filter={{!!condition}}
+                        variable="list-condition"
+                    >
+                        <$transclude/>
+                    </$list>
+                </$list>
+            </$set>
+        </$edit>
+        <$reveal
+            default={{$:/temp/fishing}}
+            type="nomatch"
+            text=""
+            animate="yes"
+        >
+            <$reveal
+                state=<<folded-state>>
+                type="match"
+                text="show"
+                animate="yes"
+            >
+                <$diff-text
+                    source={{$:/temp/fishing}}
+                    dest={{!!text}}
+                />
+            </$reveal>
+        </$reveal>
+    </$reveal>
+</div>
