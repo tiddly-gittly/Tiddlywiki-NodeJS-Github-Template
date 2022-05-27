@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/oflg/fishing-catchfish
 title: $:/plugins/oflg/fishing-catchfish
 type: application/json
-version: 0.3.1
+version: 0.3.3

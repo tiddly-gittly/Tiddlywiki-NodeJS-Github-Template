@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/oflg/fishing-analysis
 title: $:/plugins/oflg/fishing-analysis
 type: application/json
-version: 0.4.3
+version: 0.4.4
