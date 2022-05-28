@@ -3,7 +3,7 @@ name: Deploy Tiddlywiki To Github Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
