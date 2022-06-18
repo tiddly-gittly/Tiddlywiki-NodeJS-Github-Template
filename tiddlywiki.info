@@ -26,7 +26,7 @@
       "",
       "text/plain",
       "--rendertiddler",
-      "$:/core/save/all-external-js",
+      "$:/core/save/all",
       "index.html",
       "text/plain"
     ],
