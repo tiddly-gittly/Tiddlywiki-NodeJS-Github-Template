@@ -1,7 +1,7 @@
 author: oflg
-core-version: >=5.2.2
+core-version: >=5.2.3
 dependents: $:/plugins/oflg/fishing $:/plugins/tiddlywiki/dynaview $:/plugins/tiddlywiki/dynannotate
-description: Integrate Incremental Learning into TiddlyWiki
+description: Integrate Incremental Reading into TiddlyWiki
 list: readme license
 name: Fishing Catchfish
 parent-plugin: $:/plugins/oflg/fishing
@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/oflg/fishing-catchfish
 title: $:/plugins/oflg/fishing-catchfish
 type: application/json
-version: 0.3.3
+version: 0.4.0

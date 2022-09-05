@@ -1,5 +1,5 @@
 author: oflg
-core-version: >=5.2.2
+core-version: >=5.2.3
 dependents: 
 description: Integrate Spaced Repetition System into TiddlyWiki
 list: readme license
@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/oflg/fishing
 title: $:/plugins/oflg/fishing
 type: application/json
-version: 2.4.2
+version: 2.4.6
