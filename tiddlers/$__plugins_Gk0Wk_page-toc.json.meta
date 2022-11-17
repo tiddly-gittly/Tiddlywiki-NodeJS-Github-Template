@@ -7,4 +7,4 @@ plugin-type: plugin
 source: https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/page-toc
 title: $:/plugins/Gk0Wk/page-toc
 type: application/json
-version: 0.0.3
+version: 0.0.4
