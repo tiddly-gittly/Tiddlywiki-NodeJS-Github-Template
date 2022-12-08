@@ -7,4 +7,4 @@ name: Slate Write
 plugin-type: plugin
 title: $:/plugins/linonetwo/slate-write
 type: application/json
-version: 0.3.3
+version: 0.3.4
