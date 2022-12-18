@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Refnotes
 title: $:/plugins/kookma/refnotes
 type: application/json
-version: 1.8.4
+version: 1.8.5
