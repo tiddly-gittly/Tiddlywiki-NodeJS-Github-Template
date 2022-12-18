@@ -1,0 +1,10 @@
+author: Arlen22
+dependents: 
+description: Sync changes immediately from the browser to TW5 (node.js) using SSE
+license: MIT - Copyright Arlen Beiler 2021
+list: readme
+name: TiddlyWeb SSE
+plugin-type: plugin
+title: $:/plugins/twcloud/tiddlyweb-sse
+type: application/json
+version: 1.0.1
