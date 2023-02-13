@@ -1,3 +1,4 @@
+Modern.TiddlyDev#SHA256-Hashed: b2752d1e2507ac0e8bd49fa41b339e5e3f75cd7285e67305a97925c486009cc9
 author: Gk0Wk
 dependents: 
 description: Add notion-like page cover and icon display and control panel
@@ -7,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/notionpage-covericon
 title: $:/plugins/Gk0Wk/notionpage-covericon
 type: application/json
-version: 0.0.9
+version: 0.0.11
