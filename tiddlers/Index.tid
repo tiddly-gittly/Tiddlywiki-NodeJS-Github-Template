@@ -1,4 +1,10 @@
 created: 20230104152413814
-modified: 20230104152413814
+creator: 林一二
+modified: 20230221162429961
+modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
+
+Click {{$:/core/images/edit-button}} button on top-right of this card to start edit.
+
+Visit [[Tutorial (Chinese)|https://tw-cn.netlify.app/]] or [[Official Site (English)|https://tiddlywiki.com/]] to learn.
