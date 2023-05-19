@@ -1,4 +1,4 @@
-Modern.TiddlyDev#SHA256-Hashed: 6143fc556e6c7ab0dd9449df0a53bf6414a56ffc9bd0eef3eaf7ed95a13b2e17
+Modern.TiddlyDev#SHA256-Hashed: 4af1d39d9d6e184ddd3518fd902ff2d16404461b73acb16247e8cfb9f8b71cac
 author: Gk0Wk
 core-version: >=5.2.0
 dependents: $:/plugins/Gk0Wk/focused-tiddler
@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/tiddly-gittly/tw-echarts/tree/master/plugins/Gk0Wk/echarts
 title: $:/plugins/Gk0Wk/echarts
 type: application/json
-version: 0.2.1
+version: 0.2.4

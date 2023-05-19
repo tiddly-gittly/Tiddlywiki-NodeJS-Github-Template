@@ -8,4 +8,4 @@ parent-plugin: $:/plugins/oflg/fishing
 plugin-type: plugin
 title: $:/plugins/oflg/fishing-zh-Hans
 type: application/json
-version: 0.4.5
+version: 0.5.0

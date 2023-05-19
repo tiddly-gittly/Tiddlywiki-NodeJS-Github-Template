@@ -3,8 +3,7 @@ core-version: >=5.0.8
 dependents: 
 description: Chinese (Simplified)
 name: zh-Hans
-plugin-priority: 100
 plugin-type: language
 title: $:/languages/zh-Hans
 type: application/json
-version: 5.2.1
+version: 5.2.7

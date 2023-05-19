@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/oflg/fishing
 title: $:/plugins/oflg/fishing
 type: application/json
-version: 2.4.6
+version: 2.5.0
