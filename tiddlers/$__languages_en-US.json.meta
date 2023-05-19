@@ -1,0 +1,9 @@
+author: Ben Webber
+core-version: >=5.0.0
+dependents: $:/languages/en-GB
+description: English (US)
+name: en-US
+plugin-type: language
+title: $:/languages/en-US
+type: application/json
+version: 5.2.7
