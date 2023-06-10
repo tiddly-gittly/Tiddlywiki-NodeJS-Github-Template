@@ -1,10 +1,10 @@
 author: LinOnetwo
 core-version: >=5.1.22
-dependents: $:/plugins/bimlas/locator
+dependents: $:/plugins/bimlas/locator $:/plugins/tiddlywiki/browser-sniff
 description: Heavy lifting for new users to set up a powerful and opinionated knowledge management system.
 list: readme description ControlPanel
 name: ItonNote
 plugin-type: plugin
 title: $:/plugins/linonetwo/itonnote
 type: application/json
-version: 1.0.9
+version: 1.1.0
