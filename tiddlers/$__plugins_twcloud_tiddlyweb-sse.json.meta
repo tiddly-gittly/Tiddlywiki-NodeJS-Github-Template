@@ -7,4 +7,4 @@ name: TiddlyWeb SSE
 plugin-type: plugin
 title: $:/plugins/twcloud/tiddlyweb-sse
 type: application/json
-version: 1.0.1
+version: 1.0.3
