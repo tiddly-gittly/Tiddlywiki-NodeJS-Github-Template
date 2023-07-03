@@ -1,3 +1,5 @@
+/* https://github.com/tiddly-gittly/TW5-T-ONLINE/blob/master/scripts/build.js */
+
 const path = require('path');
 const {
     execSync
@@ -131,7 +133,7 @@ function buildLibrary(pluginFilter, distDir, minify) {
         ` --savelibrarytiddlers $:/UpgradeLibrary ${pluginFilter} recipes/library/tiddlers/ $:/UpgradeLibrary/List` +
         ' --savetiddler $:/UpgradeLibrary/List recipes/library/tiddlers.json' +
         ' --rendertiddler $:/plugins/tiddlywiki/pluginlibrary/library.template.html index-raw.html text/plain' +
-        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'', { env: { TIDDLYWIKI_PLUGIN_PATH: path.resolve(distDir, '..', 'plugins')}}
+        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'', { env: { TIDDLYWIKI_PLUGIN_PATH: path.resolve(distDir, '..', 'plugins') } }
     );
 
     // 最小化：HTML

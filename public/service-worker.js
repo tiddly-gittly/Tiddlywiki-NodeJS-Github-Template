@@ -7,7 +7,7 @@ if (workbox) {
 }
 
 const { registerRoute } = workbox.routing;
-	const { CacheFirst, StaleWhileRevalidate, NetworkFirst } = workbox.strategies;
+const { CacheFirst, StaleWhileRevalidate, NetworkFirst } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute, matchPrecache } = workbox.precaching;
 

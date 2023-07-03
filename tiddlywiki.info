@@ -28,7 +28,7 @@
       "index.html",
       "text/plain"
     ],
-     "readonlyexternalimages": [
+    "readonlyexternalimages": [
       "--setfield",
       "[is[binary]] [type[application/msword]]",
       "_canonical_uri",
