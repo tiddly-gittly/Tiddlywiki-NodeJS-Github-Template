@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - master
+#     paths:
+#       - "plugins/**"
+#       - "tiddlers/**"
+#       - "package.json"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -14,7 +18,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.6.0
@@ -27,13 +31,18 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+          
       - name: Install Dependency
         run: npm install
-      - name: Building online versions of web pages # 构建在线版本网页
+        
+      # - name: 运行zx构建
+      #   run: npm run zx-build
+
+      - name: Building online versions of web pages
         run: npm run buildonline
-      - name: Building downloadable offline versions of web pages # 构建可下载离线版本的网页
+      - name: Building downloadable offline versions of web pages
         run: npm run buildoffline
-      - name: Workbox offline cache # Workbox 离线缓存
+      - name: Workbox offline cache
         run: npx workbox injectManifest workbox-config.js
 
       - name: Upload artifact
@@ -43,4 +52,4 @@ jobs:
           path: ./public-dist
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/upload-pages-artifact@v1.0.8
+        uses: actions/deploy-pages@v2.0.2
