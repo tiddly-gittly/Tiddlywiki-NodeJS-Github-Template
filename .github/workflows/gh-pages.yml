@@ -29,15 +29,12 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
       - name: Install Dependency
         run: npm install
-          - name: Building online versions of web pages
-            # 构建在线版本网页
-            run: npm run buildonline
-          - name: Building downloadable offline versions of web pages
-            # 构建可下载离线版本的网页
-            run: npm run buildoffline
-          - name: Workbox offline cache
-            # Workbox 离线缓存
-            run: npx workbox injectManifest workbox-config.js
+      - name: Building online versions of web pages # 构建在线版本网页
+        run: npm run buildonline
+      - name: Building downloadable offline versions of web pages # 构建可下载离线版本的网页
+        run: npm run buildoffline
+      - name: Workbox offline cache # Workbox 离线缓存
+        un: npx workbox injectManifest workbox-config.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1.0.8
