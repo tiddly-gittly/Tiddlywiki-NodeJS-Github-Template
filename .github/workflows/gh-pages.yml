@@ -29,8 +29,6 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
       - name: Install Dependency
         run: npm install
-      - name: Build
-        run: npm run zx-build
           - name: Building online versions of web pages
             # 构建在线版本网页
             run: npm run buildonline
