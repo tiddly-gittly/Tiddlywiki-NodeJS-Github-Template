@@ -34,7 +34,7 @@ jobs:
       - name: Building downloadable offline versions of web pages # 构建可下载离线版本的网页
         run: npm run buildoffline
       - name: Workbox offline cache # Workbox 离线缓存
-        un: npx workbox injectManifest workbox-config.js
+        run: npx workbox injectManifest workbox-config.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1.0.8
