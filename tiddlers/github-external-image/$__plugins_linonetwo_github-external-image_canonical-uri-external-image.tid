@@ -6,6 +6,8 @@ type: text/vnd.tiddlywiki
 
 Please fill in [[$:/GitHub/Repo]] and [[$:/config/linonetwo/github-external-image/tiddler-folder-name]] to get started.
 
+The default branch is master, you can manually change the [[$:/core/templates/canonical-uri-external-image]] entry to another branch such as main.
+
 Then, on build, all images will be replaced by place holders.
 
 Please use following build target:
