@@ -8,6 +8,8 @@
 
 [onetwo.ren/wiki](https://onetwo.ren/wiki)是这个模板的一个例子。而[tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/)是这个repo的部署例子。(有一些优化，使这个演示只读，并且不能下载，所以它的大小几乎和GIF图片一样小。)
 
+需要修改`$:/GitHub/Repo`条目内容为个人github仓库地址。
+
 可下载的HTML在[tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html)，其中包含编辑相关的插件，而且会稍微大一些（相当于一个tiktok视频的大小）。
 
 这个 repo 曾经包含wiki的备份数据和脚本，用于在MacOS上启动本地wiki服务器。现在它已经被废弃了，而且没有钱去维护，现在[TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop)是首选。旧版本可以在[feat/auto-start分支](https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template/tree/feat/auto-start)中找到。我们欢迎对它的贡献。
