@@ -104,7 +104,7 @@ function buildOfflineHTML(distDir, htmlName, minify, excludeFilter) {
     if (typeof excludeFilter !== 'string') excludeFilter = '-[is[draft]]';
 
     // 构建HTML
-    shell(`npx tiddlywiki . --output ${distDir}` +
+    shell(`npx tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb . --output ${distDir}` +
         ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'' +
         ` --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "${excludeFilter}"`
     );
