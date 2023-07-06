@@ -104,10 +104,9 @@ function buildOfflineHTML(distDir, htmlName, minify, excludeFilter) {
     if (typeof excludeFilter !== 'string') excludeFilter = '-[is[draft]]';
 
     // 构建HTML
-    // 因为使用了tiddlywiki/tiddlyweb插件的功能，所以需要在命令中加上+plugins/tiddlywiki/tiddlyweb参数。
-    shell(`npx tiddlywiki +plugins/tiddlywiki/tiddlyweb . --output ${distDir}` +
+    shell(`npx tiddlywiki . --output ${distDir}` +
         ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'' +
-        ` --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "${excludeFilter}"`
+        ` --rendertiddler $:/core/save/all index-raw.html text/plain "" publishFilter "${excludeFilter}"`
     );
 
     // 最小化：HTML
