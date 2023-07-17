@@ -106,7 +106,7 @@ function buildOfflineHTML(distDir, htmlName, minify, excludeFilter) {
     // 构建HTML
     shell(`npx tiddlywiki . --output ${distDir}` +
         ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'' +
-        ` --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "${excludeFilter}"`
+        ` --rendertiddler $:/core/save/all index-raw.html text/plain "" publishFilter "${excludeFilter}"`
     );
 
     // 最小化：HTML
