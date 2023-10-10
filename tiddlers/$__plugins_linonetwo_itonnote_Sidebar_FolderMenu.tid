@@ -1,0 +1,32 @@
+caption: 文件目录
+created: 20231010115542028
+creator: LinOnetwo
+description: 文件夹系统目录结构
+is-dropdown: yes
+modified: 20231010115543317
+modifier: 马不前
+tags: $:/tags/MenuBar
+title: $:/plugins/linonetwo/itonnote/Sidebar/FolderMenu
+type: text/vnd.tiddlywiki
+
+<$scrollable fallthrough="none" class="tc-popup-keep tc-menubar-dropdown-sidebar">
+
+	<$let toc-open-icon="$:/core/images/fold-button" toc-closed-icon="$:/core/images/folder">
+		<div class="tc-table-of-contents">
+			<$transclude $variable="toc-selective-expandable" tag={{$:/plugins/linonetwo/itonnote/Configs/SideBarFolderMenuBaseTitle}} />
+		</div>
+	</$let>
+
+  <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+    <$list filter="[<lang>search[zh]]">
+      [[使用帮助|$:/plugins/linonetwo/itonnote/Help/Index]]
+    </$list>
+
+    <$list filter="[<lang>!search[zh]]">
+      [[Help|$:/plugins/linonetwo/itonnote/Help/Index]]
+    </$list>
+
+  </$list>
+
+</$scrollable>

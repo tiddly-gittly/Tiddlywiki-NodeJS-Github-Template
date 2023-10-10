@@ -7,4 +7,4 @@ parent-plugin: $:/plugins/tiddlywiki/codemirror
 plugin-type: plugin
 title: $:/plugins/tiddlywiki/codemirror-mode-xml
 type: application/json
-version: 5.2.7
+version: 5.3.1

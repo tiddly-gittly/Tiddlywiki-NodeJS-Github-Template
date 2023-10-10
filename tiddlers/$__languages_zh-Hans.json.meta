@@ -6,4 +6,4 @@ name: zh-Hans
 plugin-type: language
 title: $:/languages/zh-Hans
 type: application/json
-version: 5.2.7
+version: 5.3.1
