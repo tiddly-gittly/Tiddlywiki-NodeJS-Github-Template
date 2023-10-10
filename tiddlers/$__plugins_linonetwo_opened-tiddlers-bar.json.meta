@@ -7,4 +7,4 @@ name: Opened Tiddlers Bar
 plugin-type: plugin
 title: $:/plugins/linonetwo/opened-tiddlers-bar
 type: application/json
-version: 0.2.6
+version: 0.2.8

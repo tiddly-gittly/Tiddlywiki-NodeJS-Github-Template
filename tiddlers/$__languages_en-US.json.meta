@@ -6,4 +6,4 @@ name: en-US
 plugin-type: language
 title: $:/languages/en-US
 type: application/json
-version: 5.2.7
+version: 5.3.1
