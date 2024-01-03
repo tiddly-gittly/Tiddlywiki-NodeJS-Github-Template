@@ -11,7 +11,7 @@
     "cross-env": "7.0.3",
     "html-minifier-terser": "7.2.0",
     "shx": "0.3.4",
-    "tiddlywiki": "^5.3.0",
+    "tiddlywiki": "^5.3.3",
     "uglify-js": "3.17.4",
     "workbox-cli": "7.0.0",
     "zx": "^7.0.0",
