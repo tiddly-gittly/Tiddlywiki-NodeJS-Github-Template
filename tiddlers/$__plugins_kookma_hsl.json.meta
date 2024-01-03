@@ -1,5 +1,5 @@
 author: Mohammad Rahmani
-core-version: 5.1.24-prerelease
+core-version: 
 dependents: $:/plugins/tiddlywiki/highlight
 description: Extract the content and stand out specific lines and/or line ranges
 list: readme license history
@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Hsl
 title: $:/plugins/kookma/hsl
 type: application/json
-version: 1.2.0
+version: 1.2.1

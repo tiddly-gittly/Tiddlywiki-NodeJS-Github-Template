@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Todolist
 title: $:/plugins/kookma/todolist
 type: application/json
-version: 1.4.2
+version: 1.5.0

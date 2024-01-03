@@ -1,6 +1,6 @@
 author: Mohammad Rahmani
 core-version: >=5.2.1
-dependents: bibtex
+dependents: 
 description: References, citations, footnotes and abbreviations in Tiddlywiki
 list: 
 name: Refnotes
@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Refnotes
 title: $:/plugins/kookma/refnotes
 type: application/json
-version: 1.8.7
+version: 1.9.0

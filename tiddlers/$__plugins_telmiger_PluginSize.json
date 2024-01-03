@@ -1,1 +1,110 @@
-{"tiddlers":{"$:/plugins/telmiger/PluginSize/ViewTemplate":{"title":"$:/plugins/telmiger/PluginSize/ViewTemplate","created":"20190122065955189","creator":"Thomas Elmiger","list-after":"$:/core/ui/ViewTemplate/plugin","modified":"20200605060258345","modifier":"Thomas Elmiger","tags":"$:/tags/ViewTemplate","type":"text/vnd.tiddlywiki","text":"<$list filter=\"[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]\">\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>"},"$:/plugins/telmiger/PluginSize/about":{"title":"$:/plugins/telmiger/PluginSize/about","created":"20200524224655528","modified":"20200605060258364","tags":"","type":"text/vnd.tiddlywiki","text":"This plugin calculates the size of all installed plugins, including themes and languages. It adds a tab //Plugin Info// to the [[$:/ControlPanel]] – the one with the {{$:/core/images/info-button}} icon."},"$:/plugins/telmiger/PluginSize/icon":{"title":"$:/plugins/telmiger/PluginSize/icon","created":"20190127213417005","creator":"Thomas Elmiger","modified":"20200605060258378","modifier":"Thomas Elmiger","tags":"","type":"text/vnd.tiddlywiki","text":"<<HB21>>"},"$:/plugins/telmiger/PluginSize/plugin-info":{"title":"$:/plugins/telmiger/PluginSize/plugin-info","caption":"{{$:/core/images/info-button}} Plugin Info","created":"20190308213013859","creator":"Thomas Elmiger","list-after":"$:/core/ui/ControlPanel/Plugins","modified":"20200605060258392","modifier":"Thomas Elmiger","tags":"$:/tags/ControlPanel","type":"text/vnd.tiddlywiki","text":"\\define lingo-base() $:/language/ControlPanel/Plugins/\n\n\\define plugin-table(type)\n<$set name=\"plugin-type\" value=\"\"\"$type$\"\"\">\n<$set name=\"qualified-state\" value=<<qualify \"$:/state/plugin-info\">>>\n<$list filter=\"[!has[draft.of]plugin-type[$type$]sort[description]]\" emptyMessage=<<lingo \"Empty/Hint\">> >\n<div class=\"te-info-panel\">\n{{||$:/core/ui/Components/plugin-info}}\n</div>\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>\n</$set>\n</$set>\n\\end\n\n<<lingo Installed/Hint>>\n\n<<tabs \"[[$:/core/ui/ControlPanel/Plugins/Installed/Plugins]] [[$:/core/ui/ControlPanel/Plugins/Installed/Themes]] [[$:/core/ui/ControlPanel/Plugins/Installed/Languages]]\" \"$:/core/ui/ControlPanel/Plugins/Installed/Plugins\">>\n"},"$:/plugins/telmiger/PluginSize/readme":{"title":"$:/plugins/telmiger/PluginSize/readme","created":"20190127210600496","creator":"Thomas Elmiger","modified":"20200605060258408","modifier":"Thomas Elmiger","tags":"","type":"text/vnd.tiddlywiki","text":"!! Plugin Size\n\n{{$:/plugins/telmiger/PluginSize/about}}\n\n!!! Categories (character count)\n\n* <<HB34>> more than 500 k\n* <<HB21>> up to 500 k \n* <<HB13>> up to 100 k\n* <<HB8>> up to 50 k\n* <<HB5>> up to 25 k\n\n!!! Dependencies\n\nThis is done using the following other plugins: \n\n* [[Editor Counter|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2FEditorCounter]] to count the characters in the text field of plugin tiddlers\n* [[RPN|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2Frpn]] for number formatting\n* [[Harvey Balls|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2FHarveyBalls]] for size indication icons\n\n!!! Information\n\nThe size of installed plugins can be found on \n\n* a tab //{{$:/core/images/info-button}} Plugin Info// in the $:/ControlPanel \n* on $:/plugins/telmiger/PluginSize/plugin-info\n\n!!! Copyright \n\n© 2019-2020, Thomas Elmiger"},"$:/plugins/telmiger/PluginSize/styles.css":{"title":"$:/plugins/telmiger/PluginSize/styles.css","created":"20190122231405826","creator":"Thomas Elmiger","modified":"20200605060258415","modifier":"Thomas Elmiger","tags":"$:/tags/Stylesheet","type":"text/vnd.tiddlywiki","text":".tiddler-size-indicator {\n   width: 100%;\n   background-color: rgba(125,125,125,0.3);\n   padding: 0.25rem;\n   margin-bottom: 1rem;\n}\n\n.te-info-panel .tc-plugin-info {\n   margin-bottom: 0;\n}\n\n.te-info-panel .tc-plugin-info-dropdown {\n   margin-top: -1px;\n}"},"$:/plugins/telmiger/PluginSize/support":{"title":"$:/plugins/telmiger/PluginSize/support","created":"20200524225402217","modified":"20200605060258442","tags":"","type":"text/vnd.tiddlywiki","text":"{{$:/plugins/telmiger/support}}"},"$:/plugins/telmiger/PluginSize/template":{"title":"$:/plugins/telmiger/PluginSize/template","created":"20190122222437252","creator":"Thomas Elmiger","list-after":"$:/core/ui/ViewTemplate/plugin","modified":"20200605060258457","modifier":"Thomas Elmiger","type":"text/vnd.tiddlywiki","text":"\\define harveyBall(size)\n<$reveal type=\"lt\" text=\"500001\" default=$size$>\n<$reveal type=\"gt\" text=\"100000\" default=$size$>\n<<HB21>>\n</$reveal>\n<$reveal type=\"lt\" text=\"100001\" default=$size$>\n<$reveal type=\"gt\" text=\"50000\" default=$size$>\n<<HB13>>\n</$reveal>\n<$reveal type=\"lt\" text=\"50001\" default=$size$>\n<$reveal type=\"gt\" text=\"25000\" default=$size$>\n<<HB8>>\n</$reveal>\n<$reveal type=\"lt\" text=\"25001\" default=$size$>\n<<HB5>>\n</$reveal>\n</$reveal>\n</$reveal>\n</$reveal>\n<$reveal type=\"gt\" text=\"500000\" default=$size$>\n<<HB34>>\n</$reveal>\n\\end\n<div class=\"tiddler-size-indicator\">\n<$wikify name=\"size\" text=\"\"\"<$editor-counter tiddler=<<currentTiddler>> field=\"text\" mode=\"character\"/>\"\"\">\n<$macrocall $name=\"harveyBall\" size=<<size>>/> – plugin size: <$macrocall $name=\"rpn\" a=<<size>> b=\"1000\" operation=\"/\" decimals=\"1\" locale=\"en-GB\"/> k characters (<<size>>)\n</$wikify>\n</div>"}}}
+{"tiddlers": {
+"$:/plugins/telmiger/PluginSize/about": {
+    "created": "20200524224655528",
+    "text": "This plugin calculates the size of installed plugins, themes and languages. It adds a tab //Plugin Info// to the [[$:/ControlPanel]] – the one with the {{$:/core/images/info-button}} icon.",
+    "modified": "20231220191500561",
+    "title": "$:/plugins/telmiger/PluginSize/about",
+    "tags": ""
+},
+
+"$:/plugins/telmiger/PluginSize/history": {
+    "created": "20231227141710403",
+    "text": "!! History\n\n* ''1.0.1'' -- 2023-12-31 -- feature update\n** No plugin dependencies anymore: \n*** //rpn// is no longer needed.\n*** //Harvey Balls// is an option now.\n** MIT license\n\n* ''0.0.9'' -- 2019-03-10 -- initial release\n",
+    "creator": "Thomas Elmiger",
+    "title": "$:/plugins/telmiger/PluginSize/history",
+    "tags": "",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231231003218100"
+},
+
+"$:/plugins/telmiger/PluginSize/icon": {
+    "created": "20190127213417005",
+    "text": "<svg class=\"em-icon harvey-ball ball-complex\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" fill=\"currentColor\" viewBox=\"0 0 128 128\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">{{$:/language/HarveyBalls/complex/title}}</title><desc id=\"desc\">{{$:/language/HarveyBalls/complex/desc}}</desc><path d=\"M64 128C28.654 128 0 99.346 0 64 0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64zm48-64c0 .19-48 0-48 0V16c26.51 0 48 21.49 48 48z\"/></svg>",
+    "creator": "Thomas Elmiger",
+    "title": "$:/plugins/telmiger/PluginSize/icon",
+    "tags": "",
+    "modified": "20231227135655440",
+    "modifier": "Thomas Elmiger"
+},
+
+"$:/plugins/telmiger/PluginSize/license": {
+    "created": "20231227142815449",
+    "text": "`Plugin Size is published under the MIT License.`\n\n!!! Plugin Size\nThe content of $:/plugins/telmiger/PluginSize is<br>\nCopyright (c), Thomas Elmiger, https://thomas-elmiger.ch\n\n!!! The MIT License (MIT)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+    "title": "$:/plugins/telmiger/PluginSize/license",
+    "tags": "",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231227143028338",
+    "creator": "Thomas Elmiger"
+},
+
+"$:/plugins/telmiger/PluginSize/plugin-info": {
+    "created": "20190308213013859",
+    "text": "\\define lingo-base() $:/language/ControlPanel/Plugins/\n\n\\define plugin-table(type)\n<$set name=\"plugin-type\" value=\"\"\"$type$\"\"\">\n<$set name=\"qualified-state\" value=<<qualify \"$:/state/plugin-info\">>>\n<$list filter=\"[!has[draft.of]plugin-type[$type$]sort[description]]\" emptyMessage=<<lingo \"Empty/Hint\">> >\n<div class=\"te-info-panel\">\n{{||$:/core/ui/Components/plugin-info}}\n</div>\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>\n</$set>\n</$set>\n\\end\n\n<<lingo Installed/Hint>>\n\n<<tabs \"[[$:/core/ui/ControlPanel/Plugins/Installed/Plugins]] [[$:/core/ui/ControlPanel/Plugins/Installed/Themes]] [[$:/core/ui/ControlPanel/Plugins/Installed/Languages]]\" \"$:/core/ui/ControlPanel/Plugins/Installed/Plugins\">>\n",
+    "creator": "Thomas Elmiger",
+    "title": "$:/plugins/telmiger/PluginSize/plugin-info",
+    "tags": "$:/tags/ControlPanel",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231220191715377",
+    "caption": "{{$:/core/images/info-button}} Plugin Info",
+    "list-after": "$:/core/ui/ControlPanel/Plugins"
+},
+
+"$:/plugins/telmiger/PluginSize/readme": {
+    "created": "20190127210600496",
+    "text": "!! Plugin Size\n\n{{$:/plugins/telmiger/PluginSize/about}}\n\nThe same information can be found on [[$:/plugins/telmiger/PluginSize/plugin-info]].\n\n!!! Categories (character count)\n\n* <<HB5>> up to 25 k\n* <<HB8>> up to 50 k\n* <<HB13>> up to 100 k\n* <<HB21>> up to 500 k \n* <<HB34>> more than 500 k\n\n!!! Optional graphics\n\nSize indicating icons are shown if my other plugin [[Harvey Balls|https://tid.li/tw5/plugins.html#%24%3A%2Fplugins%2Ftelmiger%2FHarveyBalls]] is installed.\n\n{{$:/plugins/telmiger/PluginSize/history}}",
+    "creator": "Thomas Elmiger",
+    "title": "$:/plugins/telmiger/PluginSize/readme",
+    "tags": "",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231227143703867"
+},
+
+"$:/plugins/telmiger/PluginSize/styles.css": {
+    "created": "20190122231405826",
+    "text": ".tiddler-size-indicator {\n   width: 100%;\n   background-color: rgba(125,125,125,0.3);\n   padding: 0.25rem;\n   margin-bottom: 1rem;\n}\n.te-info-panel .tc-plugin-info {\n   margin-bottom: 0;\n}\n.te-info-panel .tc-plugin-info-dropdown {\n   margin-top: -1px;\n}",
+    "creator": "Thomas Elmiger",
+    "title": "$:/plugins/telmiger/PluginSize/styles.css",
+    "tags": "$:/tags/Stylesheet",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231220191841965"
+},
+
+"$:/plugins/telmiger/PluginSize/support": {
+    "created": "20200524225402217",
+    "text": "{{$:/plugins/telmiger/support}}",
+    "title": "$:/plugins/telmiger/PluginSize/support",
+    "tags": "",
+    "modified": "20231220192112089"
+},
+
+"$:/plugins/telmiger/PluginSize/template": {
+    "created": "20190122222437252",
+    "text": "<div class=\"tiddler-size-indicator\">\n<$let \nsize={{{ [<currentTiddler>get[text]length[]] }}} \niconS={{{ [<size>compare:number:gt[25000]then[obvious]else[simple]] }}}\niconM={{{ [<size>compare:number:gt[50000]then[complicated]else<iconS>] }}}\niconL={{{ [<size>compare:number:gt[100000]then[complex]else<iconM>] }}}\nicon={{{ [<size>compare:number:gt[500000]then[chaotic]else<iconL>] }}}\nsizek={{{ [<size>divide[1000]fixed[1]] }}}\n>\n<$let\ncommentS={{{ [<icon>match[obvious]then[small]else[tiny]] }}}\ncommentM={{{ [<icon>match[complicated]then[medium]else<commentS>] }}}\ncommentL={{{ [<icon>match[complex]then[big]else<commentM>] }}}\ncomment={{{ [<icon>match[chaotic]then[gigantic]else<commentL>] }}}\n>\n<$transclude $variable=\"HarveyBall\" variant=<<icon>> title=<<comment>>/> – plugin size:  <<sizek>> k characters (<<size>>)\n</$let>\n</$let>\n</div>",
+    "title": "$:/plugins/telmiger/PluginSize/template",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231231002534001",
+    "list-after": "$:/core/ui/ViewTemplate/plugin",
+    "creator": "Thomas Elmiger"
+},
+
+"$:/plugins/telmiger/PluginSize/ViewTemplate": {
+    "created": "20190122065955189",
+    "text": "<$list filter=\"[all[current]has[plugin-type]] -[all[current]field:plugin-type[import]]\">\n{{||$:/plugins/telmiger/PluginSize/template}}\n</$list>",
+    "title": "$:/plugins/telmiger/PluginSize/ViewTemplate",
+    "tags": "$:/tags/ViewTemplate",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231220192028833",
+    "list-after": "$:/core/ui/ViewTemplate/plugin",
+    "creator": "Thomas Elmiger"
+},
+
+"$:/plugins/telmiger/support": {
+    "created": "20181103150753927",
+    "text": "!! Support the Author\n\n''Hi!'' I’m Thomas, the author of [[tid.li/tw5/plugins.html|https://tid.li/tw5/plugins.html]]. Feedback is always welcome, as well as funding for maintenance, support and new projects :)\n\n---\n\n!!! One Time Support\n\nIf using my plugins just makes you happy, consider a one time payment via ~PayPal to reward the effort:\n\nhttps://www.paypal.me/telmiger\n\n---\n\n!!! Permanent Support\n\nIf my tools make you more productive or save you time in your job or your everyday life, you can support me as a Patron: \n\nhttps://www.patreon.com/telmiger\n\n---\n\n!!! Thank You\n\nSubstantial parts of my availabe time go to the deveopment of useful plugins for [[TiddlyWiki|https://tiddlywiki.com/]]. – Many others do the same and I would like to thank them all, especially [[Jeremy Ruston|https://tiddlywiki.com/#JeremyRuston]] and all the active members of the community!\n\n//Hereby I promise to share future revenues (if any) with other developers who’s works I use or who inspired me.//\n\nIf you like my work, I would be very happy to hear from you.\n\n''Thank you very much for your support!''<br>\n//Thomas//\n\nhttps://thomas-elmiger.ch",
+    "title": "$:/plugins/telmiger/support",
+    "tags": "",
+    "modifier": "Thomas Elmiger",
+    "modified": "20231229230608237",
+    "creator": "Thomas Elmiger"
+}}
+}

@@ -9,4 +9,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Commander
 title: $:/plugins/kookma/commander
 type: application/json
-version: 2.1.6
+version: 2.1.7

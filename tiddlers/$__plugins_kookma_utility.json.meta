@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/kookma/TW-Utility
 title: $:/plugins/kookma/utility
 type: application/json
-version: 2.6.1
+version: 2.7.0
