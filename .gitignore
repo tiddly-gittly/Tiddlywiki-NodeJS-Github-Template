@@ -12,6 +12,10 @@ tiddlers/$__Import.tid
 tiddlers/$__layout.json
 tiddlers/$__layout.json.meta
 tiddlers/$__layout.tid
+tiddlers/$__language.tid
+tiddlers/$__palette.tid
+tiddlers/$__UpgradeLibrary
+tiddlers/$__UpgradeLibrary_List
 # fsrs
 tiddlers/$__Deck_new_study.tid
 tiddlers/$__Deck_default_study.tid
