@@ -1,0 +1,91 @@
+{"tiddlers": {
+"$:/plugins/yaisog/single-tiddler-view/DynamicPageContent": {
+    "created": "20230505184127451",
+    "text": "\\parameters(filter,depth:1)\n<$list filter=\"[subfilter<filter>nth<depth>]\" emptyMessage=\"\"\"<$slot $name=\"ts-raw\" $depth={{{ [<depth>multiply[2]subtract[1]] }}} />\"\"\">\n\t<$transclude $tiddler=<<currentTiddler>> $mode=\"block\">\n\t\t<$transclude $tiddler=\"$:/plugins/yaisog/single-tiddler-view/DynamicPageContent\" filter=<<filter>> depth={{{ [<depth>add[1]] }}} $mode=\"block\"/>\n\t</$transclude>\n</$list>\n",
+    "tags": "",
+    "title": "$:/plugins/yaisog/single-tiddler-view/DynamicPageContent",
+    "modified": "20230519113543976"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/DynamicPageContent/tm-close-tiddler": {
+    "created": "20230213133858739",
+    "text": "\\define tm-close-tiddler-actions()\n<$let targetTiddler={{{ [<event-param>!is[blank]else<event-tiddlerTitle>] }}} history={{{ [<tv-history-list>get[text]] }}}>\n\t<$list filter=\"[<tv-history-list>get[current-tiddler]match<targetTiddler>]\" variable=\"void\">\n\t\t<$let previousItem={{{ [<history>jsonindexes[]] :map[<history>jsonget<currentTiddler>,[title]] :intersection[list<tv-story-list>] +[!match<targetTiddler>reverse[]first[]] :else[list<tv-story-list>before<targetTiddler>] :else[list<tv-story-list>after<targetTiddler>] :else[{$:/mwi/DefaultTiddler}] }}}>\n\t\t\t<$action-navigate $to=<<previousItem>> />\n\t\t</$let>\n\t</$list>\n\t<$action-sendmessage $message=<<event-type>> $param=<<targetTiddler>> />\n</$let>\n\\end\n\n<$messagecatcher $tm-close-tiddler=<<tm-close-tiddler-actions>> >\n\t<$slot $name=ts-raw />\n</$messagecatcher>",
+    "tags": "$:/tags/DynamicPageTemplate",
+    "title": "$:/plugins/yaisog/single-tiddler-view/DynamicPageContent/tm-close-tiddler",
+    "modified": "20230519114409228"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/DynamicPageContent/tm-delete-tiddler": {
+    "created": "20230213163657364",
+    "text": "\\define tm-delete-tiddler-actions()\n\\define tv-action-refresh-policy() always\n<$let targetTiddler={{{ [<event-param>!is[blank]else<event-tiddlerTitle>] }}} history={{{ [<tv-history-list>get[text]] }}}\n\t  patchesID={{{ [<targetTiddler>get[created]] }}} >\n\t<$action-sendmessage $message=<<event-type>> $param=<<targetTiddler>> />\n    <!-- only perform actions if delete was not canceled -->\n    <$list filter=\"[<targetTiddler>!is[tiddler]]\" variable=\"void\">\n        <$list filter=\"[<tv-history-list>get[current-tiddler]match<targetTiddler>]\" variable=\"void\">\n            <$let previousItem={{{ [<history>jsonindexes[]] :map[<history>jsonget<currentTiddler>,[title]] :intersection[list<tv-story-list>] +[!match<targetTiddler>reverse[]first[]] :else[list<tv-story-list>before<targetTiddler>] :else[list<tv-story-list>after<targetTiddler>] :else[{$:/mwi/DefaultTiddler}] }}}>\n                <$action-navigate $to=<<previousItem>> />\n            </$let>\n        </$list>\n\t</$list>\n</$let>\n\\end\n\n<$messagecatcher $tm-delete-tiddler=<<tm-delete-tiddler-actions>> >\n\t<$slot $name=ts-raw />\n</$messagecatcher>\n",
+    "title": "$:/plugins/yaisog/single-tiddler-view/DynamicPageContent/tm-delete-tiddler",
+    "modified": "20230519113530797",
+    "tags": "$:/tags/DynamicPageTemplate"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/history": {
+    "text": "| ''1.0.0'' | 2023-05-21 |initial release |\n\n",
+    "type": "text/vnd.tiddlywiki",
+    "title": "$:/plugins/yaisog/single-tiddler-view/history",
+    "tags": ""
+},
+
+"$:/plugins/yaisog/single-tiddler-view/InitialNavigation": {
+    "created": "20230521171428495",
+    "text": "<$action-setfield $tiddler=\"$:/HistoryList\" $field=\"current-tiddler\" $value={{{ [subfilter{$:/DefaultTiddlers}first[]] }}} />",
+    "tags": "$:/tags/StartupAction",
+    "title": "$:/plugins/yaisog/single-tiddler-view/InitialNavigation",
+    "modified": "20230521172644221"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/license": {
+    "text": "Distributed under an MIT license.\n\nCopyright (c) 2023 [[Yaisog Bonegnasher|https://yaisog.tiddlyhost.com/]]\n\n<<<\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n<<<",
+    "type": "text/vnd.tiddlywiki",
+    "title": "$:/plugins/yaisog/single-tiddler-view/license",
+    "tags": ""
+},
+
+"$:/plugins/yaisog/single-tiddler-view/PageTemplate": {
+    "text": "\\whitespace trim\n\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\n<$vars\n\ttv-config-toolbar-icons={{$:/config/Toolbar/Icons}}\n\ttv-config-toolbar-text={{$:/config/Toolbar/Text}}\n\ttv-config-toolbar-class={{$:/config/Toolbar/ButtonClass}}\n\ttv-enable-drag-and-drop={{$:/config/DragAndDrop/Enable}}\n\ttv-show-missing-links={{$:/config/MissingLinks}}\n\tstoryviewTitle={{$:/view}}\n\tlanguageTitle={{{ [{$:/language}get[name]] }}}>\n    \n<div class={{{ [all[shadows+tiddlers]tag[$:/tags/ClassFilters/PageTemplate]!is[draft]] :map:flat[subfilter{!!text}] tc-page-container [[tc-page-view-]addsuffix<storyviewTitle>] [[tc-language-]addsuffix<languageTitle>] :and[unique[]join[ ]] }}} >\n\n\t<$navigator story=\"$:/StoryList\" history=\"$:/HistoryList\" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>\n\n        <$dropzone enable=<<tv-enable-drag-and-drop>>>\n\n            <$transclude $tiddler=\"$:/plugins/yaisog/single-tiddler-view/DynamicPageContent\" filter=\"[all[shadows+tiddlers]tag[$:/tags/DynamicPageTemplate]!has[draft.of]]\">\n\n                <$list filter=\"[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]] :and[append[$:/plugins/yaisog/single-tiddler-view/PageTemplate/story]remove[$:/core/ui/PageTemplate/story]]\" variable=\"listItem\">\n                    <$transclude tiddler=<<listItem>>/>\n                </$list>\n\n\t\t\t\t\t\t</$transclude> <!-- see https://github.com/Jermolene/TiddlyWiki5/pull/7340 -->\n\n\t\t\t\t</$dropzone>\n\n    </$navigator>\n\n</div>\n\n</$vars>\n",
+    "created": "20220226095218264",
+    "title": "$:/plugins/yaisog/single-tiddler-view/PageTemplate",
+    "name": "~SingleTiddlerView",
+    "tags": "$:/tags/Layout",
+    "modified": "20230519114353226",
+    "icon": "$:/core/images/layout-button",
+    "description": "shows a single tiddler at a time"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/PageTemplate/story": {
+    "created": "20230211054107536",
+    "text": "\\whitespace trim\n\n\\define single-tiddler() [{$:/HistoryList!!current-tiddler}] :intersection[list<tv-story-list>]\n\n\\define story-filter() [{$:/view}!match[minimal]] :then[list<tv-story-list>] :else[subfilter<single-tiddler>]\n\n<section class=\"tc-story-river\" role=\"main\">\n\n<section class=\"story-backdrop\">\n\n<$list filter=\"[all[shadows+tiddlers]tag[$:/tags/AboveStory]!has[draft.of]]\">\n\n<$transclude/>\n\n</$list>\n\n</section>\n\n<$list filter=\"[subfilter<story-filter>]\" history=\"$:/HistoryList\" template=\"$:/core/ui/StoryTiddlerTemplate\" storyview={{$:/view}} emptyMessage={{$:/config/EmptyStoryMessage}}/>\n\n<section class=\"story-frontdrop\">\n\n<$list filter=\"[all[shadows+tiddlers]tag[$:/tags/BelowStory]!has[draft.of]]\">\n\n<$transclude/>\n\n</$list>\n\n</section>\n\n</section>\n",
+    "title": "$:/plugins/yaisog/single-tiddler-view/PageTemplate/story",
+    "tags": "",
+    "modified": "20230521172632800",
+    "list-after": "$:/core/ui/PageTemplate/story"
+},
+
+"$:/plugins/yaisog/single-tiddler-view/readme": {
+    "text": "\\define .value(_) <code class=\"doc-value\">$_$</code>\n\\define .tip(_) <div class=\"doc-icon-block\"><div class=\"doc-block-icon\">{{$:/core/images/tip}}</div> $_$</div>\n\\define .warning(_) <div class=\"doc-icon-block\"><div class=\"doc-block-icon\">{{$:/core/images/warning}}</div> $_$</div>\n\\define control-panel(target)\n<$action-setfield $tiddler=\"$:/state/tab-1749438307\" $value=\"$:/core/ui/ControlPanel/Appearance\" />\n<$action-setfield $tiddler=\"$:/state/tab--1963855381\" $value=<<__target__>> />\n<$action-navigate $to=\"$:/ControlPanel\" />\n\\end\n\\define sidebar(target)\n<$action-setfield $tiddler=\"$:/state/tab/sidebar--595412856\" $value=<<__target__>> />\n\\end\n\n<style>\n.doc-button,\n.doc-tab,\n.doc-tag,\n.doc-tiddler,\n.doc-field,\n.doc-value,\n.doc-operator,\n.doc-var,\n.doc-widget,\n.doc-attr,\n.doc-param {\n\tbackground-color: <<color background>>;\n\tborder: none;\n\tcolor: <<color very-muted-foreground>>;\n\tfont-weight: bold;\n\tpadding: 0;\n}\n.doc-icon-block {\n\tborder-left: 2px solid <<colour code-border>>;\n\tmargin-left: 3em;\n\tpadding-left: 0.6em;\n\tposition: relative;\n}\n.doc-block-icon {\n\tposition: absolute;\n\tleft: -3em;\n\ttop: 0.2em;\n}\n.doc-block-icon .tc-image-tip {\n\tfill: <<colour primary>>;\n}\n.doc-block-icon .tc-image-warning {\n\tfill: <<colour alert-highlight>>;\n}\n</style>\n\n\nThis plugin adds the Page Template <<.value ~SingleTiddlerView>> and the Story View <<.value minimal>> to a ~TiddlyWiki.\n\n!! Page Template <<.value ~SingleTiddlerView>>\nThis page template displays only a single tiddler at a time.\n\nThe tiddler shown is the tiddler set in the field <<.field current-tiddler>> of [[$:/HistoryList]], i.e. the last tiddler that has been navigated to, if that tiddler is also in [[$:/StoryList]].\n\nUpon closing or deleting a tiddler, the previously shown tiddler is navigated to. If there is no previous tiddler, the neighboring tiddler in the ~StoryList is displayed (this is mostly relevant when a wiki is opened with multiple tiddlers in the ~StoryList, but no ~HistoryList).\n\nThe extensible mechanism that is used to flexibly insert the necessary ~MessageCatchers for <<.value tm-close-tiddler>> and <<.value tm-delete-tiddler>> is only available in TiddlyWiki 5.3.0 or later.\n\n<<.tip \"\"\"The single tiddler view will only be enabled when the Story View is set to <<.value minimal>>, see below.\"\"\">>\n\n<<.tip \"\"\"You can change the page template / layout, by pressing `Ctrl-Shift-L` or in the [[$:/ControlPanel]] by going to <<.value Appearance>> and then <<.value \"Layout\">> or by clicking <$button class=\"tc-btn-invisible tc-tiddlylink\" actions=\"<<control-panel $:/snippets/LayoutSwitcher>>\" >here</$button>.\"\"\">>\n\n<<.tip \"\"\"It is useful to have list of open tiddlers, such as the <$button class=\"tc-btn-invisible tc-tiddlylink\" actions=\"<<sidebar $:/core/ui/SideBar/Open>>\">Open sidebar tab</$button> or a browser-tab-like interface at the top of the page, to be able to quickly switch between open tiddlers.\"\"\">>\n<p/>\n\n!! Story View <<.value minimal>>\nThis story view is basically the same as <<.value classic>> without any animations.\n\nWhen used to display the main story, navigation is sped up by not animating the transition between tiddlers. The value of [[$:/config/AnimationDuration]] can be left as is to retain the other animations, e.g. when adding or removing tags.\n\n<<.tip \"\"\"You can change the story view in the [[$:/ControlPanel]] by going to <<.value Appearance>> and then <<.value \"Story View\">> or by clicking <$button class=\"tc-btn-invisible tc-tiddlylink\" actions=\"<<control-panel $:/core/ui/ControlPanel/StoryView>>\" >here</$button>.\"\"\">>\n\n<<.tip \"\"\"You can also use the <<.value minimal>> story view with other page templates.\"\"\">>\n<p/>\n\n!! ~EmptyMessage\nYou can define the content to be shown when the ~StoryList is empty in the tiddler [[$:/config/EmptyStoryMessage]]. It is not set by default.",
+    "type": "text/vnd.tiddlywiki",
+    "title": "$:/plugins/yaisog/single-tiddler-view/readme",
+    "tags": ""
+},
+
+"$:/core/images/storyview-minimal": {
+    "created": "20230519114130902",
+    "text": "\\parameters (size:\"22pt\")\n<svg width=<<size>> height=<<size>> class=\"tc-image-storyview-classic tc-image-button\" viewBox=\"0 0 128 128\"><path fill-rule=\"evenodd\" d=\"M8.007 0A8.01 8.01 0 000 8.007v111.986A8.01 8.01 0 008.007 128h111.986a8.01 8.01 0 008.007-8.007V8.007A8.01 8.01 0 00119.993 0H8.007zm15.992 16C19.581 16 16 19.578 16 23.992v16.016C16 44.422 19.588 48 24 48h80c4.419 0 8-3.578 8-7.992V23.992c0-4.414-3.588-7.992-8-7.992H24zm0 48C19.581 64 16 67.59 16 72c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8 0-4.418-3.588-8-8-8H24zm0 32C19.581 96 16 99.59 16 104c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8 0-4.418-3.588-8-8-8H24z\"/></svg>",
+    "title": "$:/core/images/storyview-minimal",
+    "tags": "$:/tags/Image",
+    "modified": "20230519114134450"
+},
+
+"$:/plugins/yaisog/modules/storyviews/minimal.js": {
+    "created": "20230518155947345",
+    "text": "/*\\\ntitle: $:/core/modules/storyviews/minimal.js\ntype: application/javascript\nmodule-type: storyview\n\nViews the story as a linear sequence, without any animations\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar MinimalStoryView = function(listWidget) {\n\tthis.listWidget = listWidget;\n};\n\nMinimalStoryView.prototype.navigateTo = function(historyInfo) {\n\tvar listElementIndex = this.listWidget.findListItem(0,historyInfo.title);\n\tif(listElementIndex === undefined) {\n\t\treturn;\n\t}\n\tvar listItemWidget = this.listWidget.children[listElementIndex],\n\t\ttargetElement = listItemWidget.findFirstDomNode();\n\t// Abandon if the list entry isn't a DOM element (it might be a text node)\n\tif(!targetElement || targetElement.nodeType === Node.TEXT_NODE) {\n\t\treturn;\n\t}\n\ttargetElement.scrollIntoView();\n};\n\nMinimalStoryView.prototype.remove = function(widget) {\n\tif(typeof widget.destroy === 'function') {\n\t\twidget.destroy();\n\t} else {\n\t\twidget.removeChildDomNodes();\n\t}\n};\n\nexports.minimal = MinimalStoryView;\n\n})();\n",
+    "title": "$:/plugins/yaisog/modules/storyviews/minimal.js",
+    "type": "application/javascript",
+    "module-type": "storyview",
+    "modified": "20230519114000307"
+}}
+}

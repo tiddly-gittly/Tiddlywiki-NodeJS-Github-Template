@@ -1,0 +1,12 @@
+author: Yaisog Bonegnasher
+core-version: >=5.3.0-prerelease
+description: Display a single tiddler at a time without view animations
+list: readme license history
+name: Single Tiddler View
+packaged-by: Gatha on 21st May 2023, 19:33:06
+plugin-type: plugin
+source: https://yaisog.tiddlyhost.com/
+tags: 
+title: $:/plugins/yaisog/single-tiddler-view
+type: application/json
+version: 1.0.0
