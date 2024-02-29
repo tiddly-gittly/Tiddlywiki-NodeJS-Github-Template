@@ -10,4 +10,4 @@ plugin-type: plugin
 source: https://github.com/flibbles/tw5-relink
 title: $:/plugins/flibbles/relink-titles
 type: application/json
-version: 2.3.1
+version: 2.4.0
