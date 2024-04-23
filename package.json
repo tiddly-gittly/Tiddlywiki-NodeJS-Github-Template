@@ -13,7 +13,7 @@
     "shx": "0.3.4",
     "tiddlywiki": "^5.3.3",
     "uglify-js": "3.17.4",
-    "workbox-cli": "7.0.0",
+    "workbox-cli": "7.1.0",
     "zx": "^7.0.0",
     "rimraf": "^5.0.1"
   }
