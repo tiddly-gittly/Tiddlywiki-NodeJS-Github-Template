@@ -7,4 +7,4 @@ name: ReactJS
 plugin-type: plugin
 title: $:/plugins/linonetwo/tw-react
 type: application/json
-version: 0.6.3
+version: 0.7.0
