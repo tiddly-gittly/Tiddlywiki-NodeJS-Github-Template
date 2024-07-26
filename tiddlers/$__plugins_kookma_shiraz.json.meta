@@ -6,6 +6,7 @@ list: readme license history
 name: Shiraz
 plugin-type: plugin
 source: https://github.com/kookma/TW-Shiraz
+stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/shiraz
 type: application/json
-version: 2.9.5
+version: 2.9.7
