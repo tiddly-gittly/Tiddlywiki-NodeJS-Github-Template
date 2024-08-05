@@ -5,6 +5,7 @@ description: Internal link- or edit-buttons are added to tabs if selected
 list: readme history license
 name: Edit Tabs
 plugin-type: plugin
+stability: STABILITY_0_DEPRECATED
 title: $:/plugins/wikilabs/edit-tabs
 type: application/json
-version: 3.0.1
+version: 3.0.2
