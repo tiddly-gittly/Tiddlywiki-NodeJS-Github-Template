@@ -12,6 +12,8 @@
 
 可下载的HTML在[tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html)，其中包含编辑相关的插件，而且会稍微大一些（相当于一个tiktok视频的大小）。
 
+另外在 [tiddlyhost.com/hub/user/linonetwo](https://tiddlyhost.com/hub/user/linonetwo) 有一个 TiddlyHost 模板，点 Clone 按钮可在线使用，当我想起来的时候会手动更新。(其实等价于，先下载上面的离线版本，然后上传到新创建的 tiddlyhost wiki 上）。
+
 这个 repo 曾经包含wiki的备份数据和脚本，用于在MacOS上启动本地wiki服务器。现在它已经被废弃了，而且没有钱去维护，现在[TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop)是首选。旧版本可以在[feat/auto-start分支](https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template/tree/feat/auto-start)中找到。我们欢迎对它的贡献。
 
 ## 设置
