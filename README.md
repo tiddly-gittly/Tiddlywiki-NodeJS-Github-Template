@@ -12,6 +12,8 @@ You need to change the contents of the `$:/GitHub/Repo` entry to your personal g
 
 Downloadable HTML is at [tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/offline.html), which contains edit related plugins, and will be slightly bigger (a size of a tiktok video.)
 
+Also there is a TiddlyHost template at [tiddlyhost.com/hub/user/linonetwo](https://tiddlyhost.com/hub/user/linonetwo), which will update manually when I remember it. (It is same as, download the offline version above, and upload to a newly created tiddlyhost wiki.)
+
 This repo used to contains the wiki backup data and script to start a local wiki server on MacOS on start up. It is now deprecated, and no money to maintain, now [TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop) is preferred. Old version can be found at the [feat/auto-start branch](https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template/tree/feat/auto-start). Contribution to it is welcome.
 
 ## Setup
