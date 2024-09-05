@@ -20,11 +20,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-
+          node-version: lts/*
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 'latest'
+          run_install: false
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
@@ -33,19 +38,19 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
           
       - name: Install Dependency
-        run: npm install
+        run: pnpm install
       - name: Building online versions of web pages
-        run: npm run buildonline
+        run: pnpm run buildonline
       - name: Building downloadable offline versions of web pages
-        run: npm run buildoffline
+        run: pnpm run buildoffline
       - name: Workbox offline cache
-        run: npx workbox injectManifest workbox-config.js
+        run: pnpm exec workbox injectManifest workbox-config.js
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: ./public-dist
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.4
+        uses: actions/deploy-pages@v4
