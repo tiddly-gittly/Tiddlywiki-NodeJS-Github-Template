@@ -34,7 +34,7 @@ importers:
         version: 7.1.0
       zx:
         specifier: ^8.1.5
-        version: 8.1.5
+        version: 8.1.6
 
 packages:
 
@@ -2282,8 +2282,8 @@ packages:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
 
-  zx@8.1.5:
-    resolution: {integrity: sha512-gvmiYPvDDEz2Gcc37x7pJkipTKcFIE18q9QlSI1p5qoPDtoSn3jmGuWD0eEb7HuxEH5aDD7N/RVgH8BqSxbKzA==}
+  zx@8.1.6:
+    resolution: {integrity: sha512-SYAriWG+i2CFqMOJcF8QayI8wprlMYQsrmP6tFD7rSPnDLcImNSW7n/8crOYvNVrB2EFgz8LAQk23U1+Y7WrKA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -4898,7 +4898,7 @@ snapshots:
       camelcase: 5.3.1
       decamelize: 1.2.0
 
-  zx@8.1.5:
+  zx@8.1.6:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
       '@types/node': 22.5.4
