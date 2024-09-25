@@ -1,0 +1,11 @@
+author: Simon Huber
+core-version: >=5.3.3
+dependents: 
+description: A Flexbox Layout for TiddlyWiki5
+list: readme license
+name: TiddlyFlex
+plugin-type: plugin
+source: https://github.com/BurningTreeC/TiddlyFlex
+title: $:/plugins/BTC/TiddlyFlex
+type: application/json
+version: 0.5.5

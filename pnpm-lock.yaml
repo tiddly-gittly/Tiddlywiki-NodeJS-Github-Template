@@ -15,8 +15,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       npm-check-updates:
-        specifier: ^17.1.1
-        version: 17.1.1
+        specifier: ^17.1.3
+        version: 17.1.3
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -33,8 +33,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       zx:
-        specifier: ^8.1.5
-        version: 8.1.5
+        specifier: ^8.1.8
+        version: 8.1.8
 
 packages:
 
@@ -1649,8 +1649,8 @@ packages:
     resolution: {integrity: sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==}
     engines: {node: '>=8'}
 
-  npm-check-updates@17.1.1:
-    resolution: {integrity: sha512-2aqIzGAEWB7xPf0hKHTkNmUM5jHbn2S5r2/z/7dA5Ij2h/sVYAg9R/uVkaUC3VORPAfBm7pKkCWo6E9clEVQ9A==}
+  npm-check-updates@17.1.3:
+    resolution: {integrity: sha512-4uDLBWPuDHT5KLieIJ20FoAB8yqJejmupI42wPyfObgQOBbPAikQSwT73afDwREvhuxYrRDqlRvxTMSfvO+L8A==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -2050,6 +2050,7 @@ packages:
     resolution: {integrity: sha512-8pTmnQdkcHbol9D86Op7OGK4sGDqm19HWT2qgpSxPHfDG0yJ2rSBUTRuOMuh9GoPP0Tcz9+1Pe8A1m6pvd/zYQ==}
     engines: {node: '>=0.8.2'}
     hasBin: true
+    bundledDependencies: []
 
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
@@ -2282,8 +2283,8 @@ packages:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
 
-  zx@8.1.5:
-    resolution: {integrity: sha512-gvmiYPvDDEz2Gcc37x7pJkipTKcFIE18q9QlSI1p5qoPDtoSn3jmGuWD0eEb7HuxEH5aDD7N/RVgH8BqSxbKzA==}
+  zx@8.1.8:
+    resolution: {integrity: sha512-m8s48skYQ8EcRz9KXfc7rZCjqlZevOGiNxq5tNhDiGnhOvXKRGxVr+ajUma9B6zxMdHGSSbnjV/R/r7Ue2xd+A==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -4137,7 +4138,7 @@ snapshots:
 
   normalize-url@4.5.1: {}
 
-  npm-check-updates@17.1.1: {}
+  npm-check-updates@17.1.3: {}
 
   object-inspect@1.13.2: {}
 
@@ -4898,7 +4899,7 @@ snapshots:
       camelcase: 5.3.1
       decamelize: 1.2.0
 
-  zx@8.1.5:
+  zx@8.1.8:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
       '@types/node': 22.5.4

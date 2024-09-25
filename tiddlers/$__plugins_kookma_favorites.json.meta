@@ -1,12 +1,15 @@
 author: Mohammad Rahmani
-core-version: >=5.1.23
+core-version: >=5.3.5
 dependents: 
 description: Create favorites, organize in folders
 list: readme license history
 name: Favorites
+packaged-by: Gatha on 13th September 2024, 12:35:12
+parent-plugin: 
+plugin-priority: 
 plugin-type: plugin
 source: https://github.com/kookma/TW-Favorites
 stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/favorites
 type: application/json
-version: 4.8.7
+version: 4.8.8
