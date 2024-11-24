@@ -1,0 +1,10 @@
+caption: Dynamically detect browser or OS setting
+code-body: yes
+tags: $:/tags/DarkLightChangeActions
+title: _/dynamic/light-dark/detection
+
+<$reveal type="match" stateTitle="$:/config/palette/enable-light-dark-detection" text="yes">
+	<$let default={{{ [<dark-mode>match[yes]then[$:/config/palette/default-dark]else[$:/config/palette/default-light]] }}}>
+		<$action-setfield $tiddler="$:/palette" text={{{ [<default>get[text]] }}}/>
+	</$let>
+</$reveal>
