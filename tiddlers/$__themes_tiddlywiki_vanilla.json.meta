@@ -7,4 +7,4 @@ plugin-priority: 0
 plugin-type: theme
 title: $:/themes/tiddlywiki/vanilla
 type: application/json
-version: 5.3.2
+version: 5.3.6

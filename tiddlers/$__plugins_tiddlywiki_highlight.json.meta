@@ -4,6 +4,7 @@ description: Highlight.js syntax highlighting
 list: readme usage license
 name: Highlight
 plugin-type: plugin
+stability: STABILITY_2_STABLE
 title: $:/plugins/tiddlywiki/highlight
 type: application/json
-version: 5.3.2
+version: 5.3.6

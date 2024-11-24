@@ -5,6 +5,7 @@ library-version: v0.15.3
 list: readme usage config
 name: KaTeX
 plugin-type: plugin
+stability: STABILITY_2_STABLE
 title: $:/plugins/tiddlywiki/katex
 type: application/json
-version: 5.3.2
+version: 5.3.6

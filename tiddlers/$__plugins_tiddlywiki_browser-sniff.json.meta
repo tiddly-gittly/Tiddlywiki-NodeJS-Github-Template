@@ -4,6 +4,7 @@ description: Browser feature detection
 list: readme usage
 name: Browser Sniff
 plugin-type: plugin
+stability: STABILITY_2_STABLE
 title: $:/plugins/tiddlywiki/browser-sniff
 type: application/json
-version: 5.3.2
+version: 5.3.6

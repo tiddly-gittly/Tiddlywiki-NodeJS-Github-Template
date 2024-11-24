@@ -1,0 +1,11 @@
+author: Mario Pietsch
+core-version: >=5.3.1
+dependents: $:/plugins/wikilabs/palette-switcher
+description: Advanced Palette Watch
+list: readme history license
+name: Palette Watch
+plugin-type: plugin
+stability: STABILITY_1_EXPERIMENTAL
+title: $:/plugins/wikilabs/palette-watch
+type: application/json
+version: 0.9.1
