@@ -8,4 +8,4 @@ plugin-type: plugin
 source: https://github.com/BurningTreeC/TiddlyFlex
 title: $:/plugins/BTC/TiddlyFlex
 type: application/json
-version: 0.5.5
+version: 0.6.4
