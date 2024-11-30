@@ -1,0 +1,63 @@
+name: Upgrade NPM packages
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron:  "0 0 1 * *"
+
+jobs:
+  upgrade-packages:
+    name: Upgrade packages
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 'latest'
+          run_install: false
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+      - name: Install Dependency
+        run: pnpm install
+      - name: Upgrade Dependency
+        run: pnpm run update
+      - name: Install Dependency of upgraded
+        run: pnpm install --no-frozen-lockfile
+
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Automated Update all Library in libraries.json
+
+          # commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
+          # commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_author: Github Action <actions@github.com> # defaults to author of the commit that triggered the run
+
+
+          # Optional. Options used by `git-add`.
+          # See https://git-scm.com/docs/git-add#_options
+          # add_options: '-u'
+
+          # # Optional. Disable dirty check and always try to create a commit and push
+          skip_dirty_check: true
+          # # Optional. Skip internal call to `git fetch`
+          # skip_fetch: true
+          # # Optional. Skip internal call to `git checkout`
+          # skip_checkout: true
+          # Optional. Prevents the shell from expanding filenames.
+          # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
+          # disable_globbing: true
+          # push_options: --force
