@@ -1,0 +1,10 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/linonetwo/title-caption/edit/TitleStyle.css
+type: text/vnd.tiddlywiki
+
+/**
+ * There will be two inputs, and we select the nearest div to the title input and input.title-caption-plugin-caption-edit, then select the first input that is followed by the title preview element `tc-tiddler-title`
+ */
+div.tc-tiddler-edit-frame div:has(>.title-caption-plugin-caption-edit) .tc-tiddler-title + input {
+  font-size: unset;
+}

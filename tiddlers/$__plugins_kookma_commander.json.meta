@@ -4,7 +4,7 @@ dependents:
 description: Streamline tiddler management: bulk operations for titles, tags, and fields
 list: readme license history
 name: Tiddler Commander
-packaged-by: Gatha on 23rd November 2024, 23:03:13
+packaged-by: Gatha on 11th December 2024, 08:35:19
 parent-plugin: 
 plugin-priority: 
 plugin-type: plugin
@@ -12,4 +12,4 @@ source: https://github.com/kookma/TW-Commander
 stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/commander
 type: application/json
-version: 2.1.12
+version: 2.1.13

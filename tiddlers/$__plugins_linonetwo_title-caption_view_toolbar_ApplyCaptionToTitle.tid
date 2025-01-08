@@ -1,0 +1,30 @@
+caption: {{$:/plugins/linonetwo/title-caption/view/toolbar/icon-caption-to-title}} <<lingo ApplyCaptionToTitle $:/plugins/linonetwo/title-caption/language/>>
+description: <<lingo ApplyCaptionToTitleDescription $:/plugins/linonetwo/title-caption/language/>>
+tags: $:/tags/ViewToolbar
+title: $:/plugins/linonetwo/title-caption/view/toolbar/ApplyCaptionToTitle
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+\define lingo-base() $:/plugins/linonetwo/title-caption/language/
+
+<$let oldTitle=<<currentTiddler>> newTitle={{!!caption}}>
+  <%if [<oldTitle>] :cascade[all[shadows+tiddlers]tag[$:/tags/EditCaptionTemplateTitleFilter]!is[draft]get[text]] +[!is[blank]] %>
+    <%if [<oldTitle>get[caption]!is[blank]] %>
+      <$wikify name="ApplyCaptionToTitle" text="<<lingo ApplyCaptionToTitle>>" mode="inline">
+        <$button tooltip=<<ApplyCaptionToTitle>> aria-label=<<ApplyCaptionToTitle>> class=<<tv-config-toolbar-class>> >
+            <$action-deletefield $tiddler=<<oldTitle>> caption _is_titleless />
+            <$action-sendmessage $message="tm-rename-tiddler" from=<<oldTitle>> to=<<newTitle>> />
+
+          <$list filter="[<tv-config-toolbar-icons>match[yes]]">
+            {{$:/plugins/linonetwo/title-caption/view/toolbar/icon-caption-to-title}}
+          </$list>
+          <$list filter="[<tv-config-toolbar-text>match[yes]]">
+            <span class="tc-btn-text">
+              <$text text=<<ApplyCaptionToTitle>>/>
+            </span>
+          </$list>
+        </$button>
+      </$wikify>
+    <%endif%>
+  <%endif%>
+</$let>

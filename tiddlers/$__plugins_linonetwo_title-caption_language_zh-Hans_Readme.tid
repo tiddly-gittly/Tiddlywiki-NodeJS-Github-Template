@@ -1,0 +1,42 @@
+title: $:/plugins/linonetwo/title-caption/language/zh-Hans/Readme
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/title-caption/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+Github: https://github.com/tiddly-gittly/title-caption
+
+Caption 的意思是说明文字，「说明文字」就是图片下方解释图片内容的文字，例如「图中左二是林博士」。在太微里，「说明文字」字段一直被用于各种原本的标题是「系统使用的类似乱码的唯一标识符」的情况，向用户展示使用人类可读的「说明文字」字段。但太微默认只给部分系统条目显示「说明文字」字段，用户创建的条目可能还是会显示类似乱码的标题。
+
+现在越来越多的插件会自动生成随机标题，然后用「说明文字」字段保存人类可读的文本，所以这个字段越来越重要了。这个插件就是用来确保用户条目也会显示这个字段的内容，并且可以轻松地编辑它。
+
+!! 功能
+
+!!! 查看模式
+
+包含 `caption` （说明文字）字段，或 `_is_titleless` （无标题）字段的条目，在阅读模式时，在标题区域显示 `caption` 字段的内容。
+
+在工具栏上会显示 {{$:/plugins/linonetwo/title-caption/view/toolbar/icon-caption-to-title}} 按钮，点击后会将 `caption` 字段的内容挪到标题字段，重命名条目，并且处理所有对它的链接和嵌入。（需要额外安装 "relink "和 "relink-title "插件）
+
+!!! 编辑模式
+
+在编辑条目时，上述条目的标题编辑框会变成编辑 `caption` 字段的内容，对 `title` 字段的编辑框则变成了一个较小的、次要的输入框。
+
+很多快速录入插件可能只会带上随机标题字段，但不会给你加上默认的 `caption` 字段。这种插件一般会给条目加上 `_is_titleless: yes` 的字段。这个插件可以识别这种用法，显示友好的编辑框，让你在编辑时更方便地编辑 `caption` 字段。
+
+!! 尝试
+
+!!! 自动生成
+
+用下面的 i信息 布局，可以创建出 `title` 字段是随机 ID，`caption` 字段是真正标题的条目。
+
+<<simple-layout-launcher>>
+
+!!! 手动创建
+
+创建新条目，然后添加 `caption` 字段，或 `_is_titleless` 字段。
+
+添加后，你会发现标题编辑框会变成编辑 `caption` 字段的内容，对 `title` 字段的编辑框则变成了一个较小的、次要的输入框。

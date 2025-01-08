@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/title-caption/language/en-GB/ApplyCaptionToTitleDescription
+type: text/vnd.tiddlywiki
+
+Move `caption` field to `title`, overwrite the original `title` field.

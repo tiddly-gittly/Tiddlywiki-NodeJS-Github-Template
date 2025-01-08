@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/title-caption/readme
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/title-caption/language/
+
+<<lingo Readme>>

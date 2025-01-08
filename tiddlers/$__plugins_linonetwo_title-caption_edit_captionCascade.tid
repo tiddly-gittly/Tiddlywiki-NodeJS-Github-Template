@@ -1,0 +1,7 @@
+code-body: yes
+list-after: $:/core/ui/EditTemplate/title
+tags: $:/tags/EditTemplate
+title: $:/plugins/linonetwo/title-caption/edit/captionCascade
+type: text/vnd.tiddlywiki
+
+<$transclude tiddler={{{ [<currentTiddler>] :cascade[all[shadows+tiddlers]tag[$:/tags/EditCaptionTemplateTitleFilter]!is[draft]get[text]] }}} />

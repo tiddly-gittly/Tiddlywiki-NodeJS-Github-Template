@@ -1,0 +1,9 @@
+title: $:/plugins/linonetwo/title-caption/view/fallbackCaptionView
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+<h2 class="tc-title">
+  <$transclude field="caption">
+    <$view field="title"/>
+  </$transclude>
+</h2>

@@ -1,0 +1,12 @@
+caption: <<lingo ShortName $:/plugins/linonetwo/simple-layout-launcher/language/>>
+tags: $:/tags/SideBar
+title: $:/plugins/linonetwo/simple-layout-launcher/sidebar
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/simple-layout-launcher/language/
+
+!! <<lingo Name>>
+
+<div class="simple-layout-launcher-sidebar">
+  <<simple-layout-launcher>>
+</div>

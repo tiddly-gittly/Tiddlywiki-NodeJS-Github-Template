@@ -1,0 +1,42 @@
+title: $:/plugins/linonetwo/title-caption/language/en-GB/Readme
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/title-caption/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+Github: https://github.com/tiddly-gittly/title-caption
+
+Caption means "axillary text", it may means the text underneath an image that explains the content of the image, for example, "The second from the left in the picture is Dr Lin". In TiddlyWiki, the "caption" field has been used in various cases where the original title is "Unique identifier used by the system, similar to gibberish", and should show user the human-readable "caption" field. However, by default, TiddlyWiki only displays the "caption" field for some system tiddlers, and user-created tiddlers may still display garbled-like titles.
+
+Nowadays more and more plugins automatically generate random titles and then use the "caption" field to save human-readable text, so this field is becoming more and more important. This plugin is used to ensure that user tiddlers also display the contents of this field, and can easily edit it.
+
+!! Feature
+
+!!! View Mode
+
+Displays the contents of the `caption` field as a title for tiddlers containing a `caption` field, or a `_is_titleless` field.
+
+The {{$:/plugins/linonetwo/title-caption/view/toolbar/icon-caption-to-title}} button is displayed on the toolbar, and when clicked, it will move the contents of the `caption` field to the title field, rename and relink the entry, handle all links and transclusion to it. (Need to install "relink" and "relink-title" plugins)
+
+!!! Edit Mode
+
+When editing, the edit box for the title of said tiddler becomes an edit box for the contents of the `caption` field, and the edit box for the `title` field becomes a smaller, secondary input box.
+
+Many quick-recording plugins may just bring up a random title field, but not give you the default `caption` field. Such plugins will typically add the `_is_titleless: yes` field to the tiddler. This plugin recognises this usage and displays a friendly edit box to make it easier for you to edit the `caption` field while editing.
+
+!! Tryout
+
+!!! Auto generation
+
+With the following i-message layout, you can create tiddlers where the `title` field is a random ID and the `caption` field is the real title.
+
+<<simple-layout-launcher>>
+
+!!! Manual creation
+
+Create a new tiddler, then add the `caption` field, or the `_is_titleless` field.
+
+Once added, you'll notice that the old "title" edit box becomes an edit box for the `caption` field, and the edit box for the `title` field is now a smaller, secondary input box.

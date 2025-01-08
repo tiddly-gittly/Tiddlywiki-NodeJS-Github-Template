@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/title-caption/language/zh-Hans/ApplyCaptionToTitleDescription
+type: text/vnd.tiddlywiki
+
+将 `caption` 字段移动到 `title` 字段，覆盖原来的 `title` 字段。

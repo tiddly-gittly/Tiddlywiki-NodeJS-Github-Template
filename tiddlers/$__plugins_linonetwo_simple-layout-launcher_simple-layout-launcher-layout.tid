@@ -1,0 +1,28 @@
+description: <<lingo Description $:/plugins/linonetwo/simple-layout-launcher/language/>>
+icon: $:/plugins/linonetwo/simple-layout-launcher/simple-layout-launcher-layout-image
+name: <<lingo Name $:/plugins/linonetwo/simple-layout-launcher/language/>>
+tags: $:/tags/Layout
+title: $:/plugins/linonetwo/simple-layout-launcher/simple-layout-launcher-layout
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+\import [subfilter{$:/core/config/GlobalImportFilter}]
+\define containerClasses()
+tc-page-container tc-language-$(languageTitle)$ simple-layout-launcher-container
+\end
+\procedure redirected-navigate-actions()
+  <$action-setfield $tiddler="$:/layout" text="" $timestamp="no">
+    <$action-navigate $to=<<event-navigateTo>> $scroll="yes" />
+  </$action-setfield>
+\end
+
+<$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
+	<$messagecatcher $tm-navigate=<<redirected-navigate-actions>>>
+		{{$:/core/ui/CommandPaletteTemplate}}
+		<div class=<<containerClasses>>>
+			<div class="linonetwo-simple-layout-launcher-layout-container">
+				<<simple-layout-launcher>>
+			</div>
+		</div>
+	</$messagecatcher>
+</$navigator>

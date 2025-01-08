@@ -1,0 +1,9 @@
+tags: $:/tags/Image
+title: $:/plugins/linonetwo/simple-layout-launcher/simple-layout-launcher-layout-image
+type: text/vnd.tiddlywiki
+
+\parameters (size:"22pt")
+<svg width=<<size>> height=<<size>> class="tc-image-linonetwo-simple-layout tc-image-button" viewBox="0 0 24 24">
+  <path d="M 4 3 C 4.552 3 5 3.448 5 4 L 5 20 C 5 20.552 4.552 21 4 21 C 3.448 21 3 20.552 3 20 L 3 4 C 3 3.448 3.448 3 4 3 Z" style="stroke: none; fill-rule: evenodd;"/>
+  <path d="M 10 8 L 18 8 C 18.757 8.044 19.633 8.391 20.121 8.879 C 20.609 9.367 20.956 10.243 21 11 L 21 13 C 20.956 13.757 20.609 14.633 20.121 15.121 C 19.633 15.609 18.757 15.956 18 16 L 10 16 C 9.243 15.956 8.367 15.609 7.879 15.121 C 7.391 14.633 7.044 13.757 7 13 L 7 11 C 7.044 10.243 7.391 9.367 7.879 8.879 C 8.367 8.391 9.243 8.044 10 8 Z M 9.293 10.293 C 9.057 10.529 8.956 10.652 9 11 L 9 13 C 8.956 13.348 9.057 13.471 9.293 13.707 C 9.529 13.943 9.652 14.044 10 14 L 18 14 C 18.348 14.044 18.471 13.943 18.707 13.707 C 18.943 13.471 19.044 13.348 19 13 L 19 11 C 19.044 10.652 18.943 10.529 18.707 10.293 C 18.471 10.057 18.348 9.956 18 10 L 10 10 C 9.652 9.956 9.529 10.057 9.293 10.293 Z" style="stroke: none; fill-rule: evenodd;"/>
+</svg>

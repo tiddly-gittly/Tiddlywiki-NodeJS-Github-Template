@@ -1,0 +1,6 @@
+list-before: $:/plugins/linonetwo/title-caption/view/isTitlelessFilter
+tags: $:/tags/ViewTemplateTitleFilter
+title: $:/plugins/linonetwo/title-caption/view/hasCaptionFilter
+type: text/vnd.tiddlywiki
+
+[<currentTiddler>has[caption]then[$:/plugins/linonetwo/title-caption/view/fallbackCaptionView]]
