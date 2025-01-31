@@ -707,6 +707,10 @@
             "title": "$:/config/flibbles/relink/attributes/$list/filter",
             "text": "filter"
         },
+        "$:/config/flibbles/relink/attributes/$list/join": {
+            "title": "$:/config/flibbles/relink/attributes/$list/join",
+            "text": "wikitext"
+        },
         "$:/config/flibbles/relink/attributes/$list/template": {
             "title": "$:/config/flibbles/relink/attributes/$list/template",
             "text": "title"
