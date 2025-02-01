@@ -15,8 +15,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       npm-check-updates:
-        specifier: ^17.1.13
-        version: 17.1.13
+        specifier: ^17.1.14
+        version: 17.1.14
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -33,8 +33,8 @@ importers:
         specifier: 7.3.0
         version: 7.3.0
       zx:
-        specifier: ^8.3.0
-        version: 8.3.0
+        specifier: ^8.3.1
+        version: 8.3.1
 
 packages:
 
@@ -1649,8 +1649,8 @@ packages:
     resolution: {integrity: sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==}
     engines: {node: '>=8'}
 
-  npm-check-updates@17.1.13:
-    resolution: {integrity: sha512-m9Woo2J5XVab0VcQpYvrQ0hx3ySI1mGbiHR595mc6Lr1/FIaTWvv+oU+T1WKSfXRiluKC/V5P6Bdk5agaYpqqg==}
+  npm-check-updates@17.1.14:
+    resolution: {integrity: sha512-dr4bXIxETubLI1tFGeock5hN8yVjahvaVpx+lPO4/O2md3zJuxB7FgH3MIoTvQSCgsgkIRpe0skti01IEAA5tA==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -2283,8 +2283,8 @@ packages:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
 
-  zx@8.3.0:
-    resolution: {integrity: sha512-L8mY3yfJwo3a8ZDD6f9jZzAcRWJZYcV8GauZmBxLB/aSTwaMzMIEVpPp2Kyx+7yF0gdvuxKnMxAZRft9UCawiw==}
+  zx@8.3.1:
+    resolution: {integrity: sha512-MjNXfysB0Rv/lMi8oFa3a3flNC/KKqhguuarqxYM/uz/WFoD/AgHDkDdoDD4Y4nRjaCDphJJBTeeaPAE1P7fhA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -4138,7 +4138,7 @@ snapshots:
 
   normalize-url@4.5.1: {}
 
-  npm-check-updates@17.1.13: {}
+  npm-check-updates@17.1.14: {}
 
   object-inspect@1.13.2: {}
 
@@ -4899,7 +4899,7 @@ snapshots:
       camelcase: 5.3.1
       decamelize: 1.2.0
 
-  zx@8.3.0:
+  zx@8.3.1:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
       '@types/node': 22.5.4
