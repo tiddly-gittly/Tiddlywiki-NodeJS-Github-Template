@@ -34,7 +34,7 @@ importers:
         version: 7.3.0
       zx:
         specifier: ^8.4.1
-        version: 8.4.1
+        version: 8.5.2
 
 packages:
 
@@ -2120,7 +2120,6 @@ packages:
     resolution: {integrity: sha512-RfWt+Bo/UsTdzP5N4nEInjaJjgAzylUMf21hE4FL5v65c3x054+A+3g3sgW1m68lTJbTbiiqSZ6q6BEIZMwhSQ==}
     engines: {node: '>=0.8.2'}
     hasBin: true
-    bundledDependencies: []
 
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
@@ -2357,8 +2356,8 @@ packages:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
 
-  zx@8.4.1:
-    resolution: {integrity: sha512-1Cb+Tfwt/daKV6wckBeDbB6h3IMauqj9KWp+EcbYzi9doeJeIHCktxp/yWspXOXRdoUzBCQSKoUgm3g8r9fz5A==}
+  zx@8.5.2:
+    resolution: {integrity: sha512-eIxjTkCtlzvDNRhw3RD1gGBPA4nxOTn6PafpKl+MW4eE2jR/u/R6mqq7oyUCXwarM5DSP96kWtq6XkrL2kSFrg==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -5044,4 +5043,4 @@ snapshots:
       camelcase: 5.3.1
       decamelize: 1.2.0
 
-  zx@8.4.1: {}
+  zx@8.5.2: {}
