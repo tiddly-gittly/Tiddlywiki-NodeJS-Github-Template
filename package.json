@@ -11,12 +11,12 @@
   "devDependencies": {
     "cross-env": "7.0.3",
     "html-minifier-terser": "7.2.0",
-    "npm-check-updates": "^17.1.16",
+    "npm-check-updates": "^18.0.1",
     "rimraf": "^6.0.1",
     "shx": "0.4.0",
     "tiddlywiki": "^5.3.6",
     "uglify-js": "3.19.3",
     "workbox-cli": "7.3.0",
-    "zx": "^8.4.1"
+    "zx": "^8.5.3"
   }
 }
