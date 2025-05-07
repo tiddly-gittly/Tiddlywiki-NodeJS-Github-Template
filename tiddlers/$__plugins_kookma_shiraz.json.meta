@@ -4,7 +4,7 @@ dependents:
 description: Extended markups, tables, images, styles, and procedures
 list: readme license history
 name: Shiraz
-packaged-by: Gatha on 9th November 2024, 19:39:24
+packaged-by: Gatha on 17th February 2025, 20:12:28
 parent-plugin: 
 plugin-priority: 
 plugin-type: plugin
@@ -12,4 +12,4 @@ source: https://github.com/kookma/TW-Shiraz
 stability: STABILITY_1_EXPERIMENTAL
 title: $:/plugins/kookma/shiraz
 type: application/json
-version: 3.0.5
+version: 3.0.6
