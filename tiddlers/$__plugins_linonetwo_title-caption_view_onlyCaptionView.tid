@@ -1,7 +1,0 @@
-title: $:/plugins/linonetwo/title-caption/view/onlyCaptionView
-type: text/vnd.tiddlywiki
-
-\whitespace trim
-<h2 class="tc-title">
-  <$view field="caption" />
-</h2>
