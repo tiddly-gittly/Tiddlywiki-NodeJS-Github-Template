@@ -4,7 +4,7 @@ dependents:
 description: Create favorites, organize in folders
 list: readme license history
 name: Favorites
-packaged-by: Gatha on 13th September 2024, 12:35:12
+packaged-by: Gatha on 7th July 2025, 18:42:56
 parent-plugin: 
 plugin-priority: 
 plugin-type: plugin
@@ -12,4 +12,4 @@ source: https://github.com/kookma/TW-Favorites
 stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/favorites
 type: application/json
-version: 4.8.8
+version: 4.9.0

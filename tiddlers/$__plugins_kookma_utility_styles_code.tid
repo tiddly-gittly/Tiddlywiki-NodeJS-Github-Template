@@ -1,0 +1,43 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/utility/styles/code
+type: text/vnd.tiddlywiki
+
+div.kk-utility-code {
+	position: relative;
+}
+div.kk-utility-code > button.tc-btn-invisible {
+	position: absolute;
+	right: 0;
+	padding: 0.1em 0.2em;
+	opacity: 0.3;
+}
+div.kk-utility-code > button.tc-btn-invisible:hover {
+	transition: opacity 150ms ease-in-out;
+	opacity: 1;
+}
+div.kk-utility-code > button.tc-btn-invisible svg {
+	width: 1.2em;
+	height: 1.2em;
+}
+/* code caption*/
+.kk-utility-code-caption{
+	background: <<color pre-background>>;
+	border: solid 1px <<color pre-border>>;
+	border-bottom: unset;
+	padding: 0.3em 0.5em;
+	border-radius: 3px 3px 0 0;
+}
+.kk-utility-code-caption:empty{
+	display:none;
+}
+.kk-utility-code-caption + div.kk-utility-code > pre {
+	border-radius: 0 0 3px 3px;
+	margin-top: 0em;}
+/*
+Consider changing this rule: It hides the copy-button when
+in a tiddler the code-body field is set to yes 
+This may causes unwanted results. 	 
+*/
+div.tc-tiddler-body > div > div > button.tc-btn-invisible{
+	display:none;
+}

@@ -1,0 +1,11 @@
+tags: $:/tags/Global
+title: $:/plugins/kookma/utility/procedures/linkify
+type: text/vnd.tiddlywiki
+
+\procedure linkify(tiddler:"", field:"caption")
+<$link to=<<tiddler>> >
+	<$view tiddler=<<tiddler>> field=<<field>> >
+			<$view tiddler=<<tiddler>> field="title" />
+	</$view>
+</$link>
+\end

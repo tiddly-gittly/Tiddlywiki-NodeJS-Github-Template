@@ -1,0 +1,6 @@
+caption: Local
+tags: $:/tags/TextEditor/Snippet
+title: $:/plugins/kookma/utility/snippets/local-proc
+type: text/vnd.tiddlywiki
+
+<<local folder:"" label:"">>

@@ -4,7 +4,7 @@ dependents:
 description: Small tools for authors and developers
 list: readme license history
 name: Utility
-packaged-by: Gatha on 30th January 2025, 11:55:48
+packaged-by: Gatha on 7th July 2025, 22:39:00
 parent-plugin: 
 plugin-priority: 
 plugin-type: plugin
@@ -12,4 +12,4 @@ source: https://github.com/kookma/TW-Utility
 stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/utility
 type: application/json
-version: 3.2.2
+version: 3.2.3

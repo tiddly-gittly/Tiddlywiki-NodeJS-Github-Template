@@ -1,0 +1,39 @@
+list-after: $:/core/ui/ViewTemplate/body
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/utility/viewtemplates/source-toggle-button
+type: text/vnd.tiddlywiki
+
+<!-- These are those tiddlers are shown by default as code using $:/Core cascades-->
+\function system-excluded-filter()
+[tag[$:/tags/PageTemplate]] [tag[$:/tags/EditTemplate]] [tag[$:/tags/ViewTemplate]] [tag[$:/tags/KeyboardShortcut]] [tag[$:/tags/ImportPreview]] [tag[$:/tags/EditPreview]] [tag[$:/tags/EditorToolbar]] [tag[$:/EditorTools]] [tag[$:/tags/Actions]] [tag[$:/tags/ToolbarButtonStyle]]
+
+[prefix[$:/boot/]] [prefix[$:/core/macros]] [prefix[$:/core/save/]] [prefix[$:/core/templates/]]  [prefix[$:/config/]] [prefix[$:/core/config/]] [prefix[$:/info/]] [prefix[$:/language/]] [prefix[$:/languages/]] [prefix[$:/snippets/]]  [prefix[$:/info/]] [prefix[$:/state/]] [prefix[$:/status/]] [prefix[$:/temp/]]
+
+[field:plugin-type[import]]
+[field:code-body[yes]]
+[has[plugin-draft]]
+[has[plugin-type]]
+
+[type[text/css]] [type[application/x-tiddler-dictionary]]
+[type[application/json]] [type[application/javascript]]
+
+\end system-excluded-filter
+
+\define show-tiddler-source(open:"")
+<details  title="Show/hide tiddler source" class="kk-utility-details" $open$>
+<summary>Source</summary>
+<$transclude $variable="code" language={{{ [{!!title}get[type]else[text/vnd.tiddlywiki]] }}} src={{!!text}} />
+</details>
+\end
+
+<$reveal type=nomatch stateTitle=<<folded-state>>text=hide tag=div retain=yes animate=yes>
+<%if [[$:/config/Utility]getindex[source-toggle-button]match[show]] %>
+<%if [all[current]has[title]] -[subfilter{$:/config/Utility/SourceToggleButton/Exclude-filter}] -[function[system-excluded-filter]] %>
+	<%if [tag[show-content]] [tag[show-source]] [subfilter{$:/config/Utility/SourceToggleButton/Extra-filter}] :and[match<currentTiddler>] %>
+		<<show-tiddler-source open>>
+	<%else%>
+		<<show-tiddler-source>>
+	<%endif%>
+<%endif%>
+<%endif%>
+</$reveal>

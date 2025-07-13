@@ -1,0 +1,7 @@
+tags: $:/tags/Global
+title: $:/plugins/kookma/utility/procedures/kbd
+type: text/vnd.tiddlywiki
+
+\procedure kbd(keys, color)
+<kbd style=`color:$(color)$;`><<keys>></kbd>
+\end

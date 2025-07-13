@@ -1,0 +1,18 @@
+title: $:/plugins/linonetwo/simple-layout-launcher/language/zh-Hans/Readme
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/simple-layout-launcher/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+!! 过程
+
+本插件提供了一个简单的布局切换器，它可以通过这个过程调用来使用：
+
+```tid
+<<simple-layout-launcher>>
+```
+
+<<simple-layout-launcher>>

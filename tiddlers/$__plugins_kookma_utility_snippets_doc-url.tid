@@ -1,0 +1,6 @@
+caption: Docurl
+tags: $:/tags/TextEditor/Snippet
+title: $:/plugins/kookma/utility/snippets/doc-url
+type: text/vnd.tiddlywiki
+
+<<doc-url url:"">>

@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountTagHoursWeek/Description
+type: text/vnd.tiddlywiki
+
+Counts the total duration (`endDate - startDate` end minus beginning) of this week's "tiddlers with this tag" for a particular tag till now. (e.g. how many hours did the tiddler tagged "sleep" sleep this week)

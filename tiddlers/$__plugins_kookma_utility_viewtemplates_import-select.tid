@@ -1,0 +1,90 @@
+list-before: $:/core/ui/ViewTemplate/body
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/utility/viewtemplates/import-select
+type: text/vnd.tiddlywiki
+
+\procedure select-all-actions()
+<$list filter="[all[current]plugintiddlers[]sort[title]]" variable="payloadTiddler">
+<$action-setfield $field={{{ [<payloadTiddler>addprefix[selection-]] }}} $value={{$:/state/import/select-all}}/>
+</$list>
+<$action-setfield $field="selection-system-tiddlers"   $value={{$:/state/import/select-all}} />
+<$action-setfield $field="selection-shadow-tiddlers"   $value={{$:/state/import/select-all}} />
+<$action-setfield $field="selection-ordinary-tiddlers" $value={{$:/state/import/select-all}} />
+<$action-setfield $field="selection-existing-tiddlers" $value={{$:/state/import/select-all}} />
+\end
+
+
+\procedure select-all-state(param)
+<$list filter="[<param>match[unchecked]]" variable=null>
+	<$action-setfield $tiddler="$:/state/import/select-all" $field=text $value=<<param>>/>
+</$list>
+\end
+
+
+\procedure cb-action(filter, param)
+<$list filter="[{$:/Import}jsonindexes[tiddlers]] :filter[subfilter<filter>]" variable="tid">
+   <$action-setfield $tiddler="$:/Import" $field={{{ [[selection-]addsuffix<tid>] }}} $value=<<param>>/>
+</$list>
+<<select-all-state>>
+\end
+
+
+\procedure check-boxes()
+<$checkbox tiddler="$:/state/import/select-all" field="text" checked="checked" unchecked="unchecked" default="checked" 
+ actions=<<select-all-actions>>
+ ><span class="tc-tiny-gap">All</span>
+</$checkbox>
+
+<$checkbox field="selection-system-tiddlers" default="checked" checked="checked" unchecked="unchecked"
+ checkactions=   """<<cb-action filter:"[is[system]]" param:"checked">>"""
+ uncheckactions= """<<cb-action filter:"[is[system]]" param:"unchecked">>"""
+ ><span class="tc-tiny-gap">System</span>
+</$checkbox>
+
+<$checkbox field="selection-shadow-tiddlers" default="checked" checked="checked" unchecked="unchecked"
+ checkactions=   """<<cb-action filter:"[is[shadow]]" param:"checked">>"""
+ uncheckactions= """<<cb-action filter:"[is[shadow]]" param:"unchecked">>"""
+ ><span class="tc-tiny-gap">Shadow</span>
+</$checkbox>
+
+<$checkbox field="selection-ordinary-tiddlers" default="checked" checked="checked" unchecked="unchecked"
+ checkactions=   """<<cb-action filter:"[!is[system]!is[shadow]]" param:"checked">>"""
+ uncheckactions= """<<cb-action filter:"[!is[system]!is[shadow]]" param:"unchecked">>"""
+ ><span class="tc-tiny-gap">Ordinary</span>
+</$checkbox>
+
+<$checkbox field="selection-existing-tiddlers" default="checked" checked="checked" unchecked="unchecked"
+ checkactions=   """<<cb-action filter:"[is[tiddler]]" param:"checked">>"""
+ uncheckactions= """<<cb-action filter:"[is[tiddler]]" param:"unchecked">>"""
+ ><span class="tc-tiny-gap">Existing</span>
+</$checkbox>
+
+\end
+
+\procedure rename-existing-action()
+<$list filter="[{$:/Import}jsonindexes[tiddlers]is[tiddler]]" variable="tid">
+   <$action-setfield $tiddler="$:/Import" $field={{{ [[rename-]addsuffix<tid>] }}} $value={{{ [<tid>] :and[subfilter{!!rename-inputbox}] }}}/>
+</$list>
+\end
+
+\procedure cancel-rename-existing-action()
+<$list filter="[{$:/Import}jsonindexes[tiddlers]is[tiddler]]" variable="tid">
+   <$action-setfield $tiddler="$:/Import" $field={{{ [[rename-]addsuffix<tid>] }}} />
+</$list>
+\end
+
+\procedure rename-existing()
+<div style="margin-top:5px;">
+Rename existing
+<$keyboard key={{$:/config/shortcuts/input-cancel}} actions="""<$action-deletefield $field="rename-inputbox"/>""" >
+<$edit-text field="rename-inputbox" tag=input size="45" placeholder="enter a subfilter e.g. [addprefix[New-]]"/>
+</$keyboard>
+<$button actions=<<rename-existing-action>> >apply</$button>
+<$button actions=<<cancel-rename-existing-action>> >cancel</$button>
+</div>
+\end rename-existing
+
+<%if [[$:/config/Utility]getindex[import-select]match[show]] [all[current]match[$:/Import]status[pending]] :and[count[]match[2]] %>
+<<check-boxes>>
+<<rename-existing>>
+<%endif%>

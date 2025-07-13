@@ -1,0 +1,6 @@
+caption: Password
+tags: $:/tags/TextEditor/Snippet
+title: $:/plugins/kookma/utility/snippets/pass-proc
+type: text/vnd.tiddlywiki
+
+<<pass password:"" label:"Pass">>

@@ -1,0 +1,22 @@
+description: Show a toggle button for view fields
+list-before: $:/core/ui/ViewTemplate/body
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/utility/viewtemplates/edit-fields
+type: text/vnd.tiddlywiki
+
+<$reveal type=match stateTitle="$:/state/utility/edit-fields" stateField=text default="hide" text=show tag=div class="kk-ut-viewfields">
+
+<$vars newFieldNameTiddler=<<qualify "$:/temp/NewFieldName">>
+newFieldValueTiddler=<<qualify "$:/temp/NewFieldValue">>  
+searchListState=<<qualify "$:/temp/searchListState">> 
+storeTitle=<<qualify "$:/temp/storeTitle">> 
+>
+<$transclude tiddler="$:/core/ui/EditTemplate/fields"/>
+</$vars>
+
+</$reveal>
+
+<!-- IMPORTANT Note: I had to use another viewtemplate for TW 5.2.3+, which do not use in TW 5.2.2 and older, but after 5.3.3
+I could use the old viewtemplate to show the fields!
+See: https://github.com/Jermolene/TiddlyWiki5/discussions/6803#discussioncomment-3190043
+-->

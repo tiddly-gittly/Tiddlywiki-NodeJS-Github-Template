@@ -1,0 +1,7 @@
+tags: 
+title: $:/plugins/kookma/utility/images/tiddler-updated.svg
+type: text/vnd.tiddlywiki
+url: https://www.svgrepo.com/svg/489199/update
+
+\parameters (size:"22pt")
+<svg width=<<size>> height=<<size>> class="kk-update-button tc-image-button" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.984 10H17m3.984 0V6m0 4-3.327-3.657A8 8 0 1 0 19.418 15M12 9v4l3 1.5"/></svg>

@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountDownDays/Description
+type: text/vnd.tiddlywiki
+
+Shows the number of days left until the start date (`startDate`) of a tiddler.

@@ -1,0 +1,50 @@
+caption: Utility
+tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
+title: $:/plugins/kookma/utility/ui/ControlPanel/Settings
+type: text/vnd.tiddlywiki
+
+\procedure help-exclude-reveal-filter()
+Exclude Filter: Use this filter to hide the
+source toggle button on specific tiddlers.
+\end
+
+\procedure help-extra-reveal-filter()
+Use this filter to show the source toggle button with
+revealed source code on specific tiddlers.
+\end
+
+
+These settings let you customise the behaviour of Utility plugin.
+
+---
+
+;Show Utility setting in more sidebar
+:<$checkbox tiddler="$:/plugins/kookma/utility/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
+
+
+;Options
+:<$checkbox tiddler="$:/config/Utility" index="tw-version" checked="show" unchecked="hide"> Show TiddlyWiki version badge</$checkbox>
+:<$checkbox tiddler="$:/config/Utility" index="extended-subtitle" checked="show" unchecked="hide"> Show extended tiddler subtitle</$checkbox>
+:<$checkbox tiddler="$:/config/Utility" index="tiddler-size-edit-mode" checked="show" unchecked="hide"> Show tiddler size information in edit mode</$checkbox>
+:<$checkbox tiddler="$:/config/Utility" index="import-select" checked="show" unchecked="hide"> Show select tiddlers menu on ''~$:/Import''</$checkbox>
+:<$checkbox tiddler="$:/config/Utility" index="toolbar-controls-on-shadows" checked="show" unchecked="hide"> Show toolbar controls on shadow tiddlers</$checkbox>
+:<$checkbox tiddler="$:/config/Utility" index="immersive-reader" checked="yes"> Enter immersive reader mode</$checkbox>
+
+
+;Source Toggle Button
+:<$checkbox tiddler="$:/config/Utility" index="source-toggle-button" checked="show" unchecked="hide"> Show source button on the tiddlers</$checkbox>
+
+
+:<div style="padding-left:18px;">
+<%if  [[$:/config/Utility]getindex[source-toggle-button]match[show]] %>
+<label class="kk-utility-label" title=<<help-exclude-reveal-filter>> >Exclude filter<sup>?</sup></label>
+<$edit-text tiddler="$:/config/Utility/SourceToggleButton/Exclude-filter" field="text" tag=input default="" placeholder="enter a filter e.g. [has:field[myField]] " class="kk-ut-txt"/><br>
+
+<label class="kk-utility-label"  title=<<help-extra-reveal-filter>> >Extra filter<sup>?</sup></label>
+<$edit-text tiddler="$:/config/Utility/SourceToggleButton/Extra-filter" field="text" tag=input default="" placeholder="enter a filter e.g. [tag[myTag]] " class="kk-ut-txt"/>
+<%endif%>
+</div>
+
+;Customize UI elements
+: [[Show/hide selected UI elements|$:/plugins/kookma/utility/customize-ui/modal]]
+

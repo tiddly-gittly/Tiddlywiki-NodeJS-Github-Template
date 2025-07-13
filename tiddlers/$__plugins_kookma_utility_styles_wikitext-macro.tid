@@ -1,0 +1,23 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/utility/styles/wikitext-macro
+type: text/vnd.tiddlywiki
+
+.doc-example {
+	margin: 1em 0;
+	padding: 0.8em 0;
+}
+.doc-example:hover {
+	background-color: <<colour code-background>>;
+}
+.doc-example ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0.2em;
+}
+
+.doc-example input[type=search] { 
+  width: 95%;
+}
+.doc-example pre:first-child {
+	margin-top: 0;
+}

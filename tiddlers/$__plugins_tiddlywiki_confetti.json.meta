@@ -4,7 +4,7 @@ description: Animated confetti effect
 list: readme
 name: Confetti
 plugin-type: plugin
-stability: STABILITY_1_EXPERIMENTAL
+stability: STABILITY_2_STABLE
 title: $:/plugins/tiddlywiki/confetti
 type: application/json
-version: 5.3.6
+version: 5.3.7

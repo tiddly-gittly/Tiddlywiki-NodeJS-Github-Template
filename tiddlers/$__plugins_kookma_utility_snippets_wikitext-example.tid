@@ -1,0 +1,8 @@
+caption: Wikitext-example
+tags: $:/tags/TextEditor/Snippet
+title: $:/plugins/kookma/utility/snippets/wikitext-example
+type: text/vnd.tiddlywiki
+
+<<wikitext-example 
+src:"""
+""">>

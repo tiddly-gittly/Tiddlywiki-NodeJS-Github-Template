@@ -1,0 +1,12 @@
+caption: Sidebar tabs
+list-after: $:/plugins/kookma/utility/customize-ui/sidebar-elements
+tags: $:/tags/Utility/UI
+title: $:/plugins/kookma/utility/customize-ui/sidebar-tabs
+type: text/vnd.tiddlywiki
+
+Choose which tabs are displayed in right sidebar tabs. 
+
+<$checkbox tiddler="$:/core/ui/SideBar/Open" tag="$:/tags/SideBar"/> Show Open tab<br/>
+<$checkbox tiddler="$:/core/ui/SideBar/Recent" tag="$:/tags/SideBar"/> Show Recent tab<br/>
+<$checkbox tiddler="$:/core/ui/SideBar/Tools" tag="$:/tags/SideBar"/> Show Tools tab<br/>
+<$checkbox tiddler="$:/core/ui/SideBar/More" tag="$:/tags/SideBar"/> Show More tab<br/>

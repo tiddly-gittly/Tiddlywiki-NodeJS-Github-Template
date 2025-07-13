@@ -1,0 +1,29 @@
+caption: {{$:/plugins/kookma/utility/images/edit-fields.svg}} {{$:/language/Buttons/Utility/EditFields/Caption}}
+description: {{$:/language/Buttons/Utility/EditFields/Hint}}
+list-before: $:/plugins/kookma/shiraz/ui/Buttons/SwitchPalette
+tags: $:/tags/PageControls
+title: $:/plugins/kookma/utility/ui/Buttons/edit-fields
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\procedure stateTid() $:/state/utility/edit-fields
+
+\procedure control-panel-button(status, class)
+\whitespace trim
+	<$button set=<<stateTid>> setTo=<<status>> tooltip={{$:/language/Buttons/Utility/EditFields/Hint}} aria-label={{$:/language/Buttons/Utility/EditFields/Caption}} class=`$(tv-config-toolbar-class)$ $(class)$` >
+			<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+					{{$:/plugins/kookma/utility/images/edit-fields.svg}}  
+			</$list>
+			<$list filter="[<tv-config-toolbar-text>match[yes]]">
+					<span class="tc-btn-text"><$text text={{$:/language/Buttons/Utility/EditFields/Caption}}/></span>
+			</$list>
+	</$button>
+\end	
+
+
+<%if [<stateTid>get[text]match[show]] %>
+	<<control-panel-button status:"hide" class:"tc-selected">>
+<%else%>
+	<<control-panel-button status:"show">>
+<%endif%>

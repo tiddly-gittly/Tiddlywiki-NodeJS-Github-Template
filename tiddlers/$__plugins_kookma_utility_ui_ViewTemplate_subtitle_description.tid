@@ -1,0 +1,9 @@
+tags: $:/tags/ViewTemplate/Subtitle
+title: $:/plugins/kookma/utility/ui/ViewTemplate/subtitle/description
+type: text/vnd.tiddlywiki
+
+<%if [[$:/config/Utility]getindex[extended-subtitle]match[show]] :then[<currentTiddler>!tag[Task]] %>
+<%if [{!!description}!is[blank]] %>
+<br><<doc-svg "$:/plugins/kookma/utility/images/note.svg">> {{!!description}} 
+<%endif%>
+<%endif%>

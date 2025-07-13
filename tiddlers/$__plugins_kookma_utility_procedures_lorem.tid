@@ -1,0 +1,22 @@
+author: Jeremy Ruston
+description: creates few paragraphs of dumy text
+tags: $:/tags/Global
+title: $:/plugins/kookma/utility/procedures/lorem
+type: text/vnd.tiddlywiki
+
+\procedure .lorem(np:1, nw:"")
+\procedure baseText()
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end baseText
+
+<$let numwords={{{ [<nw>!match[]] :else[<baseText>split[ ]count[]]  }}} numparagraphs=`[range[1,$(np)$]]`>
+<$list filter="[<baseText>split[ ]limit<numwords>join[ ]trim[,]trim[.]addsuffix[.]]" variable=paragraph>
+
+<$list filter=<<numparagraphs>> variable=null> 
+<<paragraph>>
+<$list filter="[<np>!match[1]]"><p/></$list>
+</$list>
+
+</$list>
+</$let>
+\end .lorem

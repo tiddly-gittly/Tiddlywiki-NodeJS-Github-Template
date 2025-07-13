@@ -1,0 +1,15 @@
+tags: $:/tags/Global
+title: $:/plugins/kookma/utility/widgets/codeblock
+type: text/vnd.tiddlywiki
+
+\widget $codeblock(code, language, caption)
+<div class="kk-utility-code-caption"><<caption>></div>
+<div class="kk-utility-code">
+<%if [<code>!is[blank]] %>
+<$button tooltip="Copy" class="tc-btn-invisible"> {{$:/core/images/copy-clipboard}}
+<$action-sendmessage $message="tm-copy-to-clipboard" $param=<<code>> successNotification="$:/language/Utility/Notifications/Source/CopiedToClipboard/Succeeded"/>
+</$button>
+<%endif%>
+<$genesis $type="$codeblock" $remappable="no" code=<<code>> language=<<language>>/>
+</div>
+\end

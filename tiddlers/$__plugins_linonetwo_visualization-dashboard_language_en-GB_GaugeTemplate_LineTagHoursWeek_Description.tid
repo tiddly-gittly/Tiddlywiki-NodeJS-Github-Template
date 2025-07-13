@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/LineTagHoursWeek/Description
+type: text/vnd.tiddlywiki
+
+A bar chart showing the duration (`endDate - startDate` end minus beginning) of each day of the week for a tag till now. (e.g. how many hours a day did the tiddler tagged "sleep" sleep this week)

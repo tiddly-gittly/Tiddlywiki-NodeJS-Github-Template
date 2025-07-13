@@ -1,0 +1,12 @@
+tags: 
+title: $:/plugins/kookma/utility/readme
+type: text/vnd.tiddlywiki
+
+; Utility plugin
+The utility plugin objective is to provide set of tools for authors. These tools includes simple transclusions, show raw contents of tiddlers, reader mode, wikitext macros, show fields in view mode, linkify, code, docit, and much more!
+
+; Code and demo
+For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
+
+* Demo: https://kookma.github.io/TW-Utility/
+* Code: https://github.com/kookma/TW-Utility

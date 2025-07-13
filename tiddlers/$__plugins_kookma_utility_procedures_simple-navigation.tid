@@ -1,0 +1,21 @@
+tags: $:/tags/Global
+title: $:/plugins/kookma/utility/procedures/simple-navigation
+type: text/vnd.tiddlywiki
+
+\procedure simple-navigation(tag:"demo", class, close:"no")
+<$list filter="[all[current]tag<tag>]">
+<div class=`$(class)$`>
+	<$list filter="[tag<tag>before<currentTiddler>]" variable="prevTiddler">
+		<$button to=<<prevTiddler>> tooltip=<<prevTiddler>> class=`tc-btn-invisible $(class)$`>previous
+				<%if [<close>match[yes]] %><$action-sendmessage $message="tm-close-tiddler" $param=<<currentTiddler>>/><%endif%>
+		</$button>
+	</$list>
+	<%if [tag<tag>after<currentTiddler>][tag<tag>before<currentTiddler>] :and[count[]compare:integer:gteq[2]] %>|<%endif%>
+	<$list filter="[tag<tag>after<currentTiddler>]" variable="nextTiddler">
+		<$button to=<<nextTiddler>> tooltip=<<nextTiddler>> class=`tc-btn-invisible $(class)$`>next
+				<%if [<close>match[yes]] %><$action-sendmessage $message="tm-close-tiddler" $param=<<currentTiddler>>/><%endif%>
+		</$button>
+	</$list>
+</div>
+</$list>
+\end

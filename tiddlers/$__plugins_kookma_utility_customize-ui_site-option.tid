@@ -1,0 +1,11 @@
+caption: Site options
+list-before: 
+tags: $:/tags/Utility/UI
+title: $:/plugins/kookma/utility/customize-ui/site-option
+type: text/vnd.tiddlywiki
+
+Choose which elements are displayed for site. 
+
+<$checkbox tiddler="$:/core/ui/SideBarSegments/site-title" tag="$:/tags/SideBarSegment"/> Show site title<br/>
+<$checkbox tiddler="$:/core/ui/SideBarSegments/site-subtitle" tag="$:/tags/SideBarSegment"/> Show site subtitle<br/>
+<$checkbox tiddler="$:/core/ui/SideBarSegments/page-controls" tag="$:/tags/SideBarSegment"/> Show page controls<br/>

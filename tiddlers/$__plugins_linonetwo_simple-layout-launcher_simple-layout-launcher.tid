@@ -1,0 +1,33 @@
+tags: $:/tags/Global
+title: $:/plugins/linonetwo/simple-layout-launcher/simple-layout-launcher
+type: text/vnd.tiddlywiki
+
+\procedure on-click()
+<!-- Close model, similar to click close button. -->
+<$action-sendmessage $message="tm-close-tiddler" />
+\end
+
+\procedure simple-layout-launcher()
+	\whitespace trim
+	<$linkcatcher to="$:/layout" actions=<<on-click>> >
+		<div class="linonetwo-simple-layout-launcher">
+			<$list filter="[[$:/core/ui/PageTemplate]] [all[tiddlers+shadows]tag[$:/tags/Layout]]">
+				<$set name="chosen-cls" filter="[all[current]compare:eq{$:/layout}]" value="linonetwo-simple-layout-launcher-item tc-chosen" emptyValue="linonetwo-simple-layout-launcher-item">
+					<$link to={{!!title}}>
+						<div class=<<chosen-cls>>>
+							<span class="linonetwo-simple-layout-launcher-icon">
+								<$transclude tiddler={{{ [<currentTiddler>get[icon]] }}}/>
+							</span>
+							<span class="linonetwo-simple-layout-launcher-title">
+								<$transclude field="name"/>
+							</span>
+							<span class="linonetwo-simple-layout-launcher-description">
+								<$transclude field="description"/>
+							</span>
+						</div>
+					</$link>
+				</$set>
+			</$list>
+		</div>
+	</$linkcatcher>
+\end
