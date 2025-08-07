@@ -1,7 +1,0 @@
-tags: 
-title: $:/plugins/kookma/utility/images/note.svg
-type: text/vnd.tiddlywiki
-url: https://www.svgrepo.com/svg/489063/note-01
-
-\parameters (size:"22pt")
-<svg width=<<size>> height=<<size>> class="kk-note-button tc-image-button" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9m-6-6 6 6m-6-6v5a1 1 0 0 0 1 1h5M9 13h6m-6 4h6"/></svg>

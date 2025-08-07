@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountTagDaysAppearWeek/Description
-type: text/vnd.tiddlywiki
-
-Counts the number of days this week that a tag has "tiddlers with this tag". (e.g., how many days this week there were tiddlers tagged with "fitness"?)

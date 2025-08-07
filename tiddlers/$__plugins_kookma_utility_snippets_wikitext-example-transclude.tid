@@ -1,8 +1,0 @@
-caption: Wikitext-example transclude
-tags: $:/tags/TextEditor/Snippet
-title: $:/plugins/kookma/utility/snippets/wikitext-example-transclude
-type: text/vnd.tiddlywiki
-
-<$transclude $variable="wikitext-example" 
-src="""
-"""/>

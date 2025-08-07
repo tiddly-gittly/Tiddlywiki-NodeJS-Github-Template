@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/TheBrain2LevelTag/Description
-type: text/vnd.tiddlywiki
-
-A network diagram showing the 2-order associative tags of a tag, i.e., the subentries of the tiddlers with this tag and their relationships.

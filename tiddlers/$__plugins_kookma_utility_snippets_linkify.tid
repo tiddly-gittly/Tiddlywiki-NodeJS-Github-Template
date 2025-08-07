@@ -1,6 +1,0 @@
-caption: Linkify
-tags: $:/tags/TextEditor/Snippet
-title: $:/plugins/kookma/utility/snippets/linkify
-type: text/vnd.tiddlywiki
-
-<<linkify tiddler:"" field:"caption">>

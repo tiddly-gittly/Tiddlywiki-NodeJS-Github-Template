@@ -1,9 +1,0 @@
-tags: $:/tags/Global
-title: $:/plugins/kookma/utility/procedures/docit
-type: text/vnd.tiddlywiki
-
-\procedure docit()
-<div class="alert alert-danger">
-''To Be Documented''. Created on <$view field=created format=date template="YYYY.0MM.0DD"/>
-</div>
-\end

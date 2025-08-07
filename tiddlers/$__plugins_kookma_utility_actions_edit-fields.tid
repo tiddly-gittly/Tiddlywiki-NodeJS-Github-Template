@@ -1,7 +1,0 @@
-code-body: yes
-key: ((edit-fields))
-tags: $:/tags/KeyboardShortcut
-title: $:/plugins/kookma/utility/actions/edit-fields
-type: text/vnd.tiddlywiki
-
-<$action-listops $tiddler="$:/state/utility/edit-fields" $field="text" $subfilter="+[toggle[show],[hide]]" />

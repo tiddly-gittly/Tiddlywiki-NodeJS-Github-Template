@@ -1,9 +1,0 @@
-tags: $:/tags/Global
-title: $:/plugins/kookma/utility/procedures/local-link
-type: text/vnd.tiddlywiki
-
-\procedure local(folder, label:"")
-<a href={{{ [<folder>addprefix[file:///]] }}} target=_blank>
-<%if [<label>trim[]is[blank]] %><<folder>><% else %><<label>><%endif%>
-</a>
-\end

@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountDownNearestTagHours/Description
-type: text/vnd.tiddlywiki
-
-Shows the number of hours left to the `startDate` of the nearest "tiddler with this tag" for a given tag. (e.g. how many hours left until the start of tonight's tiddler tagged "sleep")

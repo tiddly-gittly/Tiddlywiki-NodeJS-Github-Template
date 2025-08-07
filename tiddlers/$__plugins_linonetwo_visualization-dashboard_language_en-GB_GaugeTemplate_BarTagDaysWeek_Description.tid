@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/BarTagDaysWeek/Description
-type: text/vnd.tiddlywiki
-
-A bar chart showing the number of days a tag has been tagged each day of the week. (e.g. how many times per day this week were the tiddlers tagged "watch short videos")

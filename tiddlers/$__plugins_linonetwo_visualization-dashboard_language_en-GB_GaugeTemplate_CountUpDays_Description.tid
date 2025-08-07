@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountUpDays/Description
-type: text/vnd.tiddlywiki
-
-Shows the number of days from the end of an tiddler (`endDate`) to now.

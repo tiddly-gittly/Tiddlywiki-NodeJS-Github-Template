@@ -1,7 +1,0 @@
-tags: 
-title: $:/plugins/kookma/utility/images/tiddler-created.svg
-type: text/vnd.tiddlywiki
-url: https://www.svgrepo.com/svg/488861/clock
-
-\parameters (size:"22pt")
-<svg width=<<size>> height=<<size>> class="kk-clock-button tc-image-button" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 14-4-2V7m0 14a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/></svg>

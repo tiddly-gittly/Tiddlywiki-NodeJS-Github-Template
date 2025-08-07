@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/PolarTagsHoursWeek/Description
-type: text/vnd.tiddlywiki
-
-A circular bar chart showing the duration of 'entries with this tag' for each day of the week for each of the selected tags, comparing the hours of each activity for the week on a polar coordinate system.

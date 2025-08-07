@@ -1,4 +1,0 @@
-title: $:/plugins/linonetwo/visualization-dashboard/language/en-GB/GaugeTemplate/CountTagHoursYear/Description
-type: text/vnd.tiddlywiki
-
-Counts the number of hours of total duration of "tiddlers with this tag" for a given tag over 365 days. (Unlike other weekly and daily level statistics that count tiddlers, this meter does not count tiddlers by default.)

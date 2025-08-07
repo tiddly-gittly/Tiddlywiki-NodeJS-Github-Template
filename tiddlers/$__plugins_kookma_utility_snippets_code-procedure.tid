@@ -1,6 +1,0 @@
-caption: Code
-tags: $:/tags/TextEditor/Snippet
-title: $:/plugins/kookma/utility/snippets/code-procedure
-type: text/vnd.tiddlywiki
-
-<<code src:"" language:"xml" caption:"">>
