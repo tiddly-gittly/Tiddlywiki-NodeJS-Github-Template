@@ -47,7 +47,7 @@ jobs:
         run: pnpm exec workbox injectManifest workbox-config.js
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload entire repository
           path: ./public-dist
