@@ -15,7 +15,7 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       npm-check-updates:
-        specifier: ^18.0.2
+        specifier: ^18.0.3
         version: 18.0.3
       rimraf:
         specifier: ^6.0.1
@@ -24,8 +24,8 @@ importers:
         specifier: 0.4.0
         version: 0.4.0
       tiddlywiki:
-        specifier: ^5.3.7
-        version: 5.3.7
+        specifier: ^5.3.8
+        version: 5.3.8
       uglify-js:
         specifier: 3.19.3
         version: 3.19.3
@@ -33,8 +33,8 @@ importers:
         specifier: 7.3.0
         version: 7.3.0
       zx:
-        specifier: ^8.7.2
-        version: 8.7.2
+        specifier: ^8.8.1
+        version: 8.8.1
 
 packages:
 
@@ -2124,8 +2124,8 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
-  tiddlywiki@5.3.7:
-    resolution: {integrity: sha512-BVVmqGUj47BC+wFZgNLU5qKuNJbTnWWTOB9mEELHtovdKaAchMF5DEXFvZEl0SOTjhF29ljecKhjla19vmoHPA==}
+  tiddlywiki@5.3.8:
+    resolution: {integrity: sha512-T25acZfdhAX/lUVPY/9SXo7bMJKgSaMs5PDOb83S2WKbTCD7DnOUQ4aC3qDy0j5XqlCn4ih3mzMWct3xnQx+Mw==}
     engines: {node: '>=0.8.2'}
     hasBin: true
 
@@ -2364,8 +2364,8 @@ packages:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
 
-  zx@8.7.2:
-    resolution: {integrity: sha512-4Wtl46msLFx6QW6GjLu1aRnFhavukT4VSp4tdXvfRIBRNW3RP7Si3RlRFD7YeQeecQBacVFRQQgm5LTvE/YEGQ==}
+  zx@8.8.1:
+    resolution: {integrity: sha512-qvsKBnvWHstHKCluKPlEgI/D3+mdiQyMoSSeFR8IX/aXzWIas5A297KxKgPJhuPXdrR6ma0Jzx43+GQ/8sqbrw==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -4725,7 +4725,7 @@ snapshots:
 
   through@2.3.8: {}
 
-  tiddlywiki@5.3.7: {}
+  tiddlywiki@5.3.8: {}
 
   tmp@0.0.33:
     dependencies:
@@ -5060,4 +5060,4 @@ snapshots:
       camelcase: 5.3.1
       decamelize: 1.2.0
 
-  zx@8.7.2: {}
+  zx@8.8.1: {}
