@@ -7,6 +7,7 @@ name: Relink Markdown
 parent-plugin: $:/plugins/flibbles/relink
 plugin-type: plugin
 source: https://github.com/flibbles/tw5-relink
+stability: STABILITY_2_STABLE
 title: $:/plugins/flibbles/relink-markdown
 type: application/json
-version: 2.5.1
+version: 2.5.2

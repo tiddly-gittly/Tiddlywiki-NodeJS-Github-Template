@@ -8,6 +8,7 @@ name: Relink Field Names
 parent-plugin: $:/plugins/flibbles/relink
 plugin-type: plugin
 source: https://github.com/flibbles/tw5-relink
+stability: STABILITY_2_STABLE
 title: $:/plugins/flibbles/relink-fieldnames
 type: application/json
-version: 2.5.0
+version: 2.5.2

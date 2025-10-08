@@ -4,9 +4,12 @@ dependents:
 description: Table of contents and navigation builder
 list: readme license history
 name: Toc
+packaged-by: Gatha on 11th August 2025, 13:41:56
+parent-plugin: 
+plugin-priority: 
 plugin-type: plugin
 source: https://github.com/kookma/TOC
 stability: STABILITY_2_STABLE
 title: $:/plugins/kookma/toc
 type: application/json
-version: 1.6.2
+version: 1.6.3
