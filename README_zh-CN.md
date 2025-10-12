@@ -6,7 +6,7 @@
 
 知识库模板，具有高级过滤搜索和分面数据聚合功能。
 
-[onetwo.ren/wiki](https://onetwo.ren/wiki)是这个模板的一个例子。而[tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/)是这个repo的部署例子。(有一些优化，使这个演示只读，并且不能下载，所以它的大小几乎和GIF图片一样小。)
+[wiki.onetwo.website](https://wiki.onetwo.website/)是这个模板的一个例子。而[tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/](https://tiddly-gittly.github.io/Tiddlywiki-NodeJS-Github-Template/)是这个repo的部署例子。(有一些优化，使这个演示只读，并且不能下载，所以它的大小几乎和GIF图片一样小。)
 
 需要修改`$:/GitHub/Repo`条目内容为个人github仓库地址。默认分支是master，可以手动修改`$:/core/templates/canonical-uri-external-image`条目，改成其他比如main分支。
 
