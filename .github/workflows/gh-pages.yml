@@ -39,13 +39,8 @@ jobs:
           
       - name: Install Dependency
         run: pnpm install
-      - name: Building online versions of web pages
-        run: pnpm run buildonline
-      - name: Building downloadable offline versions of web pages
-        run: pnpm run buildoffline
-      - name: Workbox offline cache
-        run: pnpm exec workbox injectManifest workbox-config.js
-
+      - name: Building online and offline versions
+        run: pnpm run build
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

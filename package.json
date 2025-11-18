@@ -1,19 +1,14 @@
 {
   "scripts": {
-    "zx-build": "zx ./scripts/build-wiki.mjs",
-    "server": "npx cross-env TIDDLYWIKI_PLUGIN_PATH='./plugins' TIDDLYWIKI_THEME_PATH='./themes' TIDDLYWIKI_LANGUAGE_PATH='./languages' npx tiddlywiki . --listen port=8080",
-    "buildonline": "node -e \"require('./scripts/build').buildOnlineHTML('public-dist', 'index.html');\"",
-    "buildoffline": "node -e \"require('./scripts/build').buildOfflineHTML('public-dist', 'offline.html');\"",
-    "buildlibrary": "node -e \"require('./scripts/build').buildLibrary('[prefix[$:/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/themes/tiddlywiki/]!prefix[$:/languages/]!tag[$:/tags/PluginLibrary]!prefix[$:/plugins/kookma]]', 'public-dist/library');\"",
+    "run": "npx tiddlywiki . --listen port=8080",
+    "build": "zx ./scripts/build-wiki.mjs",
     "clean": "rimraf public-dist",
     "update": "npm-check-updates -u"
   },
   "devDependencies": {
-    "cross-env": "10.1.0",
     "html-minifier-terser": "7.2.0",
     "npm-check-updates": "^19.1.2",
     "rimraf": "^6.1.0",
-    "shx": "0.4.0",
     "tiddlywiki": "^5.3.8",
     "uglify-js": "3.19.3",
     "workbox-cli": "7.3.0",
