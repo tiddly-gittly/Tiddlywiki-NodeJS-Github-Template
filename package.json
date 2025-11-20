@@ -11,7 +11,7 @@
     "rimraf": "^6.1.0",
     "tiddlywiki": "^5.3.8",
     "uglify-js": "3.19.3",
-    "workbox-cli": "7.3.0",
+    "workbox-cli": "7.4.0",
     "zx": "^8.8.5"
   }
 }
