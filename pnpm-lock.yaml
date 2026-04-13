@@ -13,7 +13,7 @@ importers:
         version: 7.2.0
       npm-check-updates:
         specifier: ^20.0.0
-        version: 20.0.1
+        version: 20.0.2
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
@@ -1577,8 +1577,8 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  npm-check-updates@20.0.1:
-    resolution: {integrity: sha512-YuzpyL1Od5dJzpeETVh2H5o1I8tpi0zkf6v7k7rXwUDfiDliBX9dgVIb7FlEfp8Lu2RtECAv63ZHm/rqpIhYsw==}
+  npm-check-updates@20.0.2:
+    resolution: {integrity: sha512-nvbcXiprjMOoSX0FCHC41kjpZhNFURV53KMU0MMa0U10RPHeoHpiilMg2P8g9NLSQoo0umSH77tUqHWTOH3w7A==}
     engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
@@ -3945,7 +3945,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  npm-check-updates@20.0.1: {}
+  npm-check-updates@20.0.2: {}
 
   object-inspect@1.13.2: {}
 
