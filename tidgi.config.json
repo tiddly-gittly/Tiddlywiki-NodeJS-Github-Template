@@ -2,5 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/tiddly-gittly/TidGi-Desktop/master/src/services/workspaces/tidgi.config.schema.json",
   "version": 1,
   "name": "Tiddlywiki-NodeJS-Github-Template",
-  "id": "E50JpP0mHHiMcKQ14W0sg"
+  "id": "E50JpP0mHHiMcKQ14W0sg",
+  "hibernateWhenUnused": true
 }
