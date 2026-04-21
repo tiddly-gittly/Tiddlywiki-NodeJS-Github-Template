@@ -12,14 +12,14 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       npm-check-updates:
-        specifier: ^20.0.0
-        version: 20.0.1
+        specifier: ^21.0.0
+        version: 21.0.3
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
       tiddlywiki:
         specifier: ^5.3.8
-        version: 5.3.8
+        version: 5.4.0
       uglify-js:
         specifier: 3.19.3
         version: 3.19.3
@@ -1577,9 +1577,9 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  npm-check-updates@20.0.1:
-    resolution: {integrity: sha512-YuzpyL1Od5dJzpeETVh2H5o1I8tpi0zkf6v7k7rXwUDfiDliBX9dgVIb7FlEfp8Lu2RtECAv63ZHm/rqpIhYsw==}
-    engines: {node: '>=20.0.0', npm: '>=8.12.1'}
+  npm-check-updates@21.0.3:
+    resolution: {integrity: sha512-8y0fqtxdo5JhwzxcS9rZd969tvPbSZ3MzQoG5Fj8eqL42t1Jsg5tjZCz8CYuXLE8LNbbyV+1xxR/f/T4AdPmdg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0, npm: '>=10.0.0'}
     hasBin: true
 
   object-inspect@1.13.2:
@@ -1954,9 +1954,9 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
-  tiddlywiki@5.3.8:
-    resolution: {integrity: sha512-T25acZfdhAX/lUVPY/9SXo7bMJKgSaMs5PDOb83S2WKbTCD7DnOUQ4aC3qDy0j5XqlCn4ih3mzMWct3xnQx+Mw==}
-    engines: {node: '>=0.8.2'}
+  tiddlywiki@5.4.0:
+    resolution: {integrity: sha512-KD7kskwijrj4tOBjHY0XldQiQ2bnNNEsCXcGaYdIUeTqEMoKVK436Gkscc+qUwQE7APRyQ6t1gvbOKOLly1MvA==}
+    engines: {node: '>=20.0.0'}
     hasBin: true
 
   tmp@0.0.33:
@@ -3945,7 +3945,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  npm-check-updates@20.0.1: {}
+  npm-check-updates@21.0.3: {}
 
   object-inspect@1.13.2: {}
 
@@ -4356,7 +4356,7 @@ snapshots:
 
   through@2.3.8: {}
 
-  tiddlywiki@5.3.8: {}
+  tiddlywiki@5.4.0: {}
 
   tmp@0.0.33:
     dependencies:
