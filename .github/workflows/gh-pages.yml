@@ -42,7 +42,7 @@ jobs:
       - name: Building online and offline versions
         run: pnpm run build
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           # Upload entire repository
           path: ./public-dist
