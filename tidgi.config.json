@@ -3,5 +3,7 @@
   "version": 1,
   "name": "Tiddlywiki-NodeJS-Github-Template",
   "id": "E50JpP0mHHiMcKQ14W0sg",
-  "hibernateWhenUnused": true
+  "hibernateWhenUnused": true,
+  "gitUrl": "https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template",
+  "storageService": "github"
 }
