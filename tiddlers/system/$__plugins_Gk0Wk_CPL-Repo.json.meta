@@ -1,4 +1,4 @@
-Modern.TiddlyDev#SHA256-Hashed: b68e70e8e5791fe86ac2dbf5bfafc187b3d6227cc25f010906be568600e2bd7a
+Modern.TiddlyDev#SHA256-Hashed: 4effbef7cde62637cc656a72a987acb6962916fa9ac89c35a0bf432a4f424a75
 author: Gk0Wk
 core-version: >=5.3.0
 dependents: 
@@ -7,4 +7,4 @@ list: docs/readme docs/tree background-actions views/system/settings docs/change
 plugin-type: plugin
 title: $:/plugins/Gk0Wk/CPL-Repo
 type: application/json
-version: 2026.06.14-2
+version: 2026.06.23-1
