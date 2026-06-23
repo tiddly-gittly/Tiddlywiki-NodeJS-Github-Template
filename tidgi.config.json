@@ -5,6 +5,5 @@
   "id": "E50JpP0mHHiMcKQ14W0sg",
   "hibernateWhenUnused": true,
   "gitUrl": "https://github.com/tiddly-gittly/Tiddlywiki-NodeJS-Github-Template",
-  "storageService": "github",
-  "enableHTTPAPI": true
+  "storageService": "github"
 }
